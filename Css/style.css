@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    z-index: 10;
+}
+
+.nvicon {
+    color: #fff;
+}
+
+.nvicon:hover {
+    color: #8B0000;
+}
+
+.nav-btn {
+    padding: 0 15px;
+    .bg-primary {
+        background-color: #e5345b !important;
+    }
+}
+
+.sf {
+    padding: 0 20px;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    padding-left: 10px;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #008B8B, #00008B); /* dải màu từ A -> B */
+    padding: 0 !important;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: red !important;
+}
+
+.dropdown-item {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+.fa-bars {
+    color: #fff;
+    font-size: 30px;
+}
+
+#searchbtn {
+    color:bisque;
+}
