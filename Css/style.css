@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -49,6 +50,9 @@ header {
 
 .nav-link:hover {
     color: red !important;
+    .dropdown-menu {
+        visibility: visible;
+    }
 }
 
 .dropdown-item {
@@ -63,4 +67,8 @@ header {
 
 #searchbtn {
     color:bisque;
+}
+
+.slide {
+    padding-top: 110px;
 }
