@@ -117,6 +117,10 @@ header {
     transition: 0.4s;
 }
 
+.slideCon {
+    position:relative;
+}
+
 .dot-container {
     position: absolute;
     height: 30px;
@@ -138,3 +142,50 @@ header {
 .active {
     background-color: #000;
 }
+
+.prev-btn {
+    position: absolute; 
+    top: 50%; 
+    left: 20px; 
+    transform: translateY(-50%);
+    z-index: 1; /* Đảm bảo nút được hiển thị trên ảnh */
+
+}
+.next-btn {
+    position: absolute; 
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%);
+    z-index: 1; /* Đảm bảo nút được hiển thị trên ảnh */
+}
+
+.btn-slide {
+    font-size: 40px;
+    color:#00008B;
+    opacity: 0.7;
+}
+
+.over {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    color: #000;
+    transition: 0.4s;
+}
+
+.overlay a {
+   background-color: white;
+   color: green;
+}
+
+.overlay a:hover {
+    background-color: #e5345b;
+    color: white;
+}
+
+.red-text {
+    color: red;
+}
+
