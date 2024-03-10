@@ -82,6 +82,8 @@ header {
     transition: margin 0.5s ease;
     /* Hiệu ứng transition */
     margin-top: 50px;
+    list-style: none;
+    /* Xóa chấm tròn trong danh sách */
 }
 
 .contact:hover+.contact-menu {
@@ -104,6 +106,35 @@ header {
 }
 
 /* slide */
-.slide {
+.slider {
     padding-top: 110px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #00008B;
+    overflow: hidden;
+}
+
+.slide {
+    transition: 0.4s;
+}
+
+.dot-container {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    background-color: #CCC;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #000;
 }

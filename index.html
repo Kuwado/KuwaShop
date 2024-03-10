@@ -12,12 +12,16 @@
 </head>
 
 <body>
+
+    <!-- Header-->
+
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div class="container-fluid">
-
+                <!--Logo-->
                 <a class="navbar-brand order-lg-0" href="#index.html"><img src="Images/logo.png" id="logo"></a>
 
+                <!--Search & Icon button-->
                 <div class="d-flex order-lg-2">
                     <form class="d-flex sf" role="search">
                         <input class="form-control me-4" type="search" placeholder="Bạn đang muốn tìm gì?"
@@ -37,6 +41,7 @@
                     </button>
                 </div>
 
+                <!--Menu-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -93,19 +98,38 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </nav>
     </header>
 
-    <section class="container slide">
-        <div class="ratio ratio-21x9">
-            <img src="Images/Slide/Slide01.png">       
-            <img src="Images/Slide/Slide02.png">     
-            <img src="Images/Slide/Slide03.png">     
-            <img src="Images/Slide/Slide04.png">                                                     
+    <!--End of header-->
+
+
+    <!--Slide-->
+    <section class="container slider">
+        <div class="ratio ratio-21x9 slide">
+            <img src="Images/Slide/Slide01.png">
+            <img src="Images/Slide/Slide02.png">
+            <img src="Images/Slide/Slide03.png">
+            <img src="Images/Slide/Slide04.png">
+        </div>
+        <div class="dot-container container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
     </section>
+
+    <!--End of Slide-->
+
+
+
+    
+    <!--Java Script-->
+    <script src="js/slide.js"></script> <!--Slide-->
+    <!--End of JS-->
 </body>
+
 
 </html>
