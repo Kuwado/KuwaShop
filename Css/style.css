@@ -9,33 +9,41 @@ header {
     z-index: 10;
 }
 
+/* icon */
 .nvicon {
     color: #fff;
 }
 
-.nvicon:hover {
-    color: #8B0000;
+.fa-bars {
+    color: #fff;
+    font-size: 30px;
 }
 
 .nav-btn {
     padding: 0 15px;
+
     .bg-primary {
         background-color: #e5345b !important;
     }
 }
 
-.sf {
-    padding: 0 20px;
+.nav-btn:hover .nvicon {
+    color: #8B0000;
 }
 
+
+/* logo */
 #logo {
     width: 100px;
     height: 100px;
     padding-left: 10px;
 }
 
+/* menu bar */
+
 .navbar {
-    background-image: linear-gradient(to right, #008B8B, #00008B); /* dải màu từ A -> B */
+    background-image: linear-gradient(to right, #008B8B, #00008B);
+    /* dải màu từ A -> B */
     padding: 0 !important;
 }
 
@@ -50,6 +58,7 @@ header {
 
 .nav-link:hover {
     color: red !important;
+
     .dropdown-menu {
         visibility: visible;
     }
@@ -60,15 +69,41 @@ header {
     font-weight: 500;
 }
 
-.fa-bars {
-    color: #fff;
-    font-size: 30px;
+.dropdown-item:hover {
+    color: #FF1493 !important;
+}
+
+.contact-menu {
+    visibility: hidden;
+    position: absolute;
+    background-color: aqua;
+    padding: 10px;
+    border: 2px solid #000;
+    transition: margin 0.5s ease;
+    /* Hiệu ứng transition */
+    margin-top: 50px;
+}
+
+.contact:hover+.contact-menu {
+    visibility: visible;
+    margin-top: 0;
+}
+
+.contact-menu:hover {
+    visibility: visible;
+    margin-top: 0;
+}
+
+/* search bar */
+.sf {
+    padding: 0 20px;
 }
 
 #searchbtn {
-    color:bisque;
+    color: bisque;
 }
 
+/* slide */
 .slide {
     padding-top: 110px;
 }
