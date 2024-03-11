@@ -12,6 +12,7 @@ header {
 /* icon */
 .nvicon {
     color: #fff;
+    font-size: 20px;
 }
 
 .fa-bars {
@@ -56,7 +57,8 @@ header {
     font-weight: 600;
 }
 
-.nav-link:hover {
+.nav-item:hover {
+
     color: red !important;
 
     .dropdown-menu {
@@ -64,15 +66,7 @@ header {
     }
 }
 
-.dropdown-item {
-    color: #000000 !important;
-    font-weight: 500;
-}
-
-.dropdown-item:hover {
-    color: #FF1493 !important;
-}
-
+/* menu detail */
 .contact-menu {
     visibility: hidden;
     position: absolute;
@@ -84,16 +78,48 @@ header {
     margin-top: 50px;
     list-style: none;
     /* Xóa chấm tròn trong danh sách */
+    line-height: 2;
+    /* Đặt khoảng cách giữa các hàng là 2 lần chiều cao của phông chữ */
+
 }
 
-.contact:hover+.contact-menu {
-    visibility: visible;
-    margin-top: 0;
+.contact:hover {
+    .contact-menu {
+        visibility: visible;
+        margin-top: 0;
+    }
+
+    .nav-link {
+        color: red !important;
+    }
 }
 
 .contact-menu:hover {
     visibility: visible;
     margin-top: 0;
+}
+
+/* sub menu */
+.contact-sub-menu {
+    list-style: none;
+    /* Loại bỏ chấm tròn */
+    line-height: 1.8;
+    /* Đặt khoảng cách giữa các hàng là 2 lần chiều cao của phông chữ */
+    border: 2px solid #000;
+}
+
+.contact-item {
+    text-decoration: none;
+    /* Loại bỏ gạch chân */
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.contact-sub-item {
+    text-decoration: none;
+    /* Loại bỏ gạch chân */
+    font-size: 16px;
+
 }
 
 /* search bar */
@@ -118,7 +144,7 @@ header {
 }
 
 .slideCon {
-    position:relative;
+    position: relative;
 }
 
 .dot-container {
@@ -144,24 +170,27 @@ header {
 }
 
 .prev-btn {
-    position: absolute; 
-    top: 50%; 
-    left: 20px; 
+    position: absolute;
+    top: 50%;
+    left: 20px;
     transform: translateY(-50%);
-    z-index: 1; /* Đảm bảo nút được hiển thị trên ảnh */
+    z-index: 1;
+    /* Đảm bảo nút được hiển thị trên ảnh */
 
 }
+
 .next-btn {
-    position: absolute; 
-    top: 50%; 
-    right: 20px; 
+    position: absolute;
+    top: 50%;
+    right: 20px;
     transform: translateY(-50%);
-    z-index: 1; /* Đảm bảo nút được hiển thị trên ảnh */
+    z-index: 1;
+    /* Đảm bảo nút được hiển thị trên ảnh */
 }
 
 .btn-slide {
     font-size: 40px;
-    color:#00008B;
+    color: #00008B;
     opacity: 0.7;
 }
 
@@ -176,8 +205,8 @@ header {
 }
 
 .overlay a {
-   background-color: white;
-   color: green;
+    background-color: white;
+    color: green;
 }
 
 .overlay a:hover {
@@ -188,4 +217,3 @@ header {
 .red-text {
     color: red;
 }
-
