@@ -7,70 +7,161 @@
     <title>KuwaShop</title>
     <link rel="stylesheet" href="FW/Bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="FW/Bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="FW/Fontawesome/fontawesome-free-6.5.1-web/css/all.css">
+    <link rel="stylesheet" href="FW/Fontawesome/fontawesome-free-6.5.1-web/css/all.min.css">
     <link rel="stylesheet" href="Css/style.css">
 </head>
 
 <body>
+
+    <!-- Header-->
+
     <header>
-        <nav class = "navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
-            <div class = "container">
-                <a class = "navbar-brand d-flex justify-content-between align-items-center order-lg-0" href = "index.html">
-                    <img src = "images/shopping-bag-icon.png" alt = "site icon">
-                    <span class = "text-uppercase fw-lighter ms-2">Attire</span>
-                </a>
-    
-                <div class = "order-lg-2 nav-btns">
-                    <button type = "button" class = "btn position-relative">
-                        <i class = "fa fa-shopping-cart"></i>
-                        <span class = "position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <!--Logo-->
+                <a class="navbar-brand order-lg-0" href="#index.html"><img src="Images/logo.png" id="logo"></a>
+
+                <!--Search & Icon button-->
+                <div class="d-flex order-lg-2">
+                    <form class="d-flex sf" role="search">
+                        <input class="form-control me-4" type="search" placeholder="Bạn đang muốn tìm gì?"
+                            aria-label="Bạn đang muốn tìm gì?">
+                        <button class="btn btn-outline-success" type="submit" id="searchbtn">Tìm</button>
+                    </form>
+                    <button type="button" class="btn position-relative nav-btn">
+                        <i class="fa fa-shopping-cart nvicon"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
                     </button>
-                    <button type = "button" class = "btn position-relative">
-                        <i class = "fa fa-heart"></i>
-                        <span class = "position-absolute top-0 start-100 translate-middle badge bg-primary">2</span>
+                    <button type="button" class="btn position-relative nav-btn">
+                        <i class="fa fa-heart nvicon"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">2</span>
                     </button>
-                    <button type = "button" class = "btn position-relative">
-                        <i class = "fa fa-search"></i>
+                    <button type="button" class="btn position-relative nav-btn">
+                        <i class="fa fa-user nvicon"></i>
                     </button>
                 </div>
-    
-                <button class = "navbar-toggler border-0" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navMenu">
-                    <span class = "navbar-toggler-icon"></span>
+
+                <!--Menu-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
                 </button>
-    
-                <div class = "collapse navbar-collapse order-lg-1" id = "navMenu">
-                    <ul class = "navbar-nav mx-auto text-center">
-                        <li class = "nav-item px-2 py-2">
-                            <a class = "nav-link text-uppercase text-dark" href = "#header">home</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 order-lg-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#index.html">TRANG CHỦ</a>
                         </li>
-                        <li class = "nav-item px-2 py-2">
-                            <a class = "nav-link text-uppercase text-dark" href = "#collection">collection</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">THÔNG TIN</a>
                         </li>
-                        <li class = "nav-item px-2 py-2">
-                            <a class = "nav-link text-uppercase text-dark" href = "#special">specials</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">ÁO</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                            </ul>
                         </li>
-                        <li class = "nav-item px-2 py-2">
-                            <a class = "nav-link text-uppercase text-dark" href = "#blogs">blogs</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">QUẦN</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                            </ul>
                         </li>
-                        <li class = "nav-item px-2 py-2">
-                            <a class = "nav-link text-uppercase text-dark" href = "#about">about us</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">GIÀY</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                            </ul>
                         </li>
-                        <li class = "nav-item px-2 py-2 border-0">
-                            <a class = "nav-link text-uppercase text-dark" href = "#popular">popular</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">PHỤ KIỆN</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link contact" href="#">LIÊN HỆ</a>
+                            <ul class="contact-menu">
+                                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                                <li><a class="dropdown-item" href="#">Link 4</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">VỀ CHÚNG TÔI</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- end of navbar -->
-        </nav>
-
     </header>
 
+    <!--End of header-->
 
-    <section class="">
 
+    <!--Slide-->
+    <section class="container slider">
+        <div class="container slideCon">
+
+            <div class="ratio ratio-21x9 slide">
+                <img src="Images/Slide/Slide01.png">
+                <img src="Images/Slide/Slide03.png">
+                <img src="Images/Slide/Slide02.png">
+                <img src="Images/Slide/Slide04.png">
+            </div>
+            <button class="btn prev-btn"><i class="fa-solid fa-circle-chevron-left  btn-slide"></i></button>
+            <button class="btn next-btn"><i class="fa-solid fa-circle-chevron-right btn-slide"></i></button>
+            <div class="ratio over">
+                <div class="overlay overMCK">
+                    <h2 class="text-capitalize text-black">best collection MCK</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-black">now availble</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">shop now</a>
+                </div>
+                <div class="overlay overBomber">
+                    <h2 class="text-capitalize text-black">best collection Bomber</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-black">new arrivals</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">shop now</a>
+                </div>
+                <div class="overlay overMangto">
+                    <h2 class="text-capitalize text-white">best collection mangto</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-white">new arrivals</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">shop now</a>
+                </div>
+                <div class="overlay overHust">
+                    <h2 class="text-capitalize red-text">best collection HUST</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-black">new arrivals</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">shop now</a>
+                </div>
+            </div>
+               
+           
+
+            <div class="dot-container container">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
     </section>
+
+    <!--End of Slide-->
+    <img src="Images/mck1.jpg" alt="" class="">
+
+
+
+    <!--Java Script-->
+    <script src="js/slide.js"></script> <!--Slide-->
+    <!--End of JS-->
 </body>
+
 
 </html>
