@@ -70,9 +70,9 @@ header {
 .contact-menu {
     visibility: hidden;
     position: absolute;
-    background-color: aqua;
+    background-color: #F0FFFF;
     padding: 10px;
-    border: 2px solid #000;
+    border: 2px solid aqua;
     transition: margin 0.5s ease;
     /* Hiệu ứng transition */
     margin-top: 50px;
@@ -105,7 +105,6 @@ header {
     /* Loại bỏ chấm tròn */
     line-height: 1.8;
     /* Đặt khoảng cách giữa các hàng là 2 lần chiều cao của phông chữ */
-    border: 2px solid #000;
 }
 
 .contact-item {
@@ -113,13 +112,22 @@ header {
     /* Loại bỏ gạch chân */
     font-size: 17px;
     font-weight: bold;
+    color: black;
+}
+
+.contact-item:hover {
+    color: #FF4500;
 }
 
 .contact-sub-item {
     text-decoration: none;
     /* Loại bỏ gạch chân */
     font-size: 16px;
+    color: black;
+}
 
+.contact-sub-item:hover {
+    color: #FF4500;
 }
 
 /* search bar */
@@ -216,4 +224,18 @@ header {
 
 .red-text {
     color: red;
+}
+
+/* footer */
+
+.footer-top {
+    background-color: #FFE4E1;
+}
+
+.footer-bottom {
+    background-color: #FFDEAD;
+}
+
+.footer-img {
+    width: 150px;
 }
