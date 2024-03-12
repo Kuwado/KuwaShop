@@ -9,18 +9,19 @@
     <script src="FW/Bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="FW/Fontawesome/fontawesome-free-6.5.1-web/css/all.min.css">
     <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/home.css">
 </head>
 
 <body>
 
-    <!-- Header-->
+    <!-----------------------------------------------Header----------------------------------------------------------->
 
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div class="container-fluid">
 
                 <!--Logo-->
-                <a class="navbar-brand order-lg-0" href="#index.html"><img src="Images/logo.png" id="logo"></a>
+                <a class="navbar-brand order-lg-0" href="#index.html"><img src="Images/Icon/logo.png" id="logo"></a>
 
                 <!--Search & Icon button-->
                 <div class="d-flex order-lg-2">
@@ -168,10 +169,10 @@
         </nav>
     </header>
 
-    <!--End of header-->
+    <!---------------------------------------------End of header------------------------------------------------------>
 
 
-    <!--Slide-->
+    <!--------------------------------------------------Slide---------------------------------------------------------->
 
     <section class="container slider">
         <div class="container slideCon">
@@ -217,16 +218,44 @@
             </div>
     </section>
 
-    <!--End of Slide-->
-
-    <img src="Images/mck1.jpg" alt="" class="">
+    <!----------------------------------------------End of Slide------------------------------------------------------>
 
 
+    <!-----------------------------------------------Category--------------------------------------------------------->
+
+    <Section class="collection mt-5">
+
+        <div class="new-collection container">
+
+            <div class="row">
+                <h2 class="d-flex justify-content-center">New Collection</h2>
+            </div>
+
+            <div class="row">
+                <h2 class="d-flex justify-content-center">New Collection</h2>
+            </div>
+
+            <div class="row">
+                <a href="#" class="view-all d-flex justify-content-center">Xem tất cả</a>
+            </div>
+
+        </div>
+
+        <div class="hot-collection container">
+
+        </div>
+
+        <div class="sale-collection container">
+
+        </div>
 
 
+    </Section>
+
+    <!--------------------------------------------End of Category------------------------------------------------------>
 
 
-    <!--Footer-->
+    <!------------------------------------------------Footer---------------------------------------------------------->
 
     <footer>
         <div class="conatiner">
@@ -235,7 +264,7 @@
                 <div class="col mt-3">
 
                     <div class="row d-flex justify-content-center">
-                        <img src="Images/logo.png" class="footer-img">
+                        <img src="Images/Icon/logo.png" class="footer-img">
                     </div>
 
                     <div class="row m-lg-1">
@@ -257,6 +286,7 @@
                                 <p>Cơ sở 1: 123 Lưu Việt Hoàn - Phường Haha - Quận Hehe - Hà Nội</p>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-1">
                                 <i class="fa-solid fa-phone"></i>
@@ -265,6 +295,7 @@
                                 <p>Hotline: 0372575757</p>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-1">
                                 <i class="fa-solid fa-location-dot"></i>
@@ -273,6 +304,7 @@
                                 <p>Cơ sở 2: 5723 Kuwado - Phường QuacQuac - Quận MeoMeo - Hà Nội</p>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-1">
                                 <i class="fa-solid fa-phone"></i>
@@ -290,9 +322,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
 
                 <div class="col mt-3">
@@ -332,14 +361,20 @@
                     </ul>
 
                     <div class="footer-register-form">
+
                         <p class="title-footer">Nhận thông tin các chương trình của KuwaShop</p>
                         <form class="d-flex footer-subscribe">
-                            <input id="email_subscribe" type="text" name="email" placeholder="Nhập địa chỉ email" required="required">
-                            <div class="btn-submit">
-                                <input id="btn-submit" class="form-submit" value="Đăng ký" type="submit">
+                            <input id="footer-email-subscribe" type="text" name="email" placeholder="Nhập địa chỉ email" required="required">
+                            <div class="footer-btn-submit">
+                                <input id="footer-btn-submit" class="footer-form-submit" value="Đăng ký" type="submit">
                             </div>
                         </form>
-                        <div id="subscribe_error"></div>
+
+                        <div id="footer-subscribe-success" class="fixed-bottom mb-3 ps-2 bg-success text-white footer-subscribe-notice"><i class="fa-solid fa-check footer-icon-notice"></i>Bạn đã đăng ký thành công</div>
+
+                        <div id="footer-subscribe-error" class="fixed-bottom mb-3 ps-2 bg-danger text-white footer-subscribe-notice"><i class="fa-solid fa-circle-exclamation footer-icon-notice"></i>Email không hợp lệ!</div>
+
+                        <div id="footer-subscribe-fail" class="fixed-bottom mb-3 ps-2 bg-warning text-black footer-subscribe-notice"><i class="fa-solid fa-triangle-exclamation footer-icon-notice"></i>Email đã tồn tại!</div>
                     </div>
                 </div>
             </div>
@@ -347,21 +382,22 @@
             <div class="row footer-bottom">
 
                 <div class="col-8">
-                    <p>haha</p>
+                    <p class="red-text d-flex justify-content-center align-content-center mt-2">Nhãn hiệu "KuwaShop" đã được ký kết bởi Hehe & Haha</p>
                 </div>
 
                 <div class="col-4">
-                    <p>haha</p>
+                    <img src="Images/Funny/hehe.jpg" class="footer-last-img img-fluid">
                 </div>
             </div>
         </div>
 
     </footer>
 
-    <!--End of footer-->
+    <!--------------------------------------------------End of footer------------------------------------------------------->
 
     <!--Java Script-->
-    <script src="js/slide.js"></script> <!--Slide-->
+    <script src="Js/main.js"></script> <!--Main-->
+    <script src="Js/slide.js"></script> <!--Slide-->
     <!--End of JS-->
 </body>
 

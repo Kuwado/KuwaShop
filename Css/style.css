@@ -5,7 +5,6 @@
 }
 
 header {
-    position: sticky;
     z-index: 10;
 }
 
@@ -139,93 +138,6 @@ header {
     color: bisque;
 }
 
-/* slide */
-.slider {
-    padding-top: 110px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid #00008B;
-    overflow: hidden;
-}
-
-.slide {
-    transition: 0.4s;
-}
-
-.slideCon {
-    position: relative;
-}
-
-.dot-container {
-    position: absolute;
-    height: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dot {
-    height: 20px;
-    width: 20px;
-    background-color: #CCC;
-    border-radius: 50%;
-    margin: 0 6px;
-    cursor: pointer;
-}
-
-.active {
-    background-color: #000;
-}
-
-.prev-btn {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    z-index: 1;
-    /* Đảm bảo nút được hiển thị trên ảnh */
-
-}
-
-.next-btn {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    z-index: 1;
-    /* Đảm bảo nút được hiển thị trên ảnh */
-}
-
-.btn-slide {
-    font-size: 40px;
-    color: #00008B;
-    opacity: 0.7;
-}
-
-.over {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    text-align: center;
-    color: #000;
-    transition: 0.4s;
-}
-
-.overlay a {
-    background-color: white;
-    color: green;
-}
-
-.overlay a:hover {
-    background-color: #e5345b;
-    color: white;
-}
-
-.red-text {
-    color: red;
-}
-
 /* footer */
 
 .footer-top {
@@ -271,24 +183,52 @@ header {
 
 .footer-subscribe {
     margin: 15px 30px 15px 15px;
-    
+
 }
 
-.btn-submit input{
-    border-radius: 20px 0px; /* Bo tròn góc */
-    background-color: pink; /* Đổi màu nền */
-    border: 1px solid black; /* Xóa border */
-    padding: 10px 20px; /* Khoảng cách giữa nút và văn bản */
+.footer-btn-submit input {
+    border-radius: 20px 0px;
+    /* Bo tròn góc */
+    background-color: pink;
+    /* Đổi màu nền */
+    border: 1px solid black;
+    /* Xóa border */
+    padding: 10px 20px;
+    /* Khoảng cách giữa nút và văn bản */
 }
 
-.btn-submit:hover input {
-    background-color: black; 
+.footer-btn-submit:hover input {
+    background-color: black;
     color: white;
 }
 
-#email_subscribe {
+#footer-email-subscribe {
     border: none;
     border-bottom: 1px solid black;
-    padding: 10px; /* Khoảng cách giữa phần input và văn bản */
+    padding: 10px;
+    /* Khoảng cách giữa phần input và văn bản */
     margin-right: 10px;
+}
+
+.footer-last-img {
+    height: auto;
+}
+
+.footer-subscribe-notice {
+    left: 77%;
+    right: 5%;
+    z-index: 10;
+    padding: 5px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    visibility: hidden;
+    transition: visibility;
+}
+
+.footer-icon-notice {
+    font-size: 24px;
+    margin-right: 10px;
+    /* Tạo khoảng cách giữa icon và văn bản */
 }
