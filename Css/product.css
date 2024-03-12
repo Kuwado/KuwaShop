@@ -1,0 +1,47 @@
+.product-img {
+    width: 100%;
+    /* Đảm bảo phần tử chứa hình ảnh mở rộng ra toàn bộ chiều rộng của nó */
+    height: 400px;
+    /* Hoặc bất kỳ chiều cao nào khác mà bạn muốn */
+    object-fit: cover;
+}
+
+.product-img-first {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-img-second {
+    position: relative;
+    transition: opacity 0.5s ease;
+}
+
+.product-img-first:hover {
+    opacity: 0;
+
+    .product-img-second {
+        opacity: 1;
+    }
+}
+
+.product {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+.ticket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../Images/Background/bg_star.jpg');
+    background-size: cover; /* Để ảnh phủ toàn bộ phần background */
+    background-position: center; /* Đặt ảnh vào giữa */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    padding: 7px 18px 7px 15px;
+    text-transform: uppercase;
+    border-radius: 5px 0px 5px 0px;
+    color: red;
+}

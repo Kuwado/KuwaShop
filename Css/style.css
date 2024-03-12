@@ -5,7 +5,6 @@
 }
 
 header {
-    position: sticky;
     z-index: 10;
 }
 
@@ -70,9 +69,9 @@ header {
 .contact-menu {
     visibility: hidden;
     position: absolute;
-    background-color: aqua;
+    background-color: #F0FFFF;
     padding: 10px;
-    border: 2px solid #000;
+    border: 2px solid aqua;
     transition: margin 0.5s ease;
     /* Hiệu ứng transition */
     margin-top: 50px;
@@ -105,7 +104,6 @@ header {
     /* Loại bỏ chấm tròn */
     line-height: 1.8;
     /* Đặt khoảng cách giữa các hàng là 2 lần chiều cao của phông chữ */
-    border: 2px solid #000;
 }
 
 .contact-item {
@@ -113,13 +111,22 @@ header {
     /* Loại bỏ gạch chân */
     font-size: 17px;
     font-weight: bold;
+    color: black;
+}
+
+.contact-item:hover {
+    color: #FF4500;
 }
 
 .contact-sub-item {
     text-decoration: none;
     /* Loại bỏ gạch chân */
     font-size: 16px;
+    color: black;
+}
 
+.contact-sub-item:hover {
+    color: #FF4500;
 }
 
 /* search bar */
@@ -131,89 +138,97 @@ header {
     color: bisque;
 }
 
-/* slide */
-.slider {
-    padding-top: 110px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid #00008B;
-    overflow: hidden;
+/* footer */
+
+.footer-top {
+    background-color: #FFE4E1;
 }
 
-.slide {
-    transition: 0.4s;
+.footer-bottom {
+    background-color: #FFDEAD;
 }
 
-.slideCon {
-    position: relative;
+.footer-img {
+    width: 150px;
 }
 
-.dot-container {
-    position: absolute;
+.footer-list-item a {
+    color: black;
+}
+
+.footer-list-item a:hover {
+    color: red;
+}
+
+.footer-icon {
+    width: auto;
     height: 30px;
-    width: 100%;
-    display: flex;
+}
+
+/* form */
+.footer-register-form {
+    background-color: #FFFFFF !important;
+    border-radius: 56px 0px;
     justify-content: center;
-    align-items: center;
+    margin: 5px 20px;
+    border: 2px solid salmon;
 }
 
-.dot {
-    height: 20px;
-    width: 20px;
-    background-color: #CCC;
-    border-radius: 50%;
-    margin: 0 6px;
-    cursor: pointer;
-}
-
-.active {
-    background-color: #000;
-}
-
-.prev-btn {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    z-index: 1;
-    /* Đảm bảo nút được hiển thị trên ảnh */
-
-}
-
-.next-btn {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    z-index: 1;
-    /* Đảm bảo nút được hiển thị trên ảnh */
-}
-
-.btn-slide {
-    font-size: 40px;
+.title-footer {
     color: #00008B;
-    opacity: 0.7;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 5px 5px 5px 30px;
 }
 
-.over {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    text-align: center;
-    color: #000;
-    transition: 0.4s;
+.footer-subscribe {
+    margin: 15px 30px 15px 15px;
+
 }
 
-.overlay a {
-    background-color: white;
-    color: green;
+.footer-btn-submit input {
+    border-radius: 20px 0px;
+    /* Bo tròn góc */
+    background-color: pink;
+    /* Đổi màu nền */
+    border: 1px solid black;
+    /* Xóa border */
+    padding: 10px 20px;
+    /* Khoảng cách giữa nút và văn bản */
 }
 
-.overlay a:hover {
-    background-color: #e5345b;
+.footer-btn-submit:hover input {
+    background-color: black;
     color: white;
 }
 
-.red-text {
-    color: red;
+#footer-email-subscribe {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    /* Khoảng cách giữa phần input và văn bản */
+    margin-right: 10px;
+}
+
+.footer-last-img {
+    height: auto;
+}
+
+.footer-subscribe-notice {
+    left: 77%;
+    right: 5%;
+    z-index: 10;
+    padding: 5px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    visibility: hidden;
+    transition: visibility;
+}
+
+.footer-icon-notice {
+    font-size: 24px;
+    margin-right: 10px;
+    /* Tạo khoảng cách giữa icon và văn bản */
 }
