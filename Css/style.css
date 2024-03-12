@@ -239,3 +239,56 @@ header {
 .footer-img {
     width: 150px;
 }
+
+.footer-list-item a {
+    color: black;
+}
+
+.footer-list-item a:hover {
+    color: red;
+}
+
+.footer-icon {
+    width: auto;
+    height: 30px;
+}
+
+/* form */
+.footer-register-form {
+    background-color: #FFFFFF !important;
+    border-radius: 56px 0px;
+    justify-content: center;
+    margin: 5px 20px;
+    border: 2px solid salmon;
+}
+
+.title-footer {
+    color: #00008B;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 5px 5px 5px 30px;
+}
+
+.footer-subscribe {
+    margin: 15px 30px 15px 15px;
+    
+}
+
+.btn-submit input{
+    border-radius: 20px 0px; /* Bo tròn góc */
+    background-color: pink; /* Đổi màu nền */
+    border: 1px solid black; /* Xóa border */
+    padding: 10px 20px; /* Khoảng cách giữa nút và văn bản */
+}
+
+.btn-submit:hover input {
+    background-color: black; 
+    color: white;
+}
+
+#email_subscribe {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px; /* Khoảng cách giữa phần input và văn bản */
+    margin-right: 10px;
+}
