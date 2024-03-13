@@ -232,3 +232,9 @@ header {
     margin-right: 10px;
     /* Tạo khoảng cách giữa icon và văn bản */
 }
+
+/* ẩn hiện */
+
+.show {
+    visibility: visible !important;
+}

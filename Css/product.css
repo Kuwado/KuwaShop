@@ -47,24 +47,29 @@
     text-transform: uppercase;
     border-radius: 5px 0px 5px 0px;
     color: red;
-    z-index: 5;
+    z-index: 4;
 }
 
 .color-bar {
     display: flex;
 }
 
-.star {
-    margin-right: 5px;
+.color-dot .fa-check {
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    visibility: hidden;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
     cursor: pointer;
-    font-size: 17px;
     position: relative;
-}
-
-.check {
-    position:absolute;
-}
-
-.red {
-    color: red;
 }
