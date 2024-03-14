@@ -44,3 +44,16 @@ document.getElementById("footer-btn-submit").addEventListener("click", function(
     // Xóa nội dung trong input
     emailInput.value = '';
 });
+
+
+function toggleActive(index) {
+    // Loại bỏ class "active" khỏi tất cả các dot
+    var dots = document.querySelectorAll('.dot');
+    dots.forEach(function(dot) {
+        dot.classList.remove('active');
+    });
+
+    // Thêm class "active" vào dot được click
+    var selectedDot = document.querySelector('.dot:nth-child(' + index + ')');
+    selectedDot.classList.add('active');
+}

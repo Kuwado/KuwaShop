@@ -12,7 +12,7 @@ let interval; // Biến lưu trữ interval
 // Hàm để bắt đầu hoặc restart interval
 function startInterval() {
     clearInterval(interval); // Xóa interval hiện tại (nếu có)
-    //interval = setInterval(imgSlide, 5000); // Khởi tạo interval mới
+    interval = setInterval(imgSlide, 5000); // Khởi tạo interval mới
 }
 
 imgPosition.forEach(function (image, i) {
