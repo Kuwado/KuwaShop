@@ -54,9 +54,9 @@ nextBtn.addEventListener("click", function(){
 function slider(index) {
     imgContainer.style.left = "-" + index * 120 + "%"
     textContainer.style.left = "-" + index * 120 + "%"
-    const dotActive = document.querySelector(".active")
-    dotActive.classList.remove("active")
-    dotItem[index].classList.add("active")
+    const dotActive = document.querySelector(".dot-active")
+    dotActive.classList.remove("dot-active")
+    dotItem[index].classList.add("dot-active")
 
 }
 
