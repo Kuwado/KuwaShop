@@ -1,0 +1,26 @@
+/* ngăn không cho click vào class a */
+.disble-a {
+    pointer-events: none;
+}
+
+.same-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.centerX {
+    display: flex;
+    align-items: center;
+}
+
+.centerY {
+    display: flex;
+    justify-content: center;
+}
+
+.centerXY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

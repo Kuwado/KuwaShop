@@ -9,3 +9,55 @@
 .bg-yellow {
     background-color: yellow;
 }
+
+.bg-bisque {
+background-color: rgba(255, 228, 196, 0.2); /* Màu bisque với độ trong suốt 50% */
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+
+.bg-aqua {
+    background-color: aqua;
+}
+
+.bg-antiquewhite {
+    background-color: antiquewhite;
+}
+
+.cl-red {
+    color: red;
+}
+
+.cl-black {
+    color: black;
+}
+
+.cl-antiquewhite{
+    color: antiquewhite;
+}
+
+.cl-white {
+    color: white !important;
+}
