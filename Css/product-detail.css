@@ -1,0 +1,15 @@
+.product-detail-img-big {
+    padding-left: 30px;
+    position: relative;
+}
+
+.product-detail-img-small {
+    height: 490px;
+    overflow: hidden;
+}
+
+.product-detail-img-small img {
+    width: 100%;
+    box-sizing: border-box; /* Box-sizing */
+}
+
