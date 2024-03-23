@@ -89,9 +89,10 @@
 
 /* Right */
 
-/**/
-.product-detail-name {
-
+/* Product Detail*/
+.product-detail {
+    margin-top: 100px;
+    padding: 10px;
 }
 
 .product-detail-sku {
@@ -144,10 +145,6 @@
 .size-ao .row .col-2:last-child {
     border-right: none !important;
 }
-
-
-
-
 
 .product-detail-quantity-text {
     font-size: 20px;
@@ -236,6 +233,8 @@
     background-color: black;
     color: white;
 }
+
+/* Product Information */
 
 .product-infor-btn-bar {
     display: flex;
