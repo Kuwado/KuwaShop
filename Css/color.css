@@ -47,7 +47,7 @@ background-color: rgba(255, 228, 196, 0.2); /* Màu bisque với độ trong su�
 }
 
 .cl-red {
-    color: red;
+    color: red !important;
 }
 
 .cl-black {
@@ -60,4 +60,8 @@ background-color: rgba(255, 228, 196, 0.2); /* Màu bisque với độ trong su�
 
 .cl-white {
     color: white !important;
+}
+
+.cl-brown {
+    color: brown !important;
 }

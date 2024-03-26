@@ -1,75 +1,73 @@
-// Lấy tất cả các container chứa các dot
-const cardContainers = document.querySelectorAll(".product");
+// Đảm bảo chỉ chọn đc 1 size
+const checkboxes = document.querySelectorAll('.product-detail-size .btn-check');
 
-// Lặp qua mỗi container và thêm sự kiện click cho các dot bên trong
-cardContainers.forEach(dotContainer => {
-    // Lấy tất cả các dot trong container hiện tại
-    const dots = dotContainer.querySelectorAll(".color-dot");
-
-    // Lặp qua mỗi dot và thêm sự kiện click
-    dots.forEach(dot => {
-        dot.addEventListener("click", function () {
-            // Ẩn tất cả các check
-            dotContainer.querySelectorAll(".color-dot i").forEach(check => {
-                check.classList.remove("show");
+// Thêm sự kiện 'change' cho mỗi checkbox
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', function() {
+        // Nếu checkbox được chọn
+        if (this.checked) {
+            // Loại bỏ chọn trước đó từ tất cả các checkbox khác
+            checkboxes.forEach((otherCheckbox) => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.checked = false;
+                }
             });
+        }
+    });
+});
 
-            // Hiển thị check trong dot được click
-            this.querySelector("i").classList.add("show");
+// Tăng giảm số lượng cần mua
+document.addEventListener("DOMContentLoaded", function() {
+    const decreaseBtn = document.querySelector('.decrease-btn');
+    const increaseBtn = document.querySelector('.increase-btn');
+    const quantityField = document.querySelector('.quantity-field');
 
-            // Lấy đường dẫn của ảnh từ thuộc tính data-src của dot
-            const firstImageSrc = dot.getAttribute("product-img-first-id");
-            const secondImageSrc = dot.getAttribute("product-img-second-id");
+    decreaseBtn.addEventListener('click', function() {
+        let value = parseInt(quantityField.value);
+        if (value > 1) {
+            value--;
+            quantityField.value = value;
+        }
+    });
 
-            // Thay đổi src của ảnh tương ứng với container chứa dot đó
-            dotContainer.querySelector(".product-img-second").src = secondImageSrc;
-            dotContainer.querySelector(".product-img-first").src = firstImageSrc;
+    increaseBtn.addEventListener('click', function() {
+        let value = parseInt(quantityField.value);
+        if (value < 10) {
+            value++;
+            quantityField.value = value;
+        }
+    });
+});
 
+// Đảm bảo phần infor chỉ có 1 action tại 1 thời điểm và có border-bottom
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.product-infor-btn');
+    const collapses = document.querySelectorAll('.collapse');
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const target = document.querySelector(this.getAttribute('data-bs-target'));
+
+            // Kiểm tra xem button hiện tại đã có border chưa
+            const hasBorder = this.style.borderBottom === '3px solid black';
+
+            // Loại bỏ border bottom từ tất cả các button
+            buttons.forEach(function(btn) {
+                btn.style.borderBottom = 'none';
+            });
+            
+            // Nếu button hiện tại đã có border, loại bỏ border. Ngược lại, thêm border vào button
+            if (hasBorder) {
+                this.style.borderBottom = 'none';
+            } else {
+                this.style.borderBottom = '3px solid black';
+            }
+
+            collapses.forEach(function(collapse) {
+                if (collapse !== target) {
+                    collapse.classList.remove('show');
+                }
+            });
         });
     });
 });
-
-const hearts = document.querySelectorAll(".favorite");
-
-// Lặp qua từng phần tử "favorite" và thêm sự kiện click cho mỗi phần tử
-hearts.forEach(heart => {
-    heart.addEventListener("click", function () {
-        const heartStatus = window.getComputedStyle(heart).color;
-        if (heartStatus === "rgb(255, 255, 255)" || heartStatus === "white") {
-            heart.style.color = "red";
-        } else {
-            heart.style.color = "white";
-        }
-    });
-});
-
-
-const carts = document.querySelectorAll(".cart-menu");
-
-// Ẩn tất cả các size-option khi trang web được tải
-
-
-carts.forEach(cart => {
-    const cartIcon = cart.querySelector(".product-cart-icon");
-    const cartMenu = cart.querySelector(".size-option");
-
-    cartIcon.addEventListener("click", function () {
-
-        // Lấy giá trị tính toán của thuộc tính visibility của size-option
-        const cartStatus = window.getComputedStyle(cartMenu).visibility;
-        if (cartStatus === "hidden") {
-            // Ẩn tất cả các size-option
-            document.querySelectorAll('.size-option').forEach(option => {
-                option.style.visibility = "hidden";
-                option.style.bottom = "0";
-            });
-            cartMenu.style.visibility = "visible"; // Hiển thị size-option được nhấp vào
-            cartMenu.style.bottom = "45px";
-        }
-        else {
-            cartMenu.style.visibility = "hidden"; // Ẩn size-option nếu đã được hiển thị
-            cartMenu.style.bottom = "0";
-        }
-    })
-})
-

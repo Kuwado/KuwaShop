@@ -60,4 +60,6 @@ function slider(index) {
 
 }
 
+slider(0);
+
 //setInterval(imgSlide, 5000)

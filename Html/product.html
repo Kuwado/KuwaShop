@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KuwaShop</title>
+    <link rel="stylesheet" href="../FW/Bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../FW/Bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../FW/Fontawesome/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/home.css">
+    <link rel="stylesheet" href="../Css/color.css">
+    <link rel="stylesheet" href="../Css/product.css">
+    <link rel="stylesheet" href="../Css/category.css">
+    <link rel="stylesheet" href="../Css/main.css">
+    <link rel="stylesheet" href="../Css/product-detail.css">
+
+</head>
+
+<body>
+    <!-----------------------------------------------Header----------------------------------------------------------->
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+
+                <!--Logo-->
+                <a class="navbar-brand order-lg-0" href="index.html"><img src="../Images/Icon/logo.png" id="logo"></a>
+
+                <!--Search & Icon button-->
+                <div class="d-flex order-lg-2">
+                    <form class="d-flex sf" role="search">
+                        <input class="form-control me-4" type="search" placeholder="Bạn đang muốn tìm gì?"
+                            aria-label="Bạn đang muốn tìm gì?">
+                        <button class="btn btn-outline-success" type="submit" id="searchbtn">Tìm</button>
+                    </form>
+                    <button type="button" class="btn position-relative nav-btn">
+                        <i class="fa fa-shopping-cart nvicon"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+                    </button>
+                    <button type="button" class="btn position-relative nav-btn">
+                        <i class="fa fa-heart nvicon"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">2</span>
+                    </button>
+                    <button type="button" class="btn position-relative nav-btn">
+                        <i class="fa fa-user nvicon"></i>
+                    </button>
+                </div>
+
+                <!--Menu-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 order-lg-1">
+
+                        <li class="nav-item contact cl-red">
+                            <a class="nav-link cl-red" href="category.html">SẢN PHẨM MỚI</a>
+                        </li>
+
+                        <li class="nav-item contact">
+                            <a class="nav-link" href="#">BÁN CHẠY</a>
+                        </li>
+
+                        <li class="nav-item contact">
+                            <a class="nav-link" href="#">ÁO</a>
+                            <ul class="contact-menu">
+                                <li>
+                                    <a class="contact-item" href="#">Áo khoác</a>
+                                    <ul class="contact-sub-menu">
+                                        <li><a class="contact-sub-item" href="#">Phao</a></li>
+                                        <li><a class="contact-sub-item" href="#">Bomber</a></li>
+                                        <li><a class="contact-sub-item" href="#">Blazer</a></li>
+                                        <li><a class="contact-sub-item" href="#">Măng tô</a></li>
+                                        <li><a class="contact-sub-item" href="#">Bò</a></li>
+                                    </ul>
+                                    <a class="contact-item" href="#">Áo mùa đông</a>
+                                    <ul class="contact-sub-menu">
+                                        <li><a class="contact-sub-item" href="#">Len</a></li>
+                                        <li><a class="contact-sub-item" href="#">Hoodie</a></li>
+                                        <li><a class="contact-sub-item" href="#">Giữ nhiệt</a></li>
+                                        <li><a class="contact-sub-item" href="#">Sweater</a></li>
+                                    </ul>
+                                    <a class="contact-item" href="#">Áo mùa hè</a>
+                                    <ul class="contact-sub-menu">
+                                        <li><a class="contact-sub-item" href="#">Polo</a></li>
+                                        <li><a class="contact-sub-item" href="#">Thun</a></li>
+                                    </ul>
+                                    <a class="contact-item" href="#">Áo trang trọng</a>
+                                    <ul class="contact-sub-menu">
+                                        <li><a class="contact-sub-item" href="#">Sơ mi</a></li>
+                                        <li><a class="contact-sub-item" href="#">Vest</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item contact">
+                            <a class="nav-link" href="#">QUẦN</a>
+                            <ul class="contact-menu">
+                                <li><a class="contact-item" href="#">Quần vải</a></li>
+                                <ul class="contact-sub-menu">
+                                    <li><a class="contact-sub-item" href="#">Âu</a></li>
+                                    <li><a class="contact-sub-item" href="#">Ống đứng</a></li>
+                                </ul>
+                                <li><a class="contact-item" href="#">Quần Jeans</a></li>
+                                <ul class="contact-sub-menu">
+                                    <li><a class="contact-sub-item" href="#">Jeans ống rộng</a></li>
+                                    <li><a class="contact-sub-item" href="#">Skinny Jeans</a></li>
+                                    <li><a class="contact-sub-item" href="#">Amiri</a></li>
+                                </ul>
+                                <li><a class="contact-item" href="#">Quần Túi hộp</a></li>
+                                <li><a class="contact-item" href="#">Quần Nỉ</a></li>
+                                <li><a class="contact-item" href="#">Quần Short</a></li>
+                                <li><a class="contact-item" href="#">Quần Lót</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item contact">
+                            <a class="nav-link" href="#">GIÀY</a>
+                            <ul class="contact-menu">
+                                <li><a class="contact-item" href="#">Giày Nike</a></li>
+                                <ul class="contact-sub-menu">
+                                    <li><a class="contact-sub-item" href="#">Jordan</a></li>
+                                    <li><a class="contact-sub-item" href="#">Air Force 1</a></li>
+                                    <li><a class="contact-sub-item" href="#">Các loại Nike khác</a></li>
+                                </ul>
+                                <li><a class="contact-item" href="#">Giày Addidas</a></li>
+                                <li><a class="contact-item" href="#">Giày New Balance</a></li>
+                                <li><a class="contact-item" href="#">Giày Reebok</a></li>
+                                <li><a class="contact-item" href="#">Giày Boot</a></li>
+                                <li><a class="contact-item" href="#">Giày Lười</a></li>
+                                <li><a class="contact-item" href="#">Dép</a></li>
+                                <ul class="contact-sub-menu">
+                                    <li><a class="contact-sub-item" href="#">Crocs</a></li>
+                                    <li><a class="contact-sub-item" href="#">Dép nhựa</a></li>
+                                    <li><a class="contact-sub-item" href="#">Dép da</a></li>
+                                </ul>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item contact">
+                            <a class="nav-link contact" href="#">PHỤ KIỆN</a>
+                            <ul class="contact-menu">
+                                <li><a class="contact-item" href="#">Khuyên tai</a></li>
+                                <li><a class="contact-item" href="#">Khăn quàng cổ</a></li>
+                                <li><a class="contact-item" href="#">Vòng cổ</a></li>
+                                <li><a class="contact-item" href="#">Vòng tay</a></li>
+                                <li><a class="contact-item" href="#">Đồng hồ</a></li>
+                                <li><a class="contact-item" href="#">Găng tay</a></li>
+                                <li><a class="contact-item" href="#">Thắt lưng</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item contact">
+                            <a class="nav-link" href="#">SALE</a>
+                            <ul class="contact-menu">
+                                <li><a class="contact-item" href="#">Link 1</a></li>
+                                <li><a class="contact-item" href="#">Link 2</a></li>
+                                <li><a class="contact-item" href="#">Link 3</a></li>
+                                <li><a class="contact-item" href="#">Link 4</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item contact">
+                            <a class="nav-link" href="#">VỀ CHÚNG TÔI</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-------------------------------------------End of Header---------------------------------------------------------->
+
+    <section class="product-detail">
+
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
+                <ol class="breadcrumb bg-bisque">
+                    <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="category.html">Sản phẩm mới</a></li>
+                    <li class="breadcrumb-item cl-red" aria-current="page">Ứ Gô Kaooo</li>
+                </ol>
+            </nav>
+
+            <!--Sản phẩm chính-->
+            <div class="row mb-5">
+
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="product-img-big">
+                                <div class="product-detail-img-big">
+                                    <img src="../Images/Product/goku_yellow_1.png" alt="" class="product-img-big-item">
+                                    <img src="../Images/Product/goku_yellow_2.png" alt=""
+                                        class="product-img-big-item product-img-big-item-2">
+                                    <img src="../Images/Product/goku_blue_1.png" alt="" class="product-img-big-item">
+                                    <img src="../Images/Product/goku_blue_2.png" alt="" class="product-img-big-item">
+                                    <img src="../Images/Product/goku_red_1.png" alt="" class="product-img-big-item">
+                                    <img src="../Images/Product/goku_red_2.png" alt="" class="product-img-big-item">
+                                    <img src="../Images/mck1.jpg" alt="" class="product-img-big-item">
+                                    <img src="../Images/mck2.jpg" alt="" class="product-img-big-item">
+                                </div>
+                                <div class="product-detail-img-big-next-btn"><i class="fa-solid fa-chevron-right "></i>
+                                </div>
+                                <div><i class="fa-solid fa-chevron-left product-detail-img-big-prev-btn"></i></div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-2 product-img-small-box">
+                            <div class="product-img-small">
+                                <div class="product-detail-img-small">
+                                    <img src="../Images/Product/goku_yellow_1.png">
+                                    <img src="../Images/Product/goku_yellow_2.png">
+                                    <img src="../Images/Product/goku_blue_1.png">
+                                    <img src="../Images/Product/goku_blue_2.png">
+                                    <img src="../Images/Product/goku_red_1.png">
+                                    <img src="../Images/Product/goku_red_2.png">
+                                    <img src="../Images/mck1.jpg">
+                                    <img src="../Images/mck2.jpg">
+                                </div>
+                            </div>
+                            <div><i class="fa-solid fa-chevron-up product-detail-img-small-up-btn"></i></div>
+                            <div><i class="fa-solid fa-chevron-down product-detail-img-small-down-btn"></i></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-1"></div>
+
+                <div class="col-5">
+                    <div class="product product-detail" style="background-color: aliceblue; color: black">
+
+                        <h2 class="product-detail-name">Ứ Gô Kaooo</h2>
+
+                        <p class="product-detail-sku">SKU: <span>57VH2003</span></p>
+
+                        <div class="d-flex align-items-center">
+                            <div class="product-detail-discount-price">999.000đ</div>
+                            <div class="product-detail-original-price ms-2">1.234.000đ</div>
+                        </div>
+
+                        <p class="product-detail-color-name">Màu sắc: <span>Tắc kè hoa</span> </p>
+
+                        <div class="color-dot-container mb-2 ms-2">
+                            <span class="color-dot bg-red" product-img-first-id="../Images/Product/goku_red_1.png"
+                                product-img-second-id="../Images/Product/goku_red_2.png"><i
+                                    class="fa-solid fa-check show"></i></span>
+                            <span class="color-dot bg-yellow" product-img-first-id="../Images/Product/goku_yellow_1.png"
+                                product-img-second-id="../Images/Product/goku_yellow_2.png"><i
+                                    class="fa-solid fa-check"></i></span>
+                            <span class="color-dot bg-blue" product-img-first-id="../Images/Product/goku_blue_1.png"
+                                product-img-second-id="../Images/Product/goku_blue_2.png"><i
+                                    class="fa-solid fa-check"></i></span>
+                        </div>
+
+                        <div class="product-detail-size">
+                            <input type="checkbox" class="btn-check" id="btn-check-size-s" name="size"
+                                autocomplete="off">
+                            <label class="btn btn-category" for="btn-check-size-s">S</label>
+                            <input type="checkbox" class="btn-check" id="btn-check-size-m" name="size"
+                                autocomplete="off">
+                            <label class="btn btn-category" for="btn-check-size-m">M</label>
+                            <input type="checkbox" class="btn-check" id="btn-check-size-l" name="size"
+                                autocomplete="off">
+                            <label class="btn btn-category" for="btn-check-size-l">L</label>
+                            <input type="checkbox" class="btn-check" id="btn-check-size-xl" name="size"
+                                autocomplete="off">
+                            <label class="btn btn-category" for="btn-check-size-xl">XL</label>
+                            <input type="checkbox" class="btn-check" id="btn-check-size-xxl" name="size"
+                                autocomplete="off">
+                            <label class="btn btn-category" for="btn-check-size-xxl">XXL</label>
+                        </div>
+
+                        <div class="size-table">
+                            <button class="btn btn-check-size" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i
+                                    class="fa-solid fa-ruler"></i> Kiểm tra size</button>
+
+                            <div class="offcanvas offcanvas-top product-detail-size-box" tabindex="-1" id="offcanvasTop"
+                                aria-labelledby="offcanvasTopLabel">
+                                <div class="offcanvas-header">
+                                    <h3 id="offcanvasTopLabel"></h3>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body product-detail-size-box-body">
+                                    <h2>Bảng tư vấn size</h2>
+                                    <div class="size-ao">
+                                        <div class="row border-all mt-4">
+                                            <h4>Size áo</h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2">Tên gọi\Size</div>
+                                            <div class="col-2">S</div>
+                                            <div class="col-2">M</div>
+                                            <div class="col-2">L</div>
+                                            <div class="col-2">XL</div>
+                                            <div class="col-2">XXL</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2">Cổ</div>
+                                            <div class="col-2">36</div>
+                                            <div class="col-2">38</div>
+                                            <div class="col-2">40</div>
+                                            <div class="col-2">42</div>
+                                            <div class="col-2">44</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2">Vai</div>
+                                            <div class="col-2">44</div>
+                                            <div class="col-2">45</div>
+                                            <div class="col-2">46</div>
+                                            <div class="col-2">47</div>
+                                            <div class="col-2">48</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2">Ngực</div>
+                                            <div class="col-2">90</div>
+                                            <div class="col-2">94</div>
+                                            <div class="col-2">98</div>
+                                            <div class="col-2">102</div>
+                                            <div class="col-2">106</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2">Eo</div>
+                                            <div class="col-2">88</div>
+                                            <div class="col-2">92</div>
+                                            <div class="col-2">96</div>
+                                            <div class="col-2">100</div>
+                                            <div class="col-2">104</div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-quantity d-flex">
+                            <p class="product-detail-quantity-text">Số lượng:</p>
+                            <div class="product-detail-quantity-input d-flex">
+                                <button class="decrease-btn">-</button>
+                                <input type="number" class="quantity-field" value="1" min="1" max="10">
+                                <button class="increase-btn">+</button>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-action d-flex">
+                            <button class="product-detail-action-cart">THÊM VÀO GIỎ</button>
+                            <button class="product-detail-action-buy">MUA HÀNG</button>
+                            <button class="product-detail-action-like"><i class="fa-solid fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-infor">
+                        <p class="product-infor-btn-bar">
+                            <button class="btn product-infor-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#product-infor-gt" aria-expanded="false"
+                                aria-controls="product-infor-gt">Giới thiệu</button>
+                            <button class="btn product-infor-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#product-infor-ct" aria-expanded="false"
+                                aria-controls="product-infor-ct">Chi tiết sản phẩm</button>
+                            <button class="btn product-infor-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#product-infor-bq" aria-expanded="false"
+                                aria-controls="product-infor-bq">Bảo quản</button>
+
+                        </p>
+                        <div class="row">
+                            <div class="collapse multi-collapse" id="product-infor-gt">
+                                <div class="card card-body">
+                                    Đây là trang phục được Son Goku mặc để chiến đấu. Áo này sẽ đẹp khi bị Jack, Jack càng nhiều càng đẹp. Đẹp nhất là khi Jack hết. Hí hí
+                                </div>
+                            </div>
+
+                            <div class="collapse multi-collapse" id="product-infor-ct">
+                                <div class="card card-body">
+                                    <p><b>Dòng sản phẩm:</b> Dragon Ball</p> 
+                                    <p><b>Nhóm sản phẩm:</b> Áo</p>  
+                                    <p><b>Cổ áo:</b> Cổ hở</p>  
+                                    <p><b>Tay áo:</b> Tay ngắn</p>  
+                                    <p><b>Kiểu dáng:</b> Xuông</p>  
+                                    <p><b>Độ dài:</b> Trên eo</p>  
+                                    <p><b>Họa tiết:</b> Trơn</p>   
+                                    <p><b>Chất liệu:</b> Vải</p>                                  
+                                </div>
+                            </div>
+                            <div class="collapse multi-collapse" id="product-infor-bq">
+                                <div class="card card-body">
+                                    Thích làm gì thì làm. Hỏng mua cái mới!!!
+                                </div>
+                            </div>
+
+                        </div>
+                       
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--Sản phẩm tương tự-->
+            <div class="row">
+                <h1 class="d-flex justify-content-center mb-4 mt-4">Sản phẩm tương tự</h1>
+            </div>
+
+            <div class="row mt-3 mb-5">
+                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                    <div class="card product">
+                        <img src="../Images/Product/goku_red_2.png" class="card-img-top product-img product-img-second">
+                        <img src="../Images/Product/goku_red_1.png" class="card-img-top product-img product-img-first">
+                        <div class="ticket">New</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="color-bar">
+                                    <div class="color-dot-container mb-2 ms-2">
+                                        <span class="color-dot bg-red" product-img-first-id="../Images/Product/goku_red_1.png"
+                                            product-img-second-id="../Images/Product/goku_red_2.png"><i
+                                                class="fa-solid fa-check show"></i></span>
+                                        <span class="color-dot bg-yellow"
+                                            product-img-first-id="../Images/Product/goku_yellow_1.png"
+                                            product-img-second-id="../Images/Product/goku_yellow_2.png"><i
+                                                class="fa-solid fa-check"></i></span>
+                                        <span class="color-dot bg-blue" product-img-first-id="../Images/Product/goku_blue_1.png"
+                                            product-img-second-id="../Images/Product/goku_blue_2.png"><i
+                                                class="fa-solid fa-check"></i></span>
+                                    </div>
+                                    <div class="favorite">
+                                        <i class="fa-solid fa-heart favorite-icon"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <a href="#" class="product-name mb-4">Ứ Gô Kaooo</a>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="discount-price">999.000đ</div>
+                                    <div class="original-price ms-2">1.234.000đ</div>
+                                </div>
+                            </div>
+                            <div class="cart-menu">
+                                <div class="size-option">
+                                    <div class="row"><button class="btn btn-size">S</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">M</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">L</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XL</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XXL</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-cart-icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                    <div class="card product">
+                        <img src="../Images/Product/test2.jpg" class="card-img-top product-img product-img-second">
+                        <img src="../Images/Product/test.jpg" class="card-img-top product-img product-img-first">
+                        <div class="ticket">New</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="color-bar">
+                                    <div class="color-dot-container mb-2 ms-2">
+                                        <span class="color-dot bg-red" product-img-first-id="../Images/Product/test.jpg"
+                                            product-img-second-id="../Images/Product/test2.jpg"><i
+                                                class="fa-solid fa-check show"></i></span>
+                                        <span class="color-dot bg-yellow"
+                                            product-img-first-id="../Images/Product/testt.jpg"
+                                            product-img-second-id="../Images/Product/testt2.jpg"><i
+                                                class="fa-solid fa-check"></i></span>
+                                        <span class="color-dot bg-blue" product-img-first-id="../Images/Product/testtt.jpg"
+                                            product-img-second-id="../Images/Product/testtt2.jpg"><i
+                                                class="fa-solid fa-check"></i></span>
+                                    </div>
+                                    <div class="favorite">
+                                        <i class="fa-solid fa-heart favorite-icon"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <a href="#" class="product-name mb-4">Áo Vest Kuhaha</a>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="discount-price">845.000đ</div>
+                                    <div class="original-price ms-2">1.690.000đ</div>
+                                </div>
+                            </div>
+                            <div class="cart-menu">
+                                <div class="size-option">
+                                    <div class="row"><button class="btn btn-size">S</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">M</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">L</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XL</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XXL</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-cart-icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                    <div class="card product">
+                        <img src="../Images/Product/test2.jpg" class="card-img-top product-img product-img-second">
+                        <img src="../Images/Product/test.jpg" class="card-img-top product-img product-img-first">
+                        <div class="ticket">New</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="color-bar">
+                                    <div class="color-dot-container mb-2 ms-2">
+                                        <span class="color-dot bg-red" product-img-first-id="../Images/Product/test.jpg"
+                                            product-img-second-id="../Images/Product/test2.jpg"><i
+                                                class="fa-solid fa-check show"></i></span>
+                                        <span class="color-dot bg-yellow"
+                                            product-img-first-id="../Images/Product/testt.jpg"
+                                            product-img-second-id="../Images/Product/testt2.jpg"><i
+                                                class="fa-solid fa-check"></i></span>
+                                        <span class="color-dot bg-blue" product-img-first-id="../Images/Product/testtt.jpg"
+                                            product-img-second-id="../Images/Product/testtt2.jpg"><i
+                                                class="fa-solid fa-check"></i></span>
+                                    </div>
+                                    <div class="favorite">
+                                        <i class="fa-solid fa-heart favorite-icon"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <a href="#" class="product-name mb-4">Áo Vest Kuhaha</a>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="discount-price">845.000đ</div>
+                                    <div class="original-price ms-2">1.690.000đ</div>
+                                </div>
+                            </div>
+                            <div class="cart-menu">
+                                <div class="size-option">
+                                    <div class="row"><button class="btn btn-size">S</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">M</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">L</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XL</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XXL</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-cart-icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                    <div class="card product">
+                        <img src="../Images/Product/test2.jpg" class="card-img-top product-img product-img-second">
+                        <img src="../Images/Product/test.jpg" class="card-img-top product-img product-img-first">
+                        <div class="ticket">New</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="color-bar">
+                                    <div class="color-dot-container mb-2 ms-2">
+                                        <span class="color-dot bg-red" product-img-first-id="../Images/Product/test.jpg"
+                                            product-img-second-id="../Images/Product/test2.jpg"><i
+                                                class="fa-solid fa-check show"></i></span>
+                                        <span class="color-dot bg-yellow"
+                                            product-img-first-id="../Images/Product/testt.jpg"
+                                            product-img-second-id="../Images/Product/testt2.jpg"><i
+                                                class="fa-solid fa-check"></i></span>
+                                        <span class="color-dot bg-blue" product-img-first-id="../Images/Product/testtt.jpg"
+                                            product-img-second-id="../Images/Product/testtt2.jpg"><i
+                                                class="fa-solid fa-check"></i></span>
+                                    </div>
+                                    <div class="favorite">
+                                        <i class="fa-solid fa-heart favorite-icon"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <a href="#" class="product-name mb-4">Áo Vest Kuhaha</a>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex align-items-center">
+                                    <div class="discount-price">845.000đ</div>
+                                    <div class="original-price ms-2">1.690.000đ</div>
+                                </div>
+                            </div>
+                            <div class="cart-menu">
+                                <div class="size-option">
+                                    <div class="row"><button class="btn btn-size">S</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">M</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">L</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XL</button>
+                                    </div>
+                                    <div class="row"><button class="btn btn-size">XXL</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-cart-icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!------------------------------------------------Footer---------------------------------------------------------->
+
+    <footer>
+        <div class="conatiner">
+            <div class="row footer-top">
+
+                <div class="col mt-3">
+
+                    <div class="row d-flex justify-content-center">
+                        <img src="../Images/Icon/logo.png" class="footer-img">
+                    </div>
+
+                    <div class="row m-lg-1">
+                        <p> Công Ty TNHH TM và Đầu Tư Quốc Tế Hehe <br />
+                            Kuwado - Nhà sưu tầm và phân phối chính hãng các thương hiệu hàng đầu Việt Nam <br />
+                        </p>
+                    </div>
+
+                    <div class="row m-lg-1">
+                        <h4 class="text-uppercase">Hệ thống cửa hàng</h4>
+                    </div>
+
+                    <div class="row m-lg-1">
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="col-11">
+                                <p>Cơ sở 1: 123 Lưu Việt Hoàn - Phường Haha - Quận Hehe - Hà Nội</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="col-11">
+                                <p>Hotline: 0372575757</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="col-11">
+                                <p>Cơ sở 2: 5723 Kuwado - Phường QuacQuac - Quận MeoMeo - Hà Nội</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="col-11">
+                                <p>Hotline: 0372232323</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="col-11">
+                                <p>Kuwashop@service.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col mt-3">
+                    <h3>Giới thiệu</h3>
+                    <ul class="footer-list list-unstyled mt-3">
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Về KuwaShop</a>
+                        </li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Tuyển dụng</a>
+                        </li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Hệ thống cửa
+                                hàng</a></li>
+                    </ul>
+                </div>
+
+                <div class="col mt-3">
+                    <h3>Chính sách khách hàng</h3>
+                    <ul class="footer-list list-unstyled mt-3">
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Chính sách điều
+                                khoản</a></li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Hướng dẫn mua
+                                bán</a></li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Chính sách thanh
+                                toán</a></li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Chính sách đổi
+                                trả</a></li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Chính sách bảo
+                                hành</a></li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Chính sách vận
+                                chuyển</a></li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Chính sách thẻ
+                                thành viên</a></li>
+                        <li class="footer-list-item mb-4 ps-3"><a href="#" class="text-decoration-none">Q&A </a></li>
+                    </ul>
+                </div>
+
+                <div class="col mt-3">
+                    <h3>Thông tin liên hệ</h3>
+                    <ul class="footer-list list-unstyled mt-3 me-3 d-flex justify-content-between">
+                        <li class="footer-list-item mb-4 ps-3 d-inline"><a href="#" class="text-decoration-none"><img
+                                    src="../Images/Icon/ic_fb.svg" class="footer-icon"></a></li>
+                        <li class="footer-list-item mb-4 ps-3 d-inline"><a href="#" class="text-decoration-none"><img
+                                    src="../Images/Icon/ic_gg.svg" class="footer-icon"></a></li>
+                        <li class="footer-list-item mb-4 ps-3 d-inline"><a href="#" class="text-decoration-none"><img
+                                    src="../Images/Icon/ic_instagram.webp" class="footer-icon"></a></li>
+                        <li class="footer-list-item mb-4 ps-3 d-inline"><a href="#" class="text-decoration-none"><img
+                                    src="../Images/Icon/ic_pinterest.png" class="footer-icon"></a></li>
+                        <li class="footer-list-item mb-4 ps-3 d-inline"><a href="#" class="text-decoration-none"><img
+                                    src="../Images/Icon/ic_ytb.svg" class="footer-icon"></a></li>
+                    </ul>
+
+                    <div class="footer-register-form">
+
+                        <p class="title-footer">Nhận thông tin các chương trình của KuwaShop</p>
+                        <form class="d-flex footer-subscribe">
+                            <input id="footer-email-subscribe" type="text" name="email" placeholder="Nhập địa chỉ email"
+                                required="required">
+                            <div class="footer-btn-submit">
+                                <input id="footer-btn-submit" class="footer-form-submit" value="Đăng ký" type="submit">
+                            </div>
+                        </form>
+
+
+                        <div id="footer-subscribe-success"
+                            class="fixed-bottom mb-3 ps-2 bg-success text-white footer-subscribe-notice"><i
+                                class="fa-solid fa-check footer-icon-notice"></i>Bạn đã đăng ký thành công</div>
+
+                        <div id="footer-subscribe-error"
+                            class="fixed-bottom mb-3 ps-2 bg-danger text-white footer-subscribe-notice"><i
+                                class="fa-solid fa-circle-exclamation footer-icon-notice"></i>Email không hợp lệ!</div>
+
+                        <div id="footer-subscribe-fail"
+                            class="fixed-bottom mb-3 ps-2 bg-warning text-black footer-subscribe-notice"><i
+                                class="fa-solid fa-triangle-exclamation footer-icon-notice"></i>Email đã tồn tại!</div>
+                    </div>
+
+                    <div class="doraemon d-flex align-items-center justify-content-center">
+                        <img src="../Images/Dong/doraemon_lacvong.gif" alt="" class="">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row footer-bottom">
+
+                <div class="col-8">
+                    <div class="row d-flex ms-3">
+                        <p class="red-text mt-2 d-flex align-items-center justify-content-center footer-text"
+                            style="display: inline-block;">Nhãn hiệu "KuwaShop" đã được ký kết bởi Hehe & Haha</p>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <img src="../Images/Background/bg_goku_frieza.png" alt="" class="img-goku-frieza img-fluid">
+                    </div>
+                </div>
+
+
+
+                <div class="col-4">
+                    <img src="../Images/Funny/hehe.jpg" class="footer-last-img">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!--------------------------------------------------End of footer------------------------------------------------------->
+
+    <!--Java Script-->
+    <script src="../Js/product.js"></script> <!--Slide-->
+    <script src="../Js/category.js"></script> <!--Slide-->
+    <script src="../Js/product_slide.js"></script> <!--Slide-->
+    <script src="../Js/main.js"></script> <!--Slide-->
+    <!--End of JS-->
+</body>
+
+</html>
