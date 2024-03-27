@@ -1,0 +1,71 @@
+.login-wrap {
+    width: 100%;
+    height: 620px;
+    background-image: url("../Images/Background/hinh-nen-dem\ toi.jpg");
+    background-size: cover; /* Đảm bảo ảnh nền sẽ căn chỉnh với kích thước của màn hình */
+    position: relative;
+}
+
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    top: 25%;
+    left: 30%;
+    color: white;
+    border-radius: 20px 0 20px 0;
+    border: 2px solid #dddddd;
+}
+
+.login-form-detail {
+    width: 80%;
+
+}
+
+.login-form-detail .form-group input[type="text"],
+.login-form-detail .form-group input[type="password"] {
+  width: 100%; /* Thiết lập chiều rộng của input là 80% */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.5); /* Thiết lập màu nền trong suốt */
+}
+
+/* Để làm cho placeholder đậm hơn */
+.login-form-detail .form-group input[type="text"]::placeholder,
+.login-form-detail .form-group input[type="password"]::placeholder {
+  font-weight: bold;
+}
+
+.login-form-detail .form-group {
+  margin-bottom: 15px;
+}
+
+.dk-btn {
+    width: 80%;
+    padding: 5px;
+    border-radius: 15px 0 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid red;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border: 1px solid blue;
+}
+
+.login-btn:hover, .dk-btn:hover {
+    background-color: black;
+    color: white;
+}

@@ -62,6 +62,11 @@
     color:blue;
 }
 
+.cart-active-done {
+    border-color: black;
+    color: black;
+}
+
 .cart-quan {
     color: brown;
     font-weight: 500;
