@@ -20,3 +20,19 @@
     --danger: #dc3545;
     --light: #f8f9fa;
     --dark: #343a40;
+
+
+    Admin page:
+        - Doanh thu: Hiển thị danh sách khách hàng gồm (Id, Tên, Email, Số đt, Số hàng đã mua, Tổng tiền đã tri)
+        --> Tổng doanh thu.
+            + Ngày
+            + Tháng
+            + Năm
+        - Đơn hàng: (Id, tên, email, địa chỉ, số điện thoại, ghi chú, chi tiết, ngày, trạng thái, xóa)
+            + Xem danh sách đơn
+            + Đơn chưa được xác nhận
+        - Sản phẩm:
+            + Xem danh sách sản phẩm
+            + Thêm danh mục sản phẩm
+            + Thêm sản phẩm
+     

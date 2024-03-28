@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KuwaShop</title>
+    <title>KuwaShop-Register</title>
     <link rel="stylesheet" href="../FW/Bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../FW/Bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../FW/Fontawesome/fontawesome-free-6.5.1-web/css/all.min.css">
@@ -12,13 +12,11 @@
     <link rel="stylesheet" href="../Css/home.css">
     <link rel="stylesheet" href="../Css/color.css">
     <link rel="stylesheet" href="../Css/product.css">
-    <link rel="stylesheet" href="../Css/category.css">
-    <link rel="stylesheet" href="../Css/main.css">
-    <link rel="stylesheet" href="../Css/cart.css">
-
+    <link rel="stylesheet" href="../Css/login.css">
 </head>
 
 <body>
+
     <!-----------------------------------------------Header----------------------------------------------------------->
 
     <header>
@@ -26,7 +24,7 @@
             <div class="container-fluid">
 
                 <!--Logo-->
-                <a class="navbar-brand order-lg-0" href="index.html"><img src="../Images/Icon/logo.png" id="logo"></a>
+                <a class="navbar-brand order-lg-0" href="#index.html"><img src="../Images/Icon/logo.png" id="logo"></a>
 
                 <!--Search & Icon button-->
                 <div class="d-flex order-lg-2">
@@ -174,163 +172,74 @@
         </nav>
     </header>
 
-    <!-------------------------------------------End of Header---------------------------------------------------------->
+    <!---------------------------------------------End of header------------------------------------------------------>
 
 
-
-
-    <!------------------------------------------------------------Cart---------------------------------------------------------->
-
-    <section class="cart">
-        <div class="container">
-            <div class="row">
-                <div class="col-8 cart-left">
-                    <div class="cart-status-wrap">
-                        <div class="cart-status">
-                            <div class="cart-status-item cart-active">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="cart-status-item">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </div>
-                            <div class="cart-status-item">
-                                <i class="fa-solid fa-money-bill"></i>
-                            </div>
-                            <div class="cart-status-item">
-                                <i class="fa-solid fa-suitcase"></i>
-                            </div>
-                        </div>
-                        <div class="cart-status-text">
-                            <p class="cart-active">Giỏ hàng</p>
-                            <p>Đặt hàng</p>
-                            <p>Thanh toán</p>
-                            <p>Nhận hàng</p>
-                        </div>
+    <!------------------------------------------------Login----------------------------------------------------------->
+    <section class="register">
+        <div class="fluid-container register-wrap">
+            <div class="register-form">
+                <h2 class="mb-3">Đăng ký</h2>
+                <form class="register-form-detail" action="" method="post">
+                    <div class="form-group">
+                        <input type="text" id="first-username" name="first-username" placeholder="Họ" required>
+                        <input type="text" id="last-username" name="last-username" placeholder="Tên" required>
                     </div>
-
-                    <h2 class="mt-3 mb-3">Giỏ hàng hiện có <span class="cart-quan">3</span> sản phẩm</h2>
-
-                    <div class="cart-product">
-                        <table>
-                            <tr>
-                                <th col>Sản phẩm</th>
-                                <th>Tên</th>
-                                <th>Loại</th>
-                                <th>Số lượng</th>
-                                <th>Giá tiền</th>
-                                <th></th>
-                            </tr>
-
-                            <tr>
-                                <td><a href="../Html/product.html" class=""><img src="../Images/Product/goku_red_1.png"
-                                            alt="" class=""></a></td>
-                                <td><a href="../Html/product.html" class="">Ứ Gô Kaooo</a></td>
-                                <td>
-                                    <p>Màu sắc: <span>Đỏ</span></p>
-                                    <p>Size: <span>XL</span></p>
-                                </td>
-                                <td>
-                                    <div class="product-detail-quantity d-flex">
-                                        <div class="product-detail-quantity-input d-flex">
-                                            <button class="decrease-btn">-</button>
-                                            <input type="number" class="quantity-field" value="1" min="1" max="10">
-                                            <button class="increase-btn">+</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div><span>1.980.000</span> đ</div>
-                                </td>
-                                <td><span><i class="fa-solid fa-trash"></i></span></td>
-                            </tr>
-
-                            <tr>
-                                <td><a href="../Html/product.html" class=""><img src="../Images/Product/goku_red_1.png"
-                                            alt="" class=""></a></td>
-                                <td><a href="../Html/product.html" class="">Ứ Gô Kaooo</a></td>
-                                <td>
-                                    <p>Màu sắc: <span>Đỏ</span></p>
-                                    <p>Size: <span>XL</span></p>
-                                </td>
-                                <td>
-                                    <div class="product-detail-quantity d-flex">
-                                        <div class="product-detail-quantity-input d-flex">
-                                            <button class="decrease-btn">-</button>
-                                            <input type="number" class="quantity-field" value="1" min="1" max="10">
-                                            <button class="increase-btn">+</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div><span>1.980.000</span> đ</div>
-                                </td>
-                                <td><span><i class="fa-solid fa-trash"></i></span></td>
-                            </tr>
-
-                            <tr>
-                                <td><a href="../Html/product.html" class=""><img src="../Images/Product/goku_red_1.png"
-                                            alt="" class=""></a></td>
-                                <td><a href="../Html/product.html" class="">Ứ Gô Kaooo</a></td>
-                                <td>
-                                    <p>Màu sắc: <span>Đỏ</span></p>
-                                    <p>Size: <span>XL</span></p>
-                                </td>
-                                <td>
-                                    <div class="product-detail-quantity d-flex">
-                                        <div class="product-detail-quantity-input d-flex">
-                                            <button class="decrease-btn">-</button>
-                                            <input type="number" class="quantity-field" value="1" min="1" max="10">
-                                            <button class="increase-btn">+</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div><span>1.980.000</span> đ</div>
-                                </td>
-                                <td><span><i class="fa-solid fa-trash"></i></span></td>
-                            </tr>
-                        </table>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
-
-                    <div class="cart-product-back-btn">
-                        <a href="" class=""><button class="btn"><i class="fa-solid fa-arrow-left"></i> Tiếp tục mua
-                                hàng</button></a>
+                    <div class="form-group">
+                        <input type="pnumber" id="pnumber" name="pnumber" placeholder="Số điện thoại" required>
                     </div>
-                </div>
-
-                <div class="col-4 cart-right">
-                    <table>
-                        <tr>
-                            <th colspan="2">Tổng tiền giỏ hàng</th>
-                        </tr>
-                        <tr>
-                            <td><p>Tổng sản phẩm</p></td>
-                            <td><p>3</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Tổng tiền ban đầu</p></td>
-                            <td><p><span>3.000.000</span> đ</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Tổng tiền cuối cùng</p></td>
-                            <td><p class="cart-right-price"><span>2.750.000</span> đ</p></td>
-                        </tr>
-                    </table>
-
-                    <div class="d-flex justify-content-center align-content-center">
-                        <a href="" class="cart-order-btn btn">Đặt hàng</a>
+                    <div class="form-group">
+                        <input type="bday" id="bday" name="bday" placeholder="Ngày sinh" required>
+                        <select name="gt" id="gt">
+                            <option>Giới tính</option>
+                            <option value="male">Nam</option>
+                            <option value="female">Nữ</option>
+                            <option value="other">Khác</option>
+                        </select>
                     </div>
-
-
-                </div>
+                    <div class="form-group">
+                        <select name="" id="city">
+                            <option value="">Tỉnh/Tp</option>
+                            <option value="">Hà Nội</option>
+                            <option value="">Thanh Hóa</option>
+                        </select>
+                        <select name="" id="district">
+                            <option value="">Quận/huyện</option>
+                            <option value="">Nam Từ Liêm</option>
+                            <option value="">Đông Sơn</option>
+                        </select>
+                        <select name="" id="ward">
+                            <option value="">Phường/xã</option>
+                            <option value="">Trung Văn</option>
+                            <option value="">Đông Khê</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="address" name="address" placeholder="Địa chỉ (Số nhà, tên đường, ...)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password-check" name="password-check" placeholder="Nhập lại mật khẩu" required>
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="dk" name="dk" value="dk">
+                        <label for="dk"> Tôi đồng ý với các <a href="#">điều khoản</a> của KuwaShop</label><br>
+                        <input type="checkbox" id="tb" name="tb" value="tb">
+                        <label for="tb"> Đăng ký nhận thông báo</label><br>
+                    </div>
+                </form>
+                <button class="dk-btn">Đăng ký</button>
             </div>
-
         </div>
-
     </section>
 
+    <!----------------------------------------------End of login------------------------------------------------------->
 
-    <!--------------------------------------------------------End of Cart-------------------------------------------------------->
 
 
     <!------------------------------------------------Footer---------------------------------------------------------->
@@ -507,11 +416,9 @@
     <!--------------------------------------------------End of footer------------------------------------------------------->
 
     <!--Java Script-->
-    <script src="../Js/product.js"></script> <!--Slide-->
-    <script src="../Js/category.js"></script> <!--Slide-->
-    <script src="../Js/product_slide.js"></script> <!--Slide-->
-    <script src="../Js/main.js"></script> <!--Slide-->
+    <script src="../Js/main.js"></script> <!--Main-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="../Js/apiprovince.js"></script>
     <!--End of JS-->
 </body>
-
-</html>
