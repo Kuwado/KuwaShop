@@ -1,3 +1,4 @@
+/* login */
 .login-wrap {
     width: 100%;
     height: 620px;
@@ -5,7 +6,6 @@
     background-size: cover; /* Đảm bảo ảnh nền sẽ căn chỉnh với kích thước của màn hình */
     position: relative;
 }
-
 
 .login-form {
     display: flex;
@@ -68,4 +68,59 @@
 .login-btn:hover, .dk-btn:hover {
     background-color: black;
     color: white;
+}
+
+
+/* register */
+
+.register-wrap {
+  width: 100%;
+  min-height: 640px;
+  background-image: url("../Images/Background/bg_tech.jpg");
+  background-size: cover; /* Đảm bảo ảnh nền sẽ căn chỉnh với kích thước của màn hình */
+  position: relative;
+}
+
+.register-wrap h2 {
+  color: blue;
+}
+
+.register-form {
+  position: absolute;
+  width: 50%;
+  height:fit-content;
+  color: white;
+  left: 25%;
+  border-radius: 5%;
+  border: 2px solid #abc123;
+  padding: 20px 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.register-form .form-group {
+  margin: 15px 0;
+  width: 100%;
+  text-align: left !important;
+}
+
+.register-form .form-group input {
+  width: 100%;
+  height: 40px;
+}
+
+#first-username, #last-username {
+  width: 49.6% !important;
+}
+
+.form-group-checkbox {
+  text-align: left;
+}
+
+#bday {
+  width: 80%;
+}
+
+.register-form-detail {
+  margin-bottom: 20px;
 }

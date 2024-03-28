@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KuwaShop-Register</title>
+  <link rel="stylesheet" href="../FW/Bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <script src="../FW/Bootstrap/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../FW/Fontawesome/fontawesome-free-6.5.1-web/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../Css/color.css">
+</head>
+
+<body>
+  <header>
+    <div class="admin-top">
+      <div class="admin-logo">
+        <img src="/Images/Icon/logo.png">
+      </div>
+      <div class="admin-title">
+        <h2>Trang Admin</h2>
+      </div>
+      <div class="admin-option">
+        <div class="admin-avt">
+          <img src="/Images/vh.jpg">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="admin-option-detail">
+          <ul>
+            <li><a href="#">Tin nhắn</a></li>
+            <li><a href="#">Thông tin</a></li>
+            <li><a href="#">Đăng xuất</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="admin">
+    <div class="fluid-container">
+      <div class="row">
+        <div class="col-2 admin-right">
+          <h2>Lựa chọn</h2>
+          <div class="accordion" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Doanh thu
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><a href="#"><i class="fa-solid fa-d"></i> Theo ngày</a></li>
+                    <li><a href="#"><i class="fa-solid fa-m"></i> Theo tháng</a></li>
+                    <li><a href="admin.html"><i class="fa-solid fa-y"></i> Theo năm</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chart-simple"></i> Thống kê doanh thu</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Đơn hàng
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><a href="#"><i class="fa-solid fa-list-check"></i> Xem danh sách đơn hàng</a></li>
+                    <li><a href="admin-order.html" class="active"><i class="fa-solid fa-list-ul"></i> Đơn hàng chưa xác
+                        nhận</a></li>
+                    <li><a href="#"><i class="fa-solid fa-xmark"></i> Đơn hàng bị hủy</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Sản phẩm
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><a href="#"><i class="fa-solid fa-table-list"></i> Xem danh sách sản phẩm</a></li>
+                    <li><a href="#"><i class="fa-solid fa-square-plus"></i> Thêm danh mục sản phẩm</a></li>
+                    <li><a href="#"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10 admin-content">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">Đơn hàng</li>
+              <li class="breadcrumb-item active" aria-current="page">Đơn hàng chưa được xác nhận</li>
+            </ol>
+          </nav>
+
+          <div class="admin-content-detail admin-order">
+            <table>
+              <tr>
+                <th>Id</th>
+                <th>Tên người đặt</th>
+                <th>Số điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Tên sản phẩm</th>
+                <th>Thông tin</th>
+                <th>Ghi chú</th>
+                <th>Chi tiết</th>
+                <th>Ngày đặt</th>
+                <th>Trạng thái</th>
+                <th>Xóa đơn</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Jacky Kitori</td>
+                <td>0507200333</td>
+                <td>số 2, đường A, phường B, Quận C, Hà Nội</td>
+                <td>Khố Jack áo ôm</td>
+                <td>Size: <span>XL</span></br> Màu sắc: <span>Đen</span></td>
+                <td>Giao nhanh</td>
+                <td><a href="admin-order-detail.html">Xem</a></td>
+                <td>28/03/2024</td>
+                <td><button class="btn admin-cf-btn">Xác nhận</button></td>
+                <td><button class="btn admin-delete-btn"><i class="fa-solid fa-trash-can"></i></button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Son Goku</td>
+                <td>0143658792</td>
+                <td>số 2, đường Hana, phường Kaka, Quận Bala, Nhật Bản</td>
+                <td>Ứ Gô Kaooo</td>
+                <td>Size: <span>XL</span></br> Màu sắc: <span>Đỏ</span></td>
+                <td>Hỏa tốc</td>
+                <td><a href="admin-order-detail.html">Xem</a></td>
+                <td>27/03/2024</td>
+                <td><button class="btn admin-cf-btn">Xác nhận</button></td>
+                <td><button class="btn admin-delete-btn"><i class="fa-solid fa-trash-can"></i></button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Boy ngu ngok</td>
+                <td>0789654123</td>
+                <td>số 123, đường Gì Đó, phường Quên Tên, Quận Không Nhớ, Hà Nội</td>
+                <td>Quần doraemon</td>
+                <td>Size: <span>XL</span></br> Màu sắc: <span>Hồng</span></td>
+                <td>Giao nhanh</td>
+                <td><a href="admin-order-detail.html">Xem</a></td>
+                <td>29/03/2024</td>
+                <td><button class="btn admin-cf-btn">Xác nhận</button></td>
+                <td><button class="btn admin-delete-btn"><i class="fa-solid fa-trash-can"></i></button></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="admin-order-pagination">
+            <nav aria-label="admin-revenenue-pagination">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+
+</html>
