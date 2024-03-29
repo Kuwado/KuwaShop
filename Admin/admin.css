@@ -157,7 +157,6 @@
 
 .admin-content-detail {
     margin: 10px 20px;
-    border-bottom: 2px solid black;
 }
 
 .admin-content-detail table {
@@ -180,9 +179,17 @@
     border-left: 2px solid black;
 }
 
+.admin-content-detail table tr:last-child {
+    border-bottom: 2px solid black;
+}
+
 .admin-content-detail table tr {
     margin-bottom: 10px;
     /* Thêm margin dưới cho mỗi dòng */
+}
+
+.admin-order-pagination {
+    text-align: center;
 }
 
 /* admin-revenue */
@@ -357,4 +364,9 @@
 .admin-cf-btn:hover {
     background-color: black;
     color: white;
+}
+
+/* product-add */
+.admin-product-add {
+    display:flex;
 }
