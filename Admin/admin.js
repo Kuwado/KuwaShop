@@ -29,3 +29,7 @@ cfOrderBtns.forEach(function(btn){
         }
     })
 })
+
+// List of product-type
+const bigTypeMenu = document.querySelector(".product-type");
+const bigTypeItem = bigTypeMenu.querySelectorAll(".product-type-item");

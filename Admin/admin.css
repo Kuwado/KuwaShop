@@ -368,5 +368,12 @@
 
 /* product-add */
 .admin-product-add {
-    display:flex;
+}
+
+.admin-product-add ul {
+    list-style-type: none;
+}
+
+.product-type-sub-menu {
+    /*visibility: hidden;*/
 }
