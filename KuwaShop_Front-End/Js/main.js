@@ -25,7 +25,7 @@ document.getElementById("footer-btn-submit").addEventListener("click", function(
         document.getElementById("footer-subscribe-error").style.zIndex = zIndexCounter++; // Tăng giá trị z-index và gán cho thông báo
     }
 
-    // Ẩn thông báo sau 5s
+    // Ẩn thông báo đi sau 5s kaka
     var timeoutId = setTimeout(function() {
         document.getElementById("footer-subscribe-error").style.visibility = "hidden";
         document.getElementById("footer-subscribe-fail").style.visibility = "hidden";
