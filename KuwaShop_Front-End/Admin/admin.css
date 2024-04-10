@@ -337,7 +337,7 @@
 
 .order-detail-btn {
     width: 20%;
-    position:absolute;
+    position: absolute;
     left: 75%;
     bottom: 5%;
     border-radius: 10px 0 10px 0;
@@ -367,13 +367,140 @@
 }
 
 /* product-add */
-.admin-product-add {
+
+.admin-content-detail {
+    font-size: 18px;
 }
 
-.admin-product-add ul {
+.pi {
+    padding: 10px 0;
+}
+
+/* type */
+
+#product-type {
+    cursor: pointer;
+}
+
+.product-type-list ul {
     list-style-type: none;
+    background-color: antiquewhite;
 }
 
-.product-type-sub-menu {
-    /*visibility: hidden;*/
+.product-type-menu {
+    width: fit-content;
+    padding: 10px 20px;
+    margin-left: 100px;
+    margin-top: 10px;
+    display: none;
+    border-radius: 5px;
+    border: 1px solid darkred;
+}
+
+.product-type-item {
+    cursor: pointer;
+    display: none;
+}
+
+.product-type-sub-item {
+    cursor: pointer;
+    display: none;
+}
+
+.product-type-small-item {
+    cursor: pointer;
+    display: none;
+}
+
+.product-active {
+    display: block !important;
+}
+
+.product-type-item.highlight .item {
+    color: red;
+}
+
+.product-type-sub-item.highlight .sub {
+    color: green;
+}
+
+.product-type-small-item.highlight {
+    color: blue;
+}
+
+#product-type:hover,
+.product-type-item span:hover {
+    color: red;
+}
+
+.product-type-sub-item span:hover {
+    color: green;
+}
+
+.product-type-small-item:hover {
+    color: blue;
+}
+
+/* other */
+
+#product-name {
+    border: none;
+    width: 50%;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+}
+
+#product-price {
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+}
+
+/* discount*/
+.product-discount ul {
+    list-style-type: none;
+    display: none;
+}
+
+.discount-p, .discount-n {
+    display: none;
+}
+
+.discount-active {
+    display: block !important;
+}
+
+#discount-btn, .product-discount li {
+    cursor: pointer;
+}
+
+#discount-btn:hover {
+    color: red;
+}
+
+.product-discount li:hover {
+    color: green;
+}
+
+.cl-red {
+    color: red;
+}
+
+/* size */
+.product-size-name {
+    width: 50px; /* Thiết lập kích thước chiều rộng cho phần tử <span> */
+    border-radius: 5px;
+    background-color: #FFFAFA;
+    border: 1px solid #FF1493;
+}
+
+.product-size-opt {
+    padding: 5px;
+}
+
+.product-size-opt input {
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #FF4500;
 }
