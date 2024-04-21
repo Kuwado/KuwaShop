@@ -56,7 +56,7 @@
                   <ul>
                     <li><a href="#"><i class="fa-solid fa-d"></i> Theo ngày</a></li>
                     <li><a href="#"><i class="fa-solid fa-m"></i> Theo tháng</a></li>
-                    <li><a href="admin.html"><i class="fa-solid fa-y"></i> Theo năm</a></li>
+                    <li><a href="admin-revenue-year.html"><i class="fa-solid fa-y"></i> Theo năm</a></li>
                     <li><a href="#"><i class="fa-solid fa-chart-simple"></i> Thống kê doanh thu</a></li>
                   </ul>
                 </div>
@@ -105,14 +105,13 @@
         <div class="col-10 admin-content">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item">Đơn hàng</li>
-              <li class="breadcrumb-item active" aria-current="page">Đơn hàng chưa được xác nhận</li>
+              <li class="breadcrumb-item">Sản phẩm</li>
+              <li class="breadcrumb-item active" aria-current="page">Thêm sản phẩm</li>
             </ol>
           </nav>
-          <div class="row">
-            <div class="col-6">
-              <div class="admin-content-detail">
-
+          <div class="admin-content-detail">
+            <div class="row">
+              <div class="col-6">
                 <div class="pi product-type-list">
                   <div id="product-type"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: <span
                       id="product-type-text"></span></div>
@@ -253,37 +252,46 @@
                   <div>Size và số lượng</div>
                   <div class="product-size-opt">
                     <button class="product-size-name">S</button>
-                    <input type="text" id="product-size-s" name="product-size-s" placeholder="Số lượng" required>
+                    <input type="number" id="product-size-s" name="product-size-s" placeholder="Số lượng" required>
                   </div>
                   <div class="product-size-opt">
                     <button class="product-size-name">M</button>
-                    <input type="text" id="product-size-m" name="product-size-m" placeholder="Số lượng" required>
+                    <input type="number" id="product-size-m" name="product-size-m" placeholder="Số lượng" required>
                   </div>
                   <div class="product-size-opt">
                     <button class="product-size-name">L</button>
-                    <input type="text" id="product-size-l" name="product-size-l" placeholder="Số lượng" required>
+                    <input type="number" id="product-size-l" name="product-size-l" placeholder="Số lượng" required>
                   </div>
                   <div class="product-size-opt">
                     <button class="product-size-name">XL</button>
-                    <input type="text" id="product-size-xl" name="product-size-xl" placeholder="Số lượng" required>
+                    <input type="number" id="product-size-xl" name="product-size-xl" placeholder="Số lượng" required>
                   </div>
                   <div class="product-size-opt">
                     <button class="product-size-name">XXL</button>
-                    <input type="text" id="product-size-xxl" name="product-size-xxl" placeholder="Số lượng" required>
+                    <input type="number" id="product-size-xxl" name="product-size-xxl" placeholder="Số lượng" required>
                   </div>
                 </div>
+              </div>
 
-
-
+              <div class="col-6 left-content">
+                <div class="product-text" id="gt">
+                  <label for="gt-text">Giới thiệu: </label><br>
+                  <textarea id="gt-text" name="gt-text" placeholder="Giới thiệu về sản phẩm"></textarea>
+                </div>
+                <div class="product-text" id="ct">
+                  <label for="ct-text">Thông tin chi tiết: </label><br>
+                  <textarea id="ct-text" name="ct-text" placeholder="Thông tin chi tiết sản phẩm"></textarea>
+                </div>
+                <div class="product-text" id="bq">
+                  <label for="bq-text">Bảo quản: </label><br>
+                  <textarea id="bq-text" name="bq-text" placeholder="Cách bảo quản sản phẩm"></textarea>
+                </div>
+                <div class="create-btn">
+                  <button id="create-btn">Tạo sản phẩm</button>
+                </div>
               </div>
             </div>
-
-            <div class="col-6">
-              <div>hello</div>
-            </div>
           </div>
-
-
         </div>
       </div>
     </div>

@@ -462,7 +462,8 @@
     display: none;
 }
 
-.discount-p, .discount-n {
+.discount-p,
+.discount-n {
     display: none;
 }
 
@@ -470,7 +471,8 @@
     display: block !important;
 }
 
-#discount-btn, .product-discount li {
+#discount-btn,
+.product-discount li {
     cursor: pointer;
 }
 
@@ -488,10 +490,22 @@
 
 /* size */
 .product-size-name {
-    width: 50px; /* Thiết lập kích thước chiều rộng cho phần tử <span> */
+    width: 50px;
+    /* Thiết lập kích thước chiều rộng cho phần tử <span> */
     border-radius: 5px;
     background-color: #FFFAFA;
-    border: 1px solid #FF1493;
+    border: 2px solid #FF1493;
+}
+
+.product-size-name:hover {
+    background-color: black;
+    color: #FFFAFA;
+}
+
+.size-btn-active {
+    background-color: black;
+    color: #FFFAFA;
+    border-color: blue;
 }
 
 .product-size-opt {
@@ -503,4 +517,53 @@
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #FF4500;
+    display: none;
+}
+
+.size-active {
+    display: inline !important;
+}
+
+/* left */
+.product-text {
+    width: 80%;
+    height: 140px;
+}
+
+.product-text label {
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product-text textarea {
+    width: 100%;
+    height: 60%;
+}
+
+.create-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#create-btn {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: cadetblue;
+    color: blue;
+}
+
+#create-btn:hover {
+    color: #FFFAFA;
+    background-color: black;
 }
