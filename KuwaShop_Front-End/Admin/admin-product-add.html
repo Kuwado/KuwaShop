@@ -16,14 +16,14 @@
   <header>
     <div class="admin-top">
       <div class="admin-logo">
-        <img src="/Images/Icon/logo.png">
+        <img src="../Images/Icon/logo.png">
       </div>
       <div class="admin-title">
         <h2>Trang Admin</h2>
       </div>
       <div class="admin-option">
         <div class="admin-avt">
-          <img src="/Images/vh.jpg">
+          <img src="../Images/vh.jpg">
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="admin-option-detail">
@@ -56,7 +56,7 @@
                   <ul>
                     <li><a href="#"><i class="fa-solid fa-d"></i> Theo ngày</a></li>
                     <li><a href="#"><i class="fa-solid fa-m"></i> Theo tháng</a></li>
-                    <li><a href="admin.html"><i class="fa-solid fa-y"></i> Theo năm</a></li>
+                    <li><a href="admin-revenue-year.html"><i class="fa-solid fa-y"></i> Theo năm</a></li>
                     <li><a href="#"><i class="fa-solid fa-chart-simple"></i> Thống kê doanh thu</a></li>
                   </ul>
                 </div>
@@ -105,133 +105,192 @@
         <div class="col-10 admin-content">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item">Đơn hàng</li>
-              <li class="breadcrumb-item active" aria-current="page">Đơn hàng chưa được xác nhận</li>
+              <li class="breadcrumb-item">Sản phẩm</li>
+              <li class="breadcrumb-item active" aria-current="page">Thêm sản phẩm</li>
             </ol>
           </nav>
-
           <div class="admin-content-detail">
+            <div class="row">
+              <div class="col-6">
+                <div class="pi product-type-list">
+                  <div id="product-type"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: <span
+                      id="product-type-text"></span></div>
+                  <ul class="product-type-menu">
+                    <li class="product-type-item"><span class="item">Áo</span>
+                      <ul class="product-type-item-menu">
+                        <li class="product-type-sub-item"><span class="sub">Áo khoác</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item">Phao</li>
+                            <li class="product-type-small-item">Bomber</li>
+                            <li class="product-type-small-item">Blazer</li>
+                            <li class="product-type-small-item">Măng tô</li>
+                            <li class="product-type-small-item">Bò</li>
+                          </ul>
+                        </li>
+                        <li class="product-type-sub-item"><span class="sub">Áo mùa đông</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item">Len</li>
+                            <li class="product-type-small-item">Hoodie</li>
+                            <li class="product-type-small-item">Giữ nhiệt</li>
+                            <li class="product-type-small-item">Sweater</li>
+                          </ul>
+                        </li>
+                        <li class="product-type-sub-item"><span class="sub">Áo mùa hè</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item">Polo</li>
+                            <li class="product-type-small-item">Thun</li>
+                          </ul>
+                        </li>
+                        <li class="product-type-sub-item"><span class="sub">Áo trang trọng</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item">Sơ mi</li>
+                            <li class="product-type-small-item">Vest</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
 
-            <div class="admin-product-add">
-              <form>
-                <ul class="product-type">
-                  <li class="product-type-item">ÁO
-                    <ul class="product-type-item-menu">
-                      <li class="product-type-sub-item">Áo khoác
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Phao</li>
-                          <li class="product-type-small-item">Bomber</li>
-                          <li class="product-type-small-item">Blazer</li>
-                          <li class="product-type-small-item">Măng tô</li>
-                          <li class="product-type-small-item">Bò</li>
-                        </ul>
-                      </li>
-                      <li class="product-type-sub-item">Áo mùa đông
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Len</li>
-                          <li class="product-type-small-item">Hoodie</li>
-                          <li class="product-type-small-item">Giữ nhiệt</li>
-                          <li class="product-type-small-item">Sweater</li>
-                        </ul>
-                      </li>
-                      <li class="product-type-sub-item">Áo mùa hè
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Polo</li>
-                          <li class="product-type-small-item">Thun</li>
-                        </ul>
-                      </li>
-                      <li class="product-type-sub-item">Áo trang trọng
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Sơ mi</li>
-                          <li class="product-type-small-item">Vest</li>
-                        </ul>
-                      </li>
+                    <li class="product-type-item"><span class="item">Quần</span>
+                      <ul class="product-type-item-menu">
+                        <li class="product-type-sub-item"><span class="sub">Quần vải</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item">Âu</li>
+                            <li class="product-type-small-item">Ống đứng</li>
+                          </ul>
+                        </li>
+                        <li class="product-type-sub-item"><span class="sub">Quần Jeans</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item">Jeans ống rộng</li>
+                            <li class="product-type-small-item">Skinny Jeans</li>
+                            <li class="product-type-small-item">Amiri</li>
+                          </ul>
+                        </li>
+                        <li class="product-type-sub-item"><span class="sub">Quần túi hộp</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Quần nỉ</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Quần short</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Quần lót</span></li>
+                      </ul>
+                    </li>
+
+                    <li class="product-type-item"><span class="item">Giày</span>
+                      <ul class="product-type-item-menu">
+                        <li class="product-type-sub-item"><span class="sub">Giày Nike</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item">Jordan</li>
+                            <li class="product-type-small-item">Air Force 1</li>
+                            <li class="product-type-small-item">Các loại Nike khác</li>
+                          </ul>
+                        </li>
+                        <li class="product-type-sub-item"><span class="sub">Giày Addidas</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Giày New Balance</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Giày Reebok</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Giày Boot</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Giày Lười</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Dép</span>
+                          <ul class="product-type-sub-menu">
+                            <li class="product-type-small-item"><span class="">Cros</span></li>
+                            <li class="product-type-small-item"><span class="">Dép nhựa</span></li>
+                            <li class="product-type-small-item"><span class="">Dép da</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="product-type-item"><span class="item">Phụ kiện</span>
+                      <ul class="product-type-item-menu">
+                        <li class="product-type-sub-item"><span class="sub">Khuyên tai</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Khăn quàng cổ</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Vòng cổ</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Vòng tay</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Đồng hồ</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Găng tay</span></li>
+                        <li class="product-type-sub-item"><span class="sub">Thắt lưng</span></li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div class="pi product-name">
+                  <input type="text" id="product-name" name="product-name" placeholder="Tên sản phẩm" required>
+                </div>
+                <div class="product-color">
+                  <select>
+                    <option>Màu sắc</option>
+                    <option>Đỏ</option>
+                    <option>Xanh lam</option>
+                    <option>Lục</option>
+                    <option>Vàng</option>
+                    <option>Tím</option>
+                    <option>Xanh nước biển</option>
+                    <option>Hồng</option>
+                    <option>Cam</option>
+                    <option>Đen</option>
+                    <option>Trắng</option>
+                    <option>Màu khác</option>
+                  </select>
+                </div>
+                <div class="pi product-price">
+                  <input type="text" id="product-price" name="product-price" placeholder="Giá sản phẩm" required>
+                  <span>đ</span>
+                </div>
+                <div class="pi product-discount">
+                  <div>
+                    <span id="discount-btn">Giảm giá<span id="discount-text"></span></span>
+                    <ul>
+                      <li id="discount-option-p">Theo phần trăm</li>
+                      <li id="discount-option-n">Theo giá trị</li>
                     </ul>
-                  </li>
+                  </div>
+                  <div class="discount-p"><input type="text" id="product-discount-p" name="product-discount-p"
+                      placeholder="Phần trăm giảm" required><span>%</span></div>
+                  <div class="discount-n"><input type="text" id="product-discount-n" name="product-discount-n"
+                      placeholder="Giá sau khi giảm" required><span>đ</span></div>
+                </div>
 
-                  <li class="product-type-item">QUẦN
-                    <ul class="product-type-item-menu">
-                      <li class="product-type-sub-item">Quần vải
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Âu</li>
-                          <li class="product-type-small-item">Ống đứng</li>
-                        </ul>
-                      </li>
-                      <li class="product-type-sub-item">Quần Jeans
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Jeans ống rộng</li>
-                          <li class="product-type-small-item">Skinny Jeans</li>
-                          <li class="product-type-small-item">Amiri</li>
-                        </ul>
-                      </li>
-                      <li class="product-type-sub-item">Quần túi hộp</li>
-                      <li class="product-type-sub-item">Quần nỉ</li>
-                      <li class="product-type-sub-item">Quần short</li>
-                      <li class="product-type-sub-item">Quần lót</li>
-                    </ul>
-                  </li>
+                <div class="pi product-size">
+                  <div>Size và số lượng</div>
+                  <div class="product-size-opt">
+                    <button class="product-size-name">S</button>
+                    <input type="number" id="product-size-s" name="product-size-s" placeholder="Số lượng" required>
+                  </div>
+                  <div class="product-size-opt">
+                    <button class="product-size-name">M</button>
+                    <input type="number" id="product-size-m" name="product-size-m" placeholder="Số lượng" required>
+                  </div>
+                  <div class="product-size-opt">
+                    <button class="product-size-name">L</button>
+                    <input type="number" id="product-size-l" name="product-size-l" placeholder="Số lượng" required>
+                  </div>
+                  <div class="product-size-opt">
+                    <button class="product-size-name">XL</button>
+                    <input type="number" id="product-size-xl" name="product-size-xl" placeholder="Số lượng" required>
+                  </div>
+                  <div class="product-size-opt">
+                    <button class="product-size-name">XXL</button>
+                    <input type="number" id="product-size-xxl" name="product-size-xxl" placeholder="Số lượng" required>
+                  </div>
+                </div>
+              </div>
 
-                  <li class="product-type-item">Giày
-                    <ul class="product-type-item-menu">
-                      <li class="product-type-sub-item">Giày Nike
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Jordan</li>
-                          <li class="product-type-small-item">Air Force 1</li>
-                          <li class="product-type-small-item">Các loại Nike khác</li>
-                        </ul>
-                      </li>
-                      <li class="product-type-sub-item">Giày Addidas</li>
-                      <li class="product-type-sub-item">Giày New Balance</li>
-                      <li class="product-type-sub-item">Giày Reebok</li>
-                      <li class="product-type-sub-item">Giày Boot</li>
-                      <li class="product-type-sub-item">Giày Lười</li>
-                      <li class="product-type-sub-item">Dép
-                        <ul class="product-type-sub-menu">
-                          <li class="product-type-small-item">Crocs</li>
-                          <li class="product-type-small-item">Dép nhựa</li>
-                          <li class="product-type-small-item">Dép da</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="product-type-item">Phụ kiện
-                    <ul class="product-type-item-menu">
-                      <li class="product-type-sub-item">Khuyên tai</li>
-                      <li class="product-type-sub-item">Khăn quàng cổ</li>
-                      <li class="product-type-sub-item">Vòng cổ</li>
-                      <li class="product-type-sub-item">Vòng tay</li>
-                      <li class="product-type-sub-item">Đồng hồ</li>
-                      <li class="product-type-sub-item">Găng tay</li>
-                      <li class="product-type-sub-item">Thắt lưng</li>
-                    </ul>
-                  </li>
-
-                </ul>
-                <input type="text" id="product-name" name="product-name" placeholder="Tên sản phẩm" required>
-                <select>
-                  <option>Màu sắc</option>
-                  <option>Đỏ</option>
-                  <option>Xanh lam</option>
-                  <option>Lục</option>
-                  <option>Vàng</option>
-                  <option>Tím</option>
-                  <option>Xanh nước biển</option>
-                  <option>Hồng</option>
-                  <option>Cam</option>
-                  <option>Đen</option>
-                  <option>Trắng</option>
-                  <option>Màu khác</option>
-                </select>
-
-
-              </form>
-
-
-
-
+              <div class="col-6 left-content">
+                <div class="product-text" id="gt">
+                  <label for="gt-text">Giới thiệu: </label><br>
+                  <textarea id="gt-text" name="gt-text" placeholder="Giới thiệu về sản phẩm"></textarea>
+                </div>
+                <div class="product-text" id="ct">
+                  <label for="ct-text">Thông tin chi tiết: </label><br>
+                  <textarea id="ct-text" name="ct-text" placeholder="Thông tin chi tiết sản phẩm"></textarea>
+                </div>
+                <div class="product-text" id="bq">
+                  <label for="bq-text">Bảo quản: </label><br>
+                  <textarea id="bq-text" name="bq-text" placeholder="Cách bảo quản sản phẩm"></textarea>
+                </div>
+                <div class="create-btn">
+                  <button id="create-btn">Tạo sản phẩm</button>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
