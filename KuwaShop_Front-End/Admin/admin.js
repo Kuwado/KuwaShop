@@ -205,3 +205,10 @@ sizeOpt.forEach(s => {
         }
     });
 });
+
+
+// Product-list
+function pDelete(x) {
+    var tr =  x.closest('tr');
+    tr.remove();
+}
