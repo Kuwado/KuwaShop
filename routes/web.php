@@ -13,3 +13,7 @@ Route::get('/admin', function() {
 Route::get('/admin/product_add', function() {
     return view('admin.product-add');
 });
+
+Route::get('/admin/product_list', function() {
+    return view('admin.product-list');
+});
