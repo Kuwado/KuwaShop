@@ -47,6 +47,7 @@
             <div class="product-add-img">
                 <label for="img-file">Tải ảnh lên</label>
                 <input id="img-file" type="file" multiple>
+                <input type="hidden" name="images[]">
                 <div class="img-list" id="input-file-imgs">
 
                 </div>

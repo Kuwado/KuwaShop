@@ -578,17 +578,20 @@
     border: 2px solid green;
     cursor: pointer;
     background-color: burlywood;
+    position: sticky;
 }
 
 .img-list {
     min-height: 100px;
     margin: 10px 0;
+    max-width: 100%;
 }
 
 #input-file-imgs img {
     width: 75px;
     height: 100px;
     object-fit: cover;
+    margin: 0 5px;
 }
 
 /* product-list */
