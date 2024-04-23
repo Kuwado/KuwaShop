@@ -17,8 +17,14 @@
                 </div>
 
                 <div class="col-10 admin-content">
+                    <div class="admin-breadcrumb">
+                        @yield('breadcrumb')
+                    </div>
                     <div class="admin-content-detail">
                         @yield('content')
+                    </div>
+                    <div class="admin-pagination">
+                        @yield('pagination')
                     </div>
                 </div>
             </div>

@@ -578,10 +578,20 @@
     border: 2px solid green;
     cursor: pointer;
     background-color: burlywood;
+    position: sticky;
 }
 
 .img-list {
-    min-height: 150px;
+    min-height: 100px;
+    margin: 10px 0;
+    max-width: 100%;
+}
+
+#input-file-imgs img {
+    width: 75px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 5px;
 }
 
 /* product-list */
@@ -643,7 +653,7 @@
     background-color: #FF4500;
 }
 
-#product-list-pagination {
+.admin-pagination {
     margin-top: 10px;
     display: flex;
     justify-content: center;

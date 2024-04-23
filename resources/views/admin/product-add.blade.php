@@ -1,13 +1,16 @@
 @extends('admin.main')
+
+@section('breadcrumb')
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Sản phẩm</li>
+        <li class="breadcrumb-item active" aria-current="page">Thêm sản phẩm</li>
+    </ol>
+</nav>
+@endsection
+
 @section('content')
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">Sản phẩm</li>
-            <li class="breadcrumb-item active" aria-current="page">Thêm sản phẩm</li>
-        </ol>
-    </nav>
-    <div class="admin-content-detail">
-      <div class="row">
+    <div class="row">
         <div class="col-6">
             <div class="pi product-type-list">
                 <div id="product-type"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: <span id="product-type-text"></span></div>
@@ -43,8 +46,9 @@
         <div class="col-6 left-content">
             <div class="product-add-img">
                 <label for="img-file">Tải ảnh lên</label>
-                <input id="img-file" type="file">
-                <div class="img-list">
+                <input id="img-file" type="file" multiple>
+                <input type="hidden" name="images[]">
+                <div class="img-list" id="input-file-imgs">
 
                 </div>
             </div>
@@ -53,6 +57,9 @@
                 <button id="create-btn">Tạo sản phẩm</button>
             </div>
         </div>
-      </div>
     </div>
+@endsection
+
+@section('footer')
+    <script src="{{asset('backend/asset/product-ajax.js')}}"></script>
 @endsection
