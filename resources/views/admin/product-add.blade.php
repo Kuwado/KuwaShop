@@ -46,8 +46,8 @@
         <div class="col-6 left-content">
             <div class="product-add-img">
                 <label for="img-file">Tải ảnh lên</label>
-                <input id="img-file" type="file">
-                <div class="img-list">
+                <input id="img-file" type="file" multiple>
+                <div class="img-list" id="input-file-imgs">
 
                 </div>
             </div>
@@ -57,4 +57,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <script src="{{asset('backend/asset/product-ajax.js')}}"></script>
 @endsection

@@ -581,7 +581,14 @@
 }
 
 .img-list {
-    min-height: 150px;
+    min-height: 100px;
+    margin: 10px 0;
+}
+
+#input-file-imgs img {
+    width: 75px;
+    height: 100px;
+    object-fit: cover;
 }
 
 /* product-list */
