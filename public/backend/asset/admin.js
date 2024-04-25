@@ -39,7 +39,9 @@ const prdTypeMenu = prdContainer.querySelector(".product-type-menu");
 const prdTypeItem = prdContainer.querySelectorAll(".product-type-item");
 const prdTypeSubItem = prdContainer.querySelectorAll(".product-type-sub-item");
 const prdTypeSmallItem = prdContainer.querySelectorAll(".product-type-small-item");
-const prdTypeText = prdContainer.querySelector("#product-type-text")
+const prdTypeText = prdContainer.querySelector("#product-type-text");
+const prdTypeInput = prdContainer.querySelector("#product-type-input");
+
 let stt = true;
 
 prdBTN.addEventListener("click", function () {
@@ -121,6 +123,7 @@ prdTypeSmallItem.forEach(function(item){
 
 function printTypeText(type){
     prdTypeText.textContent = type;
+    prdTypeInput.value = type;
     closeMenu();
 }
 
@@ -186,6 +189,21 @@ function closeDiscount(){
     discountBTN.classList.remove("cl-red");
     discountSTT = true;
 }
+
+// more and less
+document.addEventListener("DOMContentLoaded", function() {
+    const moreBtn = document.getElementById("more-btn");
+    const lessBtn = document.getElementById("less-btn");
+    const prdAdd = document.getElementById("product-add");
+    const hiddenMoreContent = document.getElementById("hidden-more-content").innerHTML;
+
+    moreBtn.addEventListener("click", function() {
+        // Sao chép nội dung từ div ẩn và thêm vào prdAdd
+        prdAdd.insertAdjacentHTML('beforeend', hiddenMoreContent);
+    });
+});
+
+
 
 // Size
 const sizeOpt = document.querySelectorAll(".product-size-opt");
