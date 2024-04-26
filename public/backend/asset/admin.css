@@ -594,6 +594,25 @@
     margin: 0 5px;
 }
 
+.more-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#more-btn, #less-btn {
+    padding: 5px;
+    width: 15%;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.straight-bottom {
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+}
 /* product-list */
 #product-list-table {
     margin: 10px;
