@@ -204,8 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-// Size
+// Size and quantity
 const sizeOpt = document.querySelectorAll(".product-size-opt");
 
 sizeOpt.forEach(s => {
