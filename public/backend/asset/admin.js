@@ -156,6 +156,7 @@ const disP = prdCount.querySelector(".discount-p");
 const disN = prdCount.querySelector(".discount-n");
 const discountUL = prdCount.querySelector("ul");
 const disText = prdCount.querySelector("#discount-text");
+const priceDiscount = document.querySelector("#product-price-discount");
 
 let discountSTT = true;
 
@@ -190,19 +191,56 @@ function closeDiscount(){
     discountSTT = true;
 }
 
-// more and less
-document.addEventListener("DOMContentLoaded", function() {
-    const moreBtn = document.getElementById("more-btn");
-    const lessBtn = document.getElementById("less-btn");
-    const prdAdd = document.getElementById("product-add");
-    const hiddenMoreContent = document.getElementById("hidden-more-content").innerHTML;
+function handleDiscountP() {
+    var inputElement = document.getElementById('product-discount-p');
+    var priceElement = document.getElementById('product-price');
+    
+    // Kiểm tra xem input và priceElement có tồn tại
+    if (inputElement && priceElement.value.trim() && inputElement.value.trim() !== '') {
+        var discountValue = parseFloat(inputElement.value); // Chuyển đổi giá trị nhập vào thành số thực
+        var price = parseFloat(priceElement.value); // Lấy giá trị giá sản phẩm từ input
 
-    moreBtn.addEventListener("click", function() {
-        // Sao chép nội dung từ div ẩn và thêm vào prdAdd
-        prdAdd.insertAdjacentHTML('beforeend', hiddenMoreContent);
-    });
-});
+        // Kiểm tra giá trị giảm giá có hợp lệ không
+        if (discountValue > 100) {
+            alert("Số phần trăm không hợp lệ (phải ≤ 100)");
+        } else if (discountValue <= 0) {
+            alert("Số phần trăm không hợp lệ (phải > 0)");
+        } else {
+            // Tính toán giá sản phẩm sau khi áp dụng giảm giá
+            var discountedPrice = price - (price * discountValue / 100);
+            priceDiscount.value = discountedPrice.toFixed(2); // Làm tròn giá trị đến 2 chữ số thập phân và gán vào input
+            
+        }
+    } else {
+        alert("Vui lòng nhập giá sản phẩm.");
+        inputElement.value = '';
+    }
+}
 
+function handleDiscountN() {
+    var inputElement = document.getElementById('product-discount-n');
+    var priceElement = document.getElementById('product-price');
+    
+    // Kiểm tra xem input và priceElement có tồn tại
+    if (inputElement && priceElement.value.trim() && inputElement.value.trim() !== '') {
+        var discountValue = parseFloat(inputElement.value); // Chuyển đổi giá trị nhập vào thành số thực
+        var price = parseFloat(priceElement.value); // Lấy giá trị giá sản phẩm từ input
+
+        // Kiểm tra giá trị giảm giá có hợp lệ không
+        if (discountValue > price) {
+            alert("Số tiền giảm không hợp lệ (phải ≤ giá gốc)");
+        } else if (discountValue <= 0) {
+            alert("Số tiền giảm không hợp lệ (phải > 0)");
+        } else {
+            // Tính toán giá sản phẩm sau khi áp dụng giảm giá
+            var discountedPrice = price - discountValue;
+            priceDiscount.value = discountedPrice.toFixed(2); // Làm tròn giá trị đến 2 chữ số thập phân và gán vào input
+            
+        }
+    } else {
+        alert("Vui lòng nhập giá sản phẩm.");
+        inputElement.value = '';    }
+}
 
 // Size and quantity
 const sizeOpt = document.querySelectorAll(".product-size-opt");
@@ -229,3 +267,13 @@ function pDelete(x) {
     var tr =  x.closest('tr');
     tr.remove();
 }
+
+
+// Color
+const selectColor = document.getElementById("select-color");
+const color = document.getElementById("product-color");
+
+selectColor.addEventListener('change', function() {
+    var selectedOption = selectColor.options[selectColor.selectedIndex].text; // Sử dụng selectColor thay vì selectElement
+    color.value = selectedOption;
+});

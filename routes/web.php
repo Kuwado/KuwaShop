@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\uploadController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +37,4 @@ Route::get('/admin/revenue', function() {
 
 Route::post('/upload', [uploadController::class,'uploadImage']);
 Route::post('/uploads', [uploadController::class,'uploadImages']);
+Route::post('/admin/product/add', [productController::class,'insert_product']);
