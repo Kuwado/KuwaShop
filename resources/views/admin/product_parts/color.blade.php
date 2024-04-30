@@ -1,4 +1,4 @@
-<select>
+<select id="select-color">
     <option>Màu sắc</option>
     <option>Đỏ</option>
     <option>Xanh lam</option>

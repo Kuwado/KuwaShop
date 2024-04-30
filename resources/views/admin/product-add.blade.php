@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <form action="/admin/product_add" method="POST">
+    <form action="/admin/product/add" enctype="multipart/form-data" method="post">
         <div class="row">
             <div class="col-6">
                 <div class="pi product-type-list">
@@ -20,7 +20,7 @@
                 </div>
     
                 <div class="pi product-name">
-                    <input type="text" id="product-name" name="product-name" placeholder="Tên sản phẩm" required>
+                    <input type="text" id="product-name" value="{{old('product-name')}}" name="product-name" placeholder="Tên sản phẩm" required>
                 </div>
 
                 <div class="pi product-price">
@@ -34,22 +34,14 @@
                             <li id="discount-option-n">Theo giá trị</li>
                         </ul>
                     </div>
-                    <div class="discount-p"><input type="text" id="product-discount-p" name="product-discount-p" placeholder="Phần trăm giảm" required><span>%</span></div>
-                    <div class="discount-n"><input type="text" id="product-discount-n" name="product-discount-n" placeholder="Giá sau khi giảm" required><span>đ</span></div>
+                    <div class="discount-p"><input type="text" id="product-discount-p" name="product-discount-p" placeholder="Phần trăm giảm" onchange="handleDiscountP()"><span>%</span></div>
+                    <div class="discount-n"><input type="text" id="product-discount-n" name="product-discount-n" placeholder="Giá sau khi giảm" onchange="handleDiscountN()"><span>đ</span></div>
+                    <input type="hidden" name="product-price-discount" id="product-price-discount">
                 </div>
-
-                <!-- Khai báo div ẩn chứa nội dung của template blade 'admin.product_parts.more' -->
 
                 <div id="product-add">
                     @include('admin.product_parts.more')
-                    @include('admin.product_parts.more')
                 </div>
-
-                <div class="more-btn">
-                    <button id="more-btn"><i class="fa-solid fa-plus"></i></button>
-                    <button id="less-btn"><i class="fa-solid fa-minus"></i></button>
-                </div>
-
             </div>
     
             <div class="col-6 left-content">
@@ -66,6 +58,7 @@
                 </div>
             </div>
         </div>
+        @csrf
     </form>    
 @endsection
 
