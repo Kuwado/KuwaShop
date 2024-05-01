@@ -1,14 +1,5 @@
 @extends('admin.main')
 
-@section('breadcrumb')
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">Sản phẩm</li>
-        <li class="breadcrumb-item active" aria-current="page">Xem danh sách sản phẩm</li>
-    </ol>
-</nav>
-@endsection
-
 @section('content')
 <table id="product-list-table">
     <tr>
@@ -20,7 +11,7 @@
     </tr>
     <tr>
         <td>1</td>
-        <td><img src="../Images/Product/goku_blue_1.png"></td>
+        <td><img src="/Images/Product/goku_blue_1.png"></td>
         <td>Áo nè</td>
         <td>22/4/2024</td>
         <td>
@@ -32,7 +23,7 @@
     </tr>
     <tr>
         <td>2</td>
-        <td><img src="../Images/Product/test.jpg"></td>
+        <td><img src="/Images/Product/test.jpg"></td>
         <td>Áo nè</td>
         <td>22/4/2024</td>
         <td>
@@ -44,7 +35,7 @@
     </tr>
     <tr>
         <td>3</td>
-        <td><img src="../Images/Product/goku_yellow_1.png"></td>
+        <td><img src="/Images/Product/goku_yellow_1.png"></td>
         <td>Áo nè</td>
         <td>22/4/2024</td>
         <td>

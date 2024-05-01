@@ -1,14 +1,5 @@
 @extends('admin.main')
 
-@section('breadcrumb')
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">Doanh thu</li>
-      <li class="breadcrumb-item active" aria-current="page">Theo năm</li>
-    </ol>
-</nav>
-@endsection
-
 @section('content')
 <div class="admin-revenue">
     <table>

@@ -1,14 +1,5 @@
 @extends('admin.main')
 
-@section('breadcrumb')
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">Đơn hàng</li>
-        <li class="breadcrumb-item active" aria-current="page">Đơn hàng chưa được xác nhận</li>
-    </ol>
-</nav>
-@endsection
-
 @section('content')
 <div class="admin-order-detail">
     <div class="product-info">
