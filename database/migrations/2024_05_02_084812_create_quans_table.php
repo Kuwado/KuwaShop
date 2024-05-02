@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('quans', function (Blueprint $table) {
             $table->id();
             $table->string('color');
+            $table->string('color_code');
             $table->integer('s')->default(0);
             $table->integer('m')->default(0);
             $table->integer('l')->default(0);

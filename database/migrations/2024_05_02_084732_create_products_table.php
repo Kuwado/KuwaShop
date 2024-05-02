@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('sku')->unique();
             $table->string('name')->unique();
-            $table->string('type');
+            $table->string('type')->nullable();
             $table->string('original_price');
             $table->string('discount_price')->nullable();
             $table->longText('intro');
