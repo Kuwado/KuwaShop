@@ -26,11 +26,12 @@ class ProductController extends Controller
         ]);
     }
 
-    public function list_product()
-    {
+    public function list_product() {
+        $products = Product::all();
         return view('admin.product.list', [
             'title' => 'Sản phẩm',
-            'subTitle' => 'Danh sách sản phẩm'
+            'subTitle' => 'Danh sách sản phẩm',
+            'products' => $products
         ]);
     }
 
@@ -67,8 +68,7 @@ class ProductController extends Controller
         }
     }
 
-    public function insert_product(Request $request)
-    {
+    public function insert_product(Request $request) {
         $product = new Product();
         $quan = new Quan();
         $productName = $request->input('product-name');
@@ -104,6 +104,7 @@ class ProductController extends Controller
             // Thêm vào bảng Products
             $product->sku = $request->input('product-name');
             $product->name = $request->input('product-name');
+            $product->image = $request->input('product-image');
             $product->type = $request->input('product-type');
             $product->original_price = $request->input('product-price');
             $product->discount_price = $request->input('product-price-discount');
@@ -128,5 +129,6 @@ class ProductController extends Controller
             $quan->images = $product_images;
             $quan->save();
         }
+        return redirect() -> back();
     }
 }

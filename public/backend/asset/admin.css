@@ -568,6 +568,14 @@
     background-color: black;
 }
 
+.product-add-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
 .product-add-img input {
     display: none;
 }
@@ -578,41 +586,24 @@
     border: 2px solid green;
     cursor: pointer;
     background-color: burlywood;
-    position: sticky;
 }
 
 .img-list {
     min-height: 100px;
     margin: 10px 0;
-    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#input-file-imgs img {
+.img-list img {
     width: 75px;
     height: 100px;
     object-fit: cover;
     margin: 0 5px;
 }
 
-.more-btn {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#more-btn, #less-btn {
-    padding: 5px;
-    width: 15%;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    border: none;
-}
-
-.straight-bottom {
-    border-bottom: 2px solid black;
-    margin-bottom: 5px;
-}
 /* product-list */
 #product-list-table {
     margin: 10px;
@@ -638,7 +629,7 @@
 }
 
 #product-list-table td:nth-child(3) {
-    width: 30%;
+    width: 20%;
 }
 
 #product-list-table td:nth-child(4) {
@@ -646,21 +637,29 @@
 }
 
 #product-list-table td:nth-child(5) {
-    width: 25%;
+    width: 10%;
+}
+
+#product-list-table td:nth-child(6) {
+    width: 10%;
+}
+
+#product-list-table td:nth-child(7) {
+    width: 15%;
     div {
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
-    button {
+    .product-edit-btn, .product-delete-btn {
         width: 70px;
         height: 45px;
         border: none;
         border-radius: 10px;
-    }
-    button:hover {
-        background-color: black;
-        color: #FFFAFA;
+        &:hover {
+            background-color: black;
+            color: #FFFAFA;
+        }
     }
 }
 
