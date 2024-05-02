@@ -18,7 +18,7 @@
 
                 <div class="col-10 admin-content">
                     <div class="admin-breadcrumb">
-                        @yield('breadcrumb')
+                        @include('admin.parts.breadcrumb')
                     </div>
                     <div class="admin-content-detail">
                         @yield('content')

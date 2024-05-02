@@ -272,8 +272,11 @@ function pDelete(x) {
 // Color
 const selectColor = document.getElementById("select-color");
 const color = document.getElementById("product-color");
+const colorCode = document.getElementById("product-color-code");
+
 
 selectColor.addEventListener('change', function() {
     var selectedOption = selectColor.options[selectColor.selectedIndex].text; // Sử dụng selectColor thay vì selectElement
     color.value = selectedOption;
+    colorCode.value = selectColor.options[selectColor.selectedIndex].value;
 });

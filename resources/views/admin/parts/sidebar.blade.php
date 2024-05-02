@@ -8,10 +8,10 @@
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
                 <ul>
-                    <li><a href="#"><i class="fa-solid fa-d"></i> Theo ngày</a></li>
-                    <li><a href="#"><i class="fa-solid fa-m"></i> Theo tháng</a></li>
-                    <li><a href="/admin/revenue"><i class="fa-solid fa-y"></i> Theo năm</a></li>
-                    <li><a href="#"><i class="fa-solid fa-chart-simple"></i> Thống kê doanh thu</a>
+                    <li><a href="/admin/revenue/day"><i class="fa-solid fa-d"></i> Theo ngày</a></li>
+                    <li><a href="/admin/revenue/month"><i class="fa-solid fa-m"></i> Theo tháng</a></li>
+                    <li><a href="/admin/revenue/year"><i class="fa-solid fa-y"></i> Theo năm</a></li>
+                    <li><a href="/admin/revenue/statistic"><i class="fa-solid fa-chart-simple"></i> Thống kê doanh thu</a>
                     </li>
                 </ul>
             </div>
@@ -25,9 +25,9 @@
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
                 <ul>
-                    <li><a href="#"><i class="fa-solid fa-list-check"></i> Xem danh sách đơn hàng</a></li>
-                    <li><a href="/admin/order"><i class="fa-solid fa-list-ul"></i> Đơn hàng chưa xác nhận</a></li>
-                    <li><a href="#"><i class="fa-solid fa-xmark"></i> Đơn hàng bị hủy</a></li>
+                    <li><a href="/admin/order/list"><i class="fa-solid fa-list-check"></i> Xem danh sách đơn hàng</a></li>
+                    <li><a href="/admin/order/list"><i class="fa-solid fa-list-ul"></i> Đơn hàng chưa xác nhận</a></li>
+                    <li><a href="/admin/order/list"><i class="fa-solid fa-xmark"></i> Đơn hàng bị hủy</a></li>
                 </ul>
             </div>
         </div>
@@ -40,9 +40,9 @@
         <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
                 <ul>
-                    <li><a href="/admin/product_list"><i class="fa-solid fa-table-list"></i> Xem danh sách sản phẩm</a></li>
-                    <li><a href="#"><i class="fa-solid fa-square-plus"></i> Thêm danh mục sản phẩm</a></li>
-                    <li><a href="/admin/product_add"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a></li>
+                    <li><a href="/admin/product/list"><i class="fa-solid fa-table-list"></i> Xem danh sách sản phẩm</a></li>
+                    <li><a href="/admin/product/add_category"><i class="fa-solid fa-square-plus"></i> Thêm danh mục sản phẩm</a></li>
+                    <li><a href="/admin/product/create"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a></li>
                 </ul>
             </div>
         </div>

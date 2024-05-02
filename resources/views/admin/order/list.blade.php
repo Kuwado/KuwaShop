@@ -1,14 +1,5 @@
 @extends('admin.main')
 
-@section('breadcrumb')
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">Đơn hàng</li>
-    <li class="breadcrumb-item active" aria-current="page">Đơn hàng chưa được xác nhận</li>
-  </ol>
-</nav>
-@endsection
-
 @section('content')
 <div class="admin-order">
     <table>
@@ -33,7 +24,7 @@
         <td>Khố Jack áo ôm</td>
         <td>Size: <span>XL</span></br> Màu sắc: <span>Đen</span></td>
         <td>Giao nhanh</td>
-        <td><a href="/admin/order-detail">Xem</a></td>
+        <td><a href="/admin/order/detail">Xem</a></td>
         <td>28/03/2024</td>
         <td><button class="btn admin-cf-btn">Xác nhận</button></td>
         <td><button class="btn admin-delete-btn"><i class="fa-solid fa-trash-can"></i></button></td>
@@ -46,7 +37,7 @@
         <td>Ứ Gô Kaooo</td>
         <td>Size: <span>XL</span></br> Màu sắc: <span>Đỏ</span></td>
         <td>Hỏa tốc</td>
-        <td><a href="/admin/order-detail">Xem</a></td>
+        <td><a href="/admin/order/detail">Xem</a></td>
         <td>27/03/2024</td>
         <td><button class="btn admin-cf-btn">Xác nhận</button></td>
         <td><button class="btn admin-delete-btn"><i class="fa-solid fa-trash-can"></i></button></td>
@@ -59,7 +50,7 @@
         <td>Quần doraemon</td>
         <td>Size: <span>XL</span></br> Màu sắc: <span>Hồng</span></td>
         <td>Giao nhanh</td>
-        <td><a href="/admin/order-detail">Xem</a></td>
+        <td><a href="/admin/order/detail">Xem</a></td>
         <td>29/03/2024</td>
         <td><button class="btn admin-cf-btn">Xác nhận</button></td>
         <td><button class="btn admin-delete-btn"><i class="fa-solid fa-trash-can"></i></button></td>

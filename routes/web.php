@@ -1,40 +1,38 @@
 <?php
 
-use App\Http\Controllers\Admin\productController;
-use App\Http\Controllers\Admin\uploadController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RevenueController;
+use App\Http\Controllers\Admin\UploadController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Admin
 Route::get('/admin', function() {
     return view('admin.home');
 });
 
-Route::get('/admin/product_add', function() {
-    return view('admin.product-add');
-});
+//Product
+Route::post('/admin/product/add', [ProductController::class,'insert_product']);
+Route::get('/admin/product/create', [ProductController::class, 'add_product']);
+Route::get('/admin/product/list', [ProductController::class, 'list_product']);
+Route::get('/admin/product/edit', [ProductController::class, 'edit_product']);
+Route::get('/admin/product/add_category', [ProductController::class, 'add_category_product']);
 
-Route::get('/admin/product_list', function() {
-    return view('admin.product-list');
-});
+// Order
+Route::get('/admin/order/list', [OrderController::class, 'list_order']);
+Route::get('/admin/order/detail', [OrderController::class, 'detail_order']);
 
-Route::get('/admin/order', function() {
-    return view('admin.order');
-});
+// Revenue
+Route::get('/admin/revenue/day', [RevenueController::class, 'day_revenue']);
+Route::get('/admin/revenue/month', [RevenueController::class, 'month_revenue']);
+Route::get('/admin/revenue/year', [RevenueController::class, 'year_revenue']);
+Route::get('/admin/revenue/statistic', [RevenueController::class, 'statistic_revenue']);
 
-Route::get('/admin/order-detail', function() {
-    return view('admin.order-detail');
-});
-
-Route::get('/admin/revenue', function() {
-    return view('admin.revenue');
-});
-
-
-
-
-Route::post('/upload', [uploadController::class,'uploadImage']);
-Route::post('/uploads', [uploadController::class,'uploadImages']);
-Route::post('/admin/product/add', [productController::class,'insert_product']);
+// Images
+Route::post('/upload', [UploadController::class,'uploadImage']);
+Route::post('/uploads', [UploadController::class,'uploadImages']);
