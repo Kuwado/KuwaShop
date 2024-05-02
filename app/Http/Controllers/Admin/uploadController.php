@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 
-class uploadController extends Controller
+class UploadController extends Controller
 {
     public function uploadImage(Request $request)
     {

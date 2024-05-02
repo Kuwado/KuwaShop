@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\orderController;
-use App\Http\Controllers\Admin\productController;
-use App\Http\Controllers\Admin\revenueController;
-use App\Http\Controllers\Admin\uploadController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RevenueController;
+use App\Http\Controllers\Admin\UploadController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,22 +17,22 @@ Route::get('/admin', function() {
 });
 
 //Product
-Route::post('/admin/product/add', [productController::class,'insert_product']);
-Route::get('/admin/product/create', [productController::class, 'add_product']);
-Route::get('/admin/product/list', [productController::class, 'list_product']);
-Route::get('/admin/product/edit', [productController::class, 'edit_product']);
-Route::get('/admin/product/add_category', [productController::class, 'add_category_product']);
+Route::post('/admin/product/add', [ProductController::class,'insert_product']);
+Route::get('/admin/product/create', [ProductController::class, 'add_product']);
+Route::get('/admin/product/list', [ProductController::class, 'list_product']);
+Route::get('/admin/product/edit', [ProductController::class, 'edit_product']);
+Route::get('/admin/product/add_category', [ProductController::class, 'add_category_product']);
 
 // Order
-Route::get('/admin/order/list', [orderController::class, 'list_order']);
-Route::get('/admin/order/detail', [orderController::class, 'detail_order']);
+Route::get('/admin/order/list', [OrderController::class, 'list_order']);
+Route::get('/admin/order/detail', [OrderController::class, 'detail_order']);
 
 // Revenue
-Route::get('/admin/revenue/day', [revenueController::class, 'day_revenue']);
-Route::get('/admin/revenue/month', [revenueController::class, 'month_revenue']);
-Route::get('/admin/revenue/year', [revenueController::class, 'year_revenue']);
-Route::get('/admin/revenue/statistic', [revenueController::class, 'statistic_revenue']);
+Route::get('/admin/revenue/day', [RevenueController::class, 'day_revenue']);
+Route::get('/admin/revenue/month', [RevenueController::class, 'month_revenue']);
+Route::get('/admin/revenue/year', [RevenueController::class, 'year_revenue']);
+Route::get('/admin/revenue/statistic', [RevenueController::class, 'statistic_revenue']);
 
 // Images
-Route::post('/upload', [uploadController::class,'uploadImage']);
-Route::post('/uploads', [uploadController::class,'uploadImages']);
+Route::post('/upload', [UploadController::class,'uploadImage']);
+Route::post('/uploads', [UploadController::class,'uploadImages']);

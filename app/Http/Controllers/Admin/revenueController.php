@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class revenueController extends Controller
+class RevenueController extends Controller
 {
     public function day_revenue() {
         return view('admin.revenue.day', [
