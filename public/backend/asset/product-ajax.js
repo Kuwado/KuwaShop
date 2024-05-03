@@ -50,3 +50,20 @@ $('#img-file').on('change', () => {
         }
     })
 });
+
+// Xóa dữ liệu trong db
+function removeRow(product_id, url) {
+    if (confirm('Xác nhận xóa')) {
+        $.ajax({
+            url: url,
+            data: { product_id },
+            method: 'GET',
+            dataType: 'JSON',
+            success: function (res) {
+                if(res.success == true) {
+                    location.reload();
+                }
+            }
+        });
+    }
+}

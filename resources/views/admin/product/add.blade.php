@@ -64,5 +64,6 @@
 @endsection
 
 @section('footer')
+    <script src="{{asset('backend/asset/admin.js')}}"></script>
     <script src="{{asset('backend/asset/product-ajax.js')}}"></script>
 @endsection

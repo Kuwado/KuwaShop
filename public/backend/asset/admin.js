@@ -35,12 +35,12 @@ cfOrderBtns.forEach(function (btn) {
 const prdBTN = document.querySelector("#product-type");
 const prdContainer = document.querySelector(".product-type-list");
 const iBTN = document.querySelector("#product-type i");
-const prdTypeMenu = prdContainer.querySelector(".product-type-menu");
-const prdTypeItem = prdContainer.querySelectorAll(".product-type-item");
-const prdTypeSubItem = prdContainer.querySelectorAll(".product-type-sub-item");
-const prdTypeSmallItem = prdContainer.querySelectorAll(".product-type-small-item");
-const prdTypeText = prdContainer.querySelector("#product-type-text");
-const prdTypeInput = prdContainer.querySelector("#product-type-input");
+const prdTypeMenu = document.querySelector(".product-type-menu");
+const prdTypeItem = document.querySelectorAll(".product-type-item");
+const prdTypeSubItem = document.querySelectorAll(".product-type-sub-item");
+const prdTypeSmallItem = document.querySelectorAll(".product-type-small-item");
+const prdTypeText = document.querySelector("#product-type-text");
+const prdTypeInput = document.querySelector("#product-type-input");
 
 let stt = true;
 
