@@ -4,9 +4,9 @@ $.ajaxSetup({
     }
 });
 
-$('#img-file').on('change', () => {
+$('#img-files').on('change', () => {
     var formData = new FormData()
-    var files = $('#img-file')[0].files
+    var files = $('#img-files')[0].files
     for (let index = 0; index < files.length; index++) {
         formData.append('files[]', files[index])
     }
@@ -28,3 +28,42 @@ $('#img-file').on('change', () => {
         }
     })
 });
+
+$('#img-file').on('change', () => {
+    var formData = new FormData();
+    var file = $('#img-file')[0].files[0]
+    formData.append('file', file)
+    $.ajax({
+        url: '/upload',
+        processData: false,//illega invocation
+        dataType: 'json',
+        data: formData,
+        method: 'POST',
+        contentType: false,// khong hien o preview
+        success: function (result) {
+            if (result.success == true) {
+                html = '';
+                html += '<img src="' + result.path + '" alt="">';
+                $('#input-file-img').html(html)
+                $('#product-image').val(result.path)
+            }
+        }
+    })
+});
+
+// Xóa dữ liệu trong db
+function removeRow(product_id, url) {
+    if (confirm('Xác nhận xóa')) {
+        $.ajax({
+            url: url,
+            data: { product_id },
+            method: 'GET',
+            dataType: 'JSON',
+            success: function (res) {
+                if(res.success == true) {
+                    location.reload();
+                }
+            }
+        });
+    }
+}

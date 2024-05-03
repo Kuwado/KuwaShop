@@ -32,13 +32,23 @@
 
                 <div id="product-add">
                     @include('admin.product.product_parts.more')
+                    <div class="product-add-img">
+                        <label for="img-file">Tải ảnh đại diện</label>
+                        <input id="img-file" type="file">
+                        <div class="img-list" id="input-file-img">
+        
+                        </div>
+                        <input type="hidden" id="product-image" name="product-image">
+                    </div>
                 </div>
             </div>
     
             <div class="col-6 left-content">
                 <div class="product-add-img">
-                    <label for="img-file">Tải ảnh lên</label>
-                    <input id="img-file" type="file" multiple>
+                    <div>
+                        <label for="img-files">Tải ảnh lên</label>
+                        <input id="img-files" type="file" multiple>
+                    </div>
                     <div class="img-list" id="input-file-imgs">
     
                     </div>
@@ -54,5 +64,6 @@
 @endsection
 
 @section('footer')
+    <script src="{{asset('backend/asset/admin.js')}}"></script>
     <script src="{{asset('backend/asset/product-ajax.js')}}"></script>
 @endsection

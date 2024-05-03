@@ -23,6 +23,8 @@ Route::get('/admin/product/list', [ProductController::class, 'list_product']);
 Route::get('/admin/product/edit', [ProductController::class, 'edit_product']);
 Route::get('/admin/product/add_category', [ProductController::class, 'add_category_product']);
 
+Route::get('/admin/product/delete', [ProductController::class, 'delete_product']);
+
 // Order
 Route::get('/admin/order/list', [OrderController::class, 'list_order']);
 Route::get('/admin/order/detail', [OrderController::class, 'detail_order']);

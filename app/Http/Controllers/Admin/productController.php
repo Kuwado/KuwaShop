@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Quan;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -26,11 +26,14 @@ class ProductController extends Controller
         ]);
     }
 
-    public function list_product()
-    {
+    // Lấy danh sách sản phẩm
+    public function list_product() {
+        //$products = DB::table('products')->paginate(5);
+        $products = Product::all();
         return view('admin.product.list', [
             'title' => 'Sản phẩm',
-            'subTitle' => 'Danh sách sản phẩm'
+            'subTitle' => 'Danh sách sản phẩm',
+            'products' => $products
         ]);
     }
 
@@ -42,6 +45,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // Thêm thông tin sản phẩm vào db
     private function checkProductNameExists($productName) {
         // Kiểm tra xem sản phẩm có tồn tại trong cơ sở dữ liệu hay không
         $existingProduct = Product::where('name', $productName)->exists();
@@ -67,8 +71,7 @@ class ProductController extends Controller
         }
     }
 
-    public function insert_product(Request $request)
-    {
+    public function insert_product(Request $request) {
         $product = new Product();
         $quan = new Quan();
         $productName = $request->input('product-name');
@@ -104,6 +107,7 @@ class ProductController extends Controller
             // Thêm vào bảng Products
             $product->sku = $request->input('product-name');
             $product->name = $request->input('product-name');
+            $product->image = $request->input('product-image');
             $product->type = $request->input('product-type');
             $product->original_price = $request->input('product-price');
             $product->discount_price = $request->input('product-price-discount');
@@ -128,5 +132,16 @@ class ProductController extends Controller
             $quan->images = $product_images;
             $quan->save();
         }
+        return redirect() -> back();
     }
+
+    public function delete_product(Request $request) {
+        Product::find($request->product_id)->delete();
+        return response() -> json([
+            'success' => true
+        ]);
+    }
+
+
+
 }
