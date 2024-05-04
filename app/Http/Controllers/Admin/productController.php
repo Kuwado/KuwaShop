@@ -18,11 +18,15 @@ class ProductController extends Controller
         ]);
     }
 
-    public function edit_product()
-    {
+    // Edit sản phẩm
+
+    // Tất cả màu của sản phẩm
+    public function edit_product_list(Request $request) {
+        $product = Product::find($request->id);
         return view('admin.product.edit', [
             'title' => 'Sản phẩm',
-            'subTitle' => 'Sửa sản phẩm'
+            'subTitle' => 'Sửa sản phẩm',
+            'product' => $product
         ]);
     }
 

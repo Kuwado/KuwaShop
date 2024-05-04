@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.admin {
+    overflow-x: hidden;
+}
+
 /* admin-top */
 .admin-top {
     position: sticky;
@@ -142,11 +146,12 @@
 }
 
 .admin-content .breadcrumb {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 700;
     padding: 10px;
     width: fit-content;
     border-bottom: 2px solid #FF4500;
+    margin-bottom: 30px;
 }
 
 .admin-content .active {
@@ -157,6 +162,14 @@
 
 .admin-content-detail {
     margin: 10px 20px;
+}
+
+.admin-content-detail label,
+#product-type-title,
+#product-discount-title,
+#product-size-title {
+    font-weight: 700;
+    padding-right: 10px;
 }
 
 .admin-content-detail table {
@@ -372,6 +385,12 @@
     font-size: 18px;
 }
 
+#select-color {
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
 .pi {
     padding: 10px 0;
 }
@@ -457,6 +476,7 @@
 }
 
 /* discount*/
+
 .product-discount ul {
     list-style-type: none;
     display: none;
@@ -488,7 +508,16 @@
     color: red;
 }
 
+/* product color */
+.product-color {
+    margin-top: 10px;
+}
+
 /* size */
+.product-size {
+    margin-top: 10px;
+}
+
 .product-size-name {
     width: 50px;
     /* Thiết lập kích thước chiều rộng cho phần tử <span> */
@@ -525,34 +554,24 @@
 }
 
 /* left */
+.pa {
+    margin-bottom: 20px;
+}
+
 .product-text {
-    width: 80%;
-    height: 140px;
-}
-
-.product-text label {
-    padding-left: 10px;
-    padding-bottom: 5px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.product-text textarea {
-    width: 100%;
-    height: 60%;
+    label {
+        margin-bottom: 10px;
+    }
+    textarea {
+        width: 90%;
+    }
 }
 
 .create-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.left-content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
 #create-btn {
@@ -621,6 +640,7 @@
 #product-list-table td:nth-child(2) {
     width: 20%;
     text-align: center;
+
     img {
         width: 150px;
         height: 200px;
@@ -646,16 +666,20 @@
 
 #product-list-table td:nth-child(7) {
     width: 15%;
+
     div {
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
-    .product-edit-btn, .product-delete-btn {
+
+    .product-edit-btn,
+    .product-delete-btn {
         width: 70px;
         height: 45px;
         border: none;
         border-radius: 10px;
+
         &:hover {
             background-color: black;
             color: #FFFAFA;

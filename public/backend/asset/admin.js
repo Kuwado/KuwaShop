@@ -175,14 +175,14 @@ opP.addEventListener("click", function(){
     disN.classList.remove("discount-active");
     disP.classList.add("discount-active");
     closeDiscount();
-    disText.textContent = ": " + opP.textContent;
+    disText.textContent = opP.textContent.toLowerCase();
 });
 
 opN.addEventListener("click", function(){
     disP.classList.remove("discount-active");
     disN.classList.add("discount-active");
     closeDiscount();
-    disText.textContent = ": " + opN.textContent;
+    disText.textContent = opN.textContent.toLowerCase();
 });
 
 function closeDiscount(){
@@ -274,9 +274,14 @@ const selectColor = document.getElementById("select-color");
 const color = document.getElementById("product-color");
 const colorCode = document.getElementById("product-color-code");
 
-
-selectColor.addEventListener('change', function() {
-    var selectedOption = selectColor.options[selectColor.selectedIndex].text; // Sử dụng selectColor thay vì selectElement
+function inputColor() {
+    var selectedOption = selectColor.options[selectColor.selectedIndex].text;
     color.value = selectedOption;
     colorCode.value = selectColor.options[selectColor.selectedIndex].value;
+}
+
+inputColor();
+
+selectColor.addEventListener('change', function() {
+    inputColor();
 });

@@ -1,4 +1,4 @@
-<div>Size và số lượng</div>
+<span id="product-size-title">Size và số lượng:</span>
 <div class="product-size-opt">
   <button type="button" class="product-size-name">S</button>
   <input type="number" id="product-size-s" name="product-size-s" placeholder="Số lượng">
@@ -19,3 +19,4 @@
   <button type="button" class="product-size-name">XXL</button>
   <input type="number" id="product-size-xxl" name="product-size-xxl" placeholder="Số lượng">
 </div>
+

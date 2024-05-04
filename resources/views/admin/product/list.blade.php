@@ -22,7 +22,7 @@
             <td>{{number_format($product->discount_price)}}</td>
             <td>
                 <div>
-                    <a href="/admin/product/edit"><button class="product-edit-btn">Sửa</button></a>
+                    <a href="/admin/product/edit/{{$product->id}}"><button class="product-edit-btn">Sửa</button></a>
                     <button class="product-delete-btn" onclick="removeRow(product_id = {{$product->id}}, url='/admin/product/delete')">Xóa</button>
                 </div>
             </td>

@@ -9,7 +9,7 @@
             <div class="col-6 right-content">
                 <div class="product-name pa">
                     <label for="product-name">Tên sản phẩm:</label>
-                    <input type="text" id="product-name" value="{{old('product-name')}}" name="product-name" placeholder="Nhập tên sản phẩm" required>
+                    <input type="text" id="product-name" value="{{$product->name}}" name="product-name" placeholder="Nhập tên sản phẩm" required>
                 </div>
 
                 <div class="product-price pa">
