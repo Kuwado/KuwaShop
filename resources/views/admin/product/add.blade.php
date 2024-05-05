@@ -19,26 +19,29 @@
 
                 <div class="product-discount pa">
                     <div>
-                        <span id="discount-btn"><span id="product-discount-title">Giảm giá</span><span id="discount-text"></span></span>
-                        <ul>
-                            <li id="discount-option-p">Theo phần trăm</li>
-                            <li id="discount-option-n">Theo giá trị</li>
+                        <span id="discount-btn" onClick="discountHandle()"><span id="product-discount-title">Giảm giá</span><span id="discount-text"></span></span>
+                        <ul id="discount-ul">
+                            <li id="discount-option-p" onClick="discountPercentHandle()">Theo phần trăm</li>
+                            <li id="discount-option-n" onClick="discountNumberHandle()">Theo giá trị</li>
                         </ul>
                     </div>
-                    <div class="discount-p"><input type="text" id="product-discount-p" name="product-discount-p" placeholder="Phần trăm giảm" onchange="handleDiscountP()"><span>%</span></div>
-                    <div class="discount-n"><input type="text" id="product-discount-n" name="product-discount-n" placeholder="Giá sau khi giảm" onchange="handleDiscountN()"><span>đ</span></div>
+                    <div class="discount-p">
+                        <input type="text" id="product-discount-p" name="product-discount-p" placeholder="Phần trăm giảm" onchange="handleDiscountP()"><span>%</span>
+                    </div>
+                    <div class="discount-n">
+                        <input type="text" id="product-discount-n" name="product-discount-n" placeholder="Giá sau khi giảm" onchange="handleDiscountN()"><span>đ</span>
+                    </div>
                     <input type="hidden" name="product-price-discount" id="product-price-discount">
                 </div>
 
                 <div class="product-size pa">
                     @include('admin.product.product_parts.size')
                 </div>
-                
             </div>
     
             <div class="col-6 left-content">
                 <div class="product-type-list pa">
-                    <div id="product-type"><span id="product-type-title"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: </span><span id="product-type-text"></span></div>
+                    <div id="product-type" onclick="productTypeHandle()"><span id="product-type-title"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: </span><span id="product-type-text"></span></div>
                     @include('admin.product.product_parts.type') 
                     <input type ="hidden" name="product-type" id="product-type-input">   
                 </div>
@@ -89,4 +92,7 @@
     <script src="{{asset('backend/asset/Ckeditor5-Kuwashop/script.js')}}"></script>
     <script src="{{asset('backend/asset/admin.js')}}"></script>
     <script src="{{asset('backend/asset/product-ajax.js')}}"></script>
+    <script>
+            inputColor();
+    </script>
 @endsection

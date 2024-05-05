@@ -12,72 +12,63 @@
                     <input type="text" id="product-name" value="{{$product->name}}" name="product-name" placeholder="Nhập tên sản phẩm" required>
                 </div>
 
-                <div class="product-price pa">
-                    <label for="product-price">Giá gốc:</label>
-                    <input type="text" id="product-price" value="{{old('product-price')}}" name="product-price" placeholder="Giá sản phẩm" required><span>đ</span>
-                </div>
-
-                <div class="product-discount pa">
-                    <div>
-                        <span id="discount-btn"><span id="product-discount-title">Giảm giá</span><span id="discount-text"></span></span>
-                        <ul>
-                            <li id="discount-option-p">Theo phần trăm</li>
-                            <li id="discount-option-n">Theo giá trị</li>
-                        </ul>
-                    </div>
-                    <div class="discount-p"><input type="text" id="product-discount-p" name="product-discount-p" placeholder="Phần trăm giảm" onchange="handleDiscountP()"><span>%</span></div>
-                    <div class="discount-n"><input type="text" id="product-discount-n" name="product-discount-n" placeholder="Giá sau khi giảm" onchange="handleDiscountN()"><span>đ</span></div>
-                    <input type="hidden" name="product-price-discount" id="product-price-discount">
-                </div>
-
-                <div class="product-size pa">
-                    @include('admin.product.product_parts.size')
-                </div>
-                
-            </div>
-    
-            <div class="col-6 left-content">
                 <div class="product-type-list pa">
-                    <div id="product-type"><span id="product-type-title"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: </span><span id="product-type-text"></span></div>
+                    <div id="product-type"><span id="product-type-title"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: </span><span id="product-type-text">{{$product->type}}</span></div>
                     @include('admin.product.product_parts.type') 
                     <input type ="hidden" name="product-type" id="product-type-input">   
                 </div>
-
-                <div class="product-color pa">
-                    @include('admin.product.product_parts.color')
-                    <input type="hidden" name="product-color" id="product-color">
-                    <input type="hidden" name="product-color-code" id="product-color-code">
+                
+                <div class="product-price pa">
+                    <label for="product-price">Giá gốc:</label>
+                    <input type="text" id="product-price" value="{{$product->original_price}}" name="product-price" placeholder="Giá sản phẩm" required><span>đ</span>
                 </div>
+
+                <div class="product-discount pa">
+                    <label for="product-price-discount">Giá giảm:</label>
+                    <input type="text" name="product-price-discount" id="product-price-discount" value="{{$product->discount_price}}"><span>đ</span>
+                </div>
+            </div>
     
+            <div class="col-6 left-content">            
                 <div class="product-add-img pa">
                     <label for="img-file">Tải ảnh đại diện</label>
                     <input id="img-file" type="file">
                     <div class="img-list" id="input-file-img">
-    
+                        <img src={{asset($product->image)}}>
                     </div>
                     <input type="hidden" id="product-image" name="product-image">
-                </div>
-
-                <div class="product-add-img pa">
-                    <div>
-                        <label for="img-files">Tải ảnh lên</label>
-                        <input id="img-files" type="file" multiple>
-                    </div>
-                    <div class="img-list" id="input-file-imgs">
-    
-                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="product-intro">
-                @include('admin.product.product_parts.intro')
+                <div class="product-text pa" id="gt">
+                    <label for="gt-text">Giới thiệu: </label><br>
+                    <textarea class="editor" id="gt-text" name="product-gt-text" placeholder=" Giới thiệu về sản phẩm">{{$product->intro}}</textarea>
+                </div>
+                
+                <div class="product-text pa" id="ct">
+                    <label for="ct-text">Thông tin chi tiết: </label><br>
+                    <textarea class="editor" id="ct-text" name="product-ct-text" placeholder=" Thông tin chi tiết sản phẩm">{{$product->detail}}</</textarea>
+                </div>
+                
+                <div class="product-text pa" id="bq">
+                    <label for="bq-text">Bảo quản: </label><br>
+                    <textarea class="editor" id="bq-text" name="product-bq-text" placeholder=" Cách bảo quản sản phẩm">{{$product->preserve}}</</textarea>
+                </div>            
             </div>
 
             <div class="create-btn">
-                <button type="submit" id="create-btn">Tạo sản phẩm</button>
+                <button type="submit" id="create-btn">Sửa thông tin</button>
             </div>
+        </div>
+
+        <div class="row" id="edit-color">
+            <label>Danh sách các màu của sản phẩm:</label>
+            @foreach ($quans as $quan)
+                <a style="background-color: {{$quan->color_code}}" class="edit-color" href="/admin/product/edit/{{$product->id}}/{{$quan->color}}"></a>
+            @endforeach
         </div>
 
         @csrf

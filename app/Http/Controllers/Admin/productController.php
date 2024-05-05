@@ -23,10 +23,24 @@ class ProductController extends Controller
     // Tất cả màu của sản phẩm
     public function edit_product_list(Request $request) {
         $product = Product::find($request->id);
-        return view('admin.product.edit', [
+        $quans = Quan::where('product_id', $request->id)->get();        
+        return view('admin.product.edit.all', [
             'title' => 'Sản phẩm',
-            'subTitle' => 'Sửa sản phẩm',
-            'product' => $product
+            'subTitle' => 'Sửa thông tin sản phẩm',
+            'product' => $product,
+            'quans' => $quans
+        ]);
+    }
+
+    // Edit chi tiết 
+    public function edit_product(Request $request) {
+        $product = Product::find($request->id);
+        $quan = Quan::where('product_id', $request->id)->where('color', $request->color)->first();        
+        return view('admin.product.edit.detail', [
+            'title' => 'Sản phẩm',
+            'subTitle' => 'Sửa số lượng sản phẩm',
+            'product' => $product,
+            'quan' => $quan
         ]);
     }
 

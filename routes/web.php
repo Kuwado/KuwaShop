@@ -20,8 +20,8 @@ Route::get('/admin', function() {
 Route::post('/admin/product/add', [ProductController::class,'insert_product']);
 Route::get('/admin/product/create', [ProductController::class, 'add_product']);
 Route::get('/admin/product/list', [ProductController::class, 'list_product']);
-Route::get('/admin/product/edit/all/{id}', [ProductController::class, 'edit_product_list']);
-Route::get('/admin/product/edit/detail/{color}', [ProductController::class, 'edit_product']);
+Route::get('/admin/product/edit/{id}', [ProductController::class, 'edit_product_list']);
+Route::get('/admin/product/edit/{id}/{color}', [ProductController::class, 'edit_product']);
 Route::get('/admin/product/add_category', [ProductController::class, 'add_category_product']);
 
 Route::get('/admin/product/delete', [ProductController::class, 'delete_product']);
@@ -36,6 +36,6 @@ Route::get('/admin/revenue/month', [RevenueController::class, 'month_revenue']);
 Route::get('/admin/revenue/year', [RevenueController::class, 'year_revenue']);
 Route::get('/admin/revenue/statistic', [RevenueController::class, 'statistic_revenue']);
 
-// Images
+// Images upload
 Route::post('/upload', [UploadController::class,'uploadImage']);
 Route::post('/uploads', [UploadController::class,'uploadImages']);

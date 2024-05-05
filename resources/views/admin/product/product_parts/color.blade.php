@@ -1,5 +1,5 @@
 <label for="select-color">Màu sắc: </label>
-<select id="select-color">
+<select id="select-color" onChange="selectColorHnadle()">
     <option value="#FF0000">Đỏ</option>
     <option value="#0000FF">Xanh lam</option>
     <option value="#00FF00">Lục</option>

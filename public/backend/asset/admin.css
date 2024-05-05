@@ -5,7 +5,8 @@
 }
 
 .admin {
-    overflow-x: hidden;
+    overflow: hidden;
+    background-color: #7FFFD4;
 }
 
 /* admin-top */
@@ -141,7 +142,7 @@
 /* main content */
 
 .admin-content {
-    background-color: aqua;
+    background-color: #66FFFF;
     height: min-content;
 }
 
@@ -469,7 +470,10 @@
     border-bottom: 2px solid black;
 }
 
-#product-price {
+#product-price,
+#product-price-discount,
+#product-discount-p,
+#product-discount-n {
     border: none;
     background-color: transparent;
     border-bottom: 2px solid black;
@@ -562,6 +566,7 @@
     label {
         margin-bottom: 10px;
     }
+
     textarea {
         width: 90%;
     }
@@ -700,4 +705,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* edit */
+.edit-color {
+    text-decoration: none;
+    font-weight: 600;
+    height: 50px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 20px 0 20px 0;
+    border: 2px solid black;
+
+    &:hover {
+        border: 4px solid rgb(22, 9, 104);
+    }
+}
+
+#edit-color {
+    padding: 20px 0;
+    label {
+        margin-bottom: 10px;
+    }
 }

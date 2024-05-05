@@ -44,7 +44,8 @@ const prdTypeInput = document.querySelector("#product-type-input");
 
 let stt = true;
 
-prdBTN.addEventListener("click", function () {
+// Khi ấn nút Loại sản phẩm
+function productTypeHandle() {
     if (stt) {
         iBTN.classList.remove("fa-chevron-down");
         iBTN.classList.add("fa-chevron-up");
@@ -57,7 +58,7 @@ prdBTN.addEventListener("click", function () {
     } else {
        closeMenu();
     }
-});
+};
 
 // Gắn sự kiện click cho từng prdTypeItem
 prdTypeItem.forEach(function (item) {
@@ -149,18 +150,19 @@ function closeMenu(){
 //-------------------------------------------------------------------------------------------------------
 // Discount
 const prdCount = document.querySelector(".product-discount");
-const discountBTN = prdCount.querySelector("#discount-btn");
-const opP = prdCount.querySelector("#discount-option-p");
-const opN = prdCount.querySelector("#discount-option-n");
-const disP = prdCount.querySelector(".discount-p");
-const disN = prdCount.querySelector(".discount-n");
-const discountUL = prdCount.querySelector("ul");
-const disText = prdCount.querySelector("#discount-text");
+const discountBTN = document.querySelector("#discount-btn");
+const opP = document.querySelector("#discount-option-p");
+const opN = document.querySelector("#discount-option-n");
+const disP = document.querySelector(".discount-p");
+const disN = document.querySelector(".discount-n");
+const discountUL = document.querySelector("#discount-ul");
+const disText = document.querySelector("#discount-text");
 const priceDiscount = document.querySelector("#product-price-discount");
 
 let discountSTT = true;
 
-discountBTN.addEventListener("click", function(){
+// Khi ấn nút giảm giá
+function discountHandle() {
     if (discountSTT) {
         discountUL.classList.add("discount-active");
         discountBTN.classList.add("cl-red");
@@ -169,21 +171,21 @@ discountBTN.addEventListener("click", function(){
     else {
         closeDiscount();
     }
-});
+}
 
-opP.addEventListener("click", function(){
+function discountPercentHandle() {
     disN.classList.remove("discount-active");
     disP.classList.add("discount-active");
     closeDiscount();
     disText.textContent = opP.textContent.toLowerCase();
-});
+};
 
-opN.addEventListener("click", function(){
+function discountNumberHandle() {
     disP.classList.remove("discount-active");
     disN.classList.add("discount-active");
     closeDiscount();
     disText.textContent = opN.textContent.toLowerCase();
-});
+};
 
 function closeDiscount(){
     discountUL.classList.remove("discount-active");
@@ -208,7 +210,7 @@ function handleDiscountP() {
         } else {
             // Tính toán giá sản phẩm sau khi áp dụng giảm giá
             var discountedPrice = price - (price * discountValue / 100);
-            priceDiscount.value = discountedPrice.toFixed(2); // Làm tròn giá trị đến 2 chữ số thập phân và gán vào input
+            priceDiscount.value = discountedPrice.toFixed(0); // Làm tròn giá trị đến 2 chữ số thập phân và gán vào input
             
         }
     } else {
@@ -234,7 +236,7 @@ function handleDiscountN() {
         } else {
             // Tính toán giá sản phẩm sau khi áp dụng giảm giá
             var discountedPrice = price - discountValue;
-            priceDiscount.value = discountedPrice.toFixed(2); // Làm tròn giá trị đến 2 chữ số thập phân và gán vào input
+            priceDiscount.value = discountedPrice.toFixed(0); // Làm tròn giá trị đến 2 chữ số thập phân và gán vào input
             
         }
     } else {
@@ -261,14 +263,6 @@ sizeOpt.forEach(s => {
     });
 });
 
-
-// Product-list
-function pDelete(x) {
-    var tr =  x.closest('tr');
-    tr.remove();
-}
-
-
 // Color
 const selectColor = document.getElementById("select-color");
 const color = document.getElementById("product-color");
@@ -280,8 +274,6 @@ function inputColor() {
     colorCode.value = selectColor.options[selectColor.selectedIndex].value;
 }
 
-inputColor();
-
-selectColor.addEventListener('change', function() {
+function selectColorHnadle() {
     inputColor();
-});
+};
