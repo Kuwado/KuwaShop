@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <form action="/admin/product/add" enctype="multipart/form-data" method="post">
+    <form action="/admin/product/update/{{$product->id}}/{{$quan->color}}" enctype="multipart/form-data" method="post">
         <div class="row">
             <div class="col-6 right-content">
                 <div class="product-name pa">
@@ -54,6 +54,7 @@
                         @endphp
                         @foreach ($images as $image)
                             <img src="{{asset($image)}}">
+                            <input type="hidden" value="{{$image}}" class="product-images" name="images[]">
                         @endforeach
                     </div>
                 </div>

@@ -277,3 +277,17 @@ function inputColor() {
 function selectColorHnadle() {
     inputColor();
 };
+
+// Hàm blockColor để vô hiệu hóa các tùy chọn có màu trùng với mảng colors
+function blockColor(colors) {
+    // Duyệt qua từng màu trong mảng colors
+    colors.forEach(color => {
+        // Nếu màu trùng với tùy chọn đã chọn, vô hiệu hóa tùy chọn đó
+        for (var i = 0; i < selectColor.options.length; i++) {
+            if (selectColor.options[i].text === color) {
+                selectColor.options[i].disabled = true;
+                break; // Thoát khỏi vòng lặp sau khi tìm thấy tùy chọn cần vô hiệu hóa
+            }
+        }
+    });
+}

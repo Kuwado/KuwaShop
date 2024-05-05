@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <form action="/admin/product/add" enctype="multipart/form-data" method="post">
+    <form action="/admin/product/update/{{$product->id}}" enctype="multipart/form-data" method="post">
         <div class="row">
             <div class="col-6 right-content">
                 <div class="product-name pa">
@@ -13,9 +13,9 @@
                 </div>
 
                 <div class="product-type-list pa">
-                    <div id="product-type"><span id="product-type-title"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: </span><span id="product-type-text">{{$product->type}}</span></div>
+                    <div id="product-type" onclick="productTypeHandle()"><span id="product-type-title"><i class="fa-solid fa-chevron-down"></i> Loại sản phẩm: </span><span id="product-type-text">{{$product->type}}</span></div>
                     @include('admin.product.product_parts.type') 
-                    <input type ="hidden" name="product-type" id="product-type-input">   
+                    <input type ="hidden" name="product-type" id="product-type-input" value="{{$product->type}}">   
                 </div>
                 
                 <div class="product-price pa">
@@ -29,14 +29,18 @@
                 </div>
             </div>
     
-            <div class="col-6 left-content">            
+            <div class="col-6 left-content">    
+                <div class="edit-add-color">
+                    <a href="/admin/product/more/{{$product->id}}" id="edit-add-color">Thêm màu</a>
+                </div>
+                
                 <div class="product-add-img pa">
                     <label for="img-file">Tải ảnh đại diện</label>
                     <input id="img-file" type="file">
                     <div class="img-list" id="input-file-img">
                         <img src={{asset($product->image)}}>
                     </div>
-                    <input type="hidden" id="product-image" name="product-image">
+                    <input type="hidden" id="product-image" name="product-image" value={{$product->image}}>
                 </div>
             </div>
         </div>
@@ -69,6 +73,10 @@
             @foreach ($quans as $quan)
                 <a style="background-color: {{$quan->color_code}}" class="edit-color" href="/admin/product/edit/{{$product->id}}/{{$quan->color}}"></a>
             @endforeach
+        </div>
+
+        <div id="edit-back-btn">
+            <a href="/admin/product/list" class="admin-back-btn"><i class="fa-solid fa-arrow-left-long"></i><span> Quay lại</span></a>
         </div>
 
         @csrf

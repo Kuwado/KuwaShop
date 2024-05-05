@@ -390,6 +390,7 @@
     background: none;
     border: none;
     border-bottom: 2px solid black;
+    cursor: pointer;
 }
 
 .pi {
@@ -580,8 +581,9 @@
 }
 
 #create-btn {
-    width: 150px;
-    height: 40px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
     border-radius: 20px;
     background-color: cadetblue;
     color: blue;
@@ -724,7 +726,52 @@
 
 #edit-color {
     padding: 20px 0;
+
     label {
         margin-bottom: 10px;
+    }
+}
+
+#edit-back-btn {
+    margin: 20px 0;
+    float: right;
+}
+
+.admin-back-btn {
+    text-decoration: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    border-radius: 15px 0 15px;
+    border: 2px solid #00FF00;
+    background-color: #1b1b23;
+    color: #fafafa;
+
+    &:hover {
+        background-color: #fafafa;
+        color: #1b1b23;
+    }
+}
+
+.edit-add-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#edit-add-color {
+    text-decoration: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    border-radius: 15px 0 15px;
+    border: 2px solid #00FF00;
+    background-image: linear-gradient(to right, #FFFF33, #FF3399);
+    color: black;
+
+    &:hover {
+        color: #3333FF;
+        border: 2px solid #3333FF;
     }
 }

@@ -18,33 +18,16 @@ class ProductController extends Controller
         ]);
     }
 
-    // Edit sản phẩm
-
-    // Tất cả màu của sản phẩm
-    public function edit_product_list(Request $request) {
-        $product = Product::find($request->id);
-        $quans = Quan::where('product_id', $request->id)->get();        
-        return view('admin.product.edit.all', [
+//
+    public function add_category_product()
+    {
+        return view('admin.product.add_category', [
             'title' => 'Sản phẩm',
-            'subTitle' => 'Sửa thông tin sản phẩm',
-            'product' => $product,
-            'quans' => $quans
+            'subTitle' => 'Thêm danh mục sản phẩm'
         ]);
     }
 
-    // Edit chi tiết 
-    public function edit_product(Request $request) {
-        $product = Product::find($request->id);
-        $quan = Quan::where('product_id', $request->id)->where('color', $request->color)->first();        
-        return view('admin.product.edit.detail', [
-            'title' => 'Sản phẩm',
-            'subTitle' => 'Sửa số lượng sản phẩm',
-            'product' => $product,
-            'quan' => $quan
-        ]);
-    }
-
-    // Lấy danh sách sản phẩm
+// Lấy danh sách sản phẩm
     public function list_product() {
         //$products = DB::table('products')->paginate(5);
         $products = Product::all();
@@ -55,15 +38,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function add_category_product()
-    {
-        return view('admin.product.add_category', [
-            'title' => 'Sản phẩm',
-            'subTitle' => 'Thêm danh mục sản phẩm'
-        ]);
-    }
-
-    // Thêm thông tin sản phẩm vào db
+// Thêm thông tin sản phẩm vào db
     private function checkProductNameExists($productName) {
         // Kiểm tra xem sản phẩm có tồn tại trong cơ sở dữ liệu hay không
         $existingProduct = Product::where('name', $productName)->exists();
@@ -153,12 +128,102 @@ class ProductController extends Controller
         return redirect() -> back();
     }
 
+// Xóa sản phẩm
     public function delete_product(Request $request) {
         Product::find($request->product_id)->delete();
         return response() -> json([
             'success' => true
         ]);
     }
+
+// Edit sản phẩm
+    // Tất cả màu của sản phẩm
+    public function edit_product_all(Request $request) {
+        $product = Product::find($request->id);
+        $quans = Quan::where('product_id', $request->id)->get();        
+        return view('admin.product.edit.all', [
+            'title' => 'Sản phẩm',
+            'subTitle' => 'Sửa thông tin sản phẩm',
+            'product' => $product,
+            'quans' => $quans
+        ]);
+    }
+
+    // Edit chi tiết 
+    public function edit_product_detail(Request $request) {
+        $product = Product::find($request->id);
+        $quan = Quan::where('product_id', $request->id)->where('color', $request->color)->first();        
+        return view('admin.product.edit.detail', [
+            'title' => 'Sản phẩm',
+            'subTitle' => 'Sửa số lượng sản phẩm',
+            'product' => $product,
+            'quan' => $quan
+        ]);
+    }
+
+// Update sản phẩm
+    // Update thông tin
+    public function update_product_all(Request $request) {
+        $product = Product::find($request->id);
+        $product->name = $request->input('product-name');
+        $product->image = $request->input('product-image');
+        $product->type = $request->input('product-type');
+        $product->original_price = $request->input('product-price');
+        $product->discount_price = $request->input('product-price-discount');
+        $product->intro = $request->input('product-gt-text');
+        $product->detail = $request->input('product-ct-text');
+        $product->preserve = $request->input('product-bq-text');
+        $product->save();
+        return redirect('/admin/product/list');
+    }
+
+    //Update số lượng
+    public function update_product_detail(Request $request) {
+        $quan = Quan::where('product_id', $request->id)->where('color', $request->color)->first();  
+        $quan->s = $request->input('product-size-s') ?? 0;
+        $quan->m = $request->input('product-size-m') ?? 0;
+        $quan->l = $request->input('product-size-l') ?? 0;
+        $quan->xl = $request->input('product-size-xl') ?? 0;
+        $quan->xxl = $request->input('product-size-xxl') ?? 0;
+        $product_images = implode('*', $request->input('images'));
+        $quan->images = $product_images;
+        $quan->save();  
+        return redirect('/admin/product/edit/' . $quan->product_id);    
+    }
+
+    // Thêm màu cho sản phẩm
+    public function add_color_product(Request $request) {
+        $product = Product::find($request->id);
+        $quans = Quan::where('product_id', $request->id)->get();  
+        $colors = [];
+        foreach ($quans as $quan) {
+            $colors[] = $quan->color;
+        }   
+        return view('admin.product.edit.more', [
+            'title' => 'Sản phẩm',
+            'subTitle' => 'Thêm màu cho sản phẩm',
+            'product' => $product,
+            'colors' => $colors
+        ]);
+    }
+
+    // Post thêm color cho sp
+    public function insert_color_product(Request $request) {
+        $quan = new Quan();
+        $quan->product_id = $request->id;
+        $quan->color = $request->input('product-color');
+        $quan->color_code = $request->input('product-color-code');
+        $quan->s = $request->input('product-size-s') ?? 0; 
+        $quan->m = $request->input('product-size-m') ?? 0;
+        $quan->l = $request->input('product-size-l') ?? 0;
+        $quan->xl = $request->input('product-size-xl') ?? 0;
+        $quan->xxl = $request->input('product-size-xxl') ?? 0;
+        $product_images = implode('*', $request->input('images'));
+        $quan->images = $product_images;
+        $quan->save();
+        return redirect() -> back();
+    }
+
 
 
 
