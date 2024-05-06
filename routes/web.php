@@ -19,6 +19,7 @@ Route::get('/admin', function() {
 //Product
 Route::post('/admin/product/add', [ProductController::class,'insert_product']);
 Route::get('/admin/product/create', [ProductController::class, 'add_product']);
+
 Route::get('/admin/product/list', [ProductController::class, 'list_product']);
 
 Route::get('/admin/product/edit/{id}', [ProductController::class, 'edit_product_all']);
@@ -28,8 +29,7 @@ Route::post('/admin/product/update/{id}/{color}', [ProductController::class,'upd
 Route::get('/admin/product/more/{id}', [ProductController::class, 'add_color_product']);
 Route::post('/admin/product/more/{id}', [ProductController::class, 'insert_color_product']);
 
-
-Route::get('/admin/product/add_category', [ProductController::class, 'add_category_product']);
+Route::get('/admin/product/add/category', [ProductController::class, 'add_category_product']);
 
 Route::get('/admin/product/delete', [ProductController::class, 'delete_product']);
 

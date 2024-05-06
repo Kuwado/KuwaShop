@@ -41,7 +41,7 @@
             <div class="accordion-body">
                 <ul>
                     <li><a href="/admin/product/list"><i class="fa-solid fa-table-list"></i> Xem danh sách sản phẩm</a></li>
-                    <li><a href="/admin/product/add_category"><i class="fa-solid fa-square-plus"></i> Thêm danh mục sản phẩm</a></li>
+                    <li><a href="/admin/product/add/category"><i class="fa-solid fa-square-plus"></i> Thêm danh mục sản phẩm</a></li>
                     <li><a href="/admin/product/create"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a></li>
                 </ul>
             </div>

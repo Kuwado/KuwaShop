@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Quan;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,15 +16,6 @@ class ProductController extends Controller
         return view('admin.product.add', [
             'title' => 'Sản phẩm',
             'subTitle' => 'Thêm sản phẩm'
-        ]);
-    }
-
-//
-    public function add_category_product()
-    {
-        return view('admin.product.add_category', [
-            'title' => 'Sản phẩm',
-            'subTitle' => 'Thêm danh mục sản phẩm'
         ]);
     }
 
@@ -222,6 +214,16 @@ class ProductController extends Controller
         $quan->images = $product_images;
         $quan->save();
         return redirect() -> back();
+    }
+
+// Thêm danh mục sản phẩm
+    public function add_category_product() {
+        $types = DB::table('types')->get();
+        return view('admin.product.category.add', [
+            'title' => 'Sản phẩm',
+            'subTitle' => 'Thêm danh mục sản phẩm',
+            'types' => $types
+        ]);
     }
 
 
