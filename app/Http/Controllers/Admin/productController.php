@@ -5,15 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Quan;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function add_product()
-    {
+    public function add_product() {
+        $types = Type::all();
         return view('admin.product.add', [
             'title' => 'Sản phẩm',
-            'subTitle' => 'Thêm sản phẩm'
+            'subTitle' => 'Thêm sản phẩm',
+            'types' => $types
         ]);
     }
 
@@ -131,12 +133,14 @@ class ProductController extends Controller
     // Tất cả màu của sản phẩm
     public function edit_product_all(Request $request) {
         $product = Product::find($request->id);
-        $quans = Quan::where('product_id', $request->id)->get();        
+        $quans = Quan::where('product_id', $request->id)->get(); 
+        $types = Type::all();       
         return view('admin.product.edit.all', [
             'title' => 'Sản phẩm',
             'subTitle' => 'Sửa thông tin sản phẩm',
             'product' => $product,
-            'quans' => $quans
+            'quans' => $quans,
+            'types' => $types
         ]);
     }
 

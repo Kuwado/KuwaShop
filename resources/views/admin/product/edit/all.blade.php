@@ -1,7 +1,4 @@
 @extends('admin.main')
-@section('head')
-    <link rel="stylesheet" href="{{asset('backend/asset/Ckeditor5-Kuwashop/styles.css')}}">
-@endsection
 
 @section('content')
     <form action="/admin/product/update/{{$product->id}}" enctype="multipart/form-data" method="post">

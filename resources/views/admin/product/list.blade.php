@@ -6,6 +6,7 @@
         <th>STT</th>
         <th>Hình ảnh</th>
         <th>Tên sản phẩm</th>
+        <th>Loại sản phẩm</th>
         <th>Ngày tạo</th>
         <th>Giá gốc</th>
         <th>Giá giảm</th>
@@ -17,6 +18,7 @@
             <td>{{$product->id}}</td>
             <td><img src="{{asset($product->image)}}"></td>
             <td>{{$product->name}}</td>
+            <td>{{$product->type}}</td>
             <td>{{$product->created_at}}</td>
             <td>{{number_format($product->original_price)}}</td>
             <td>{{number_format($product->discount_price)}}</td>

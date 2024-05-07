@@ -1,7 +1,4 @@
 @extends('admin.main')
-@section('head')
-    <link rel="stylesheet" href="{{asset('backend/asset/Ckeditor5-Kuwashop/styles.css')}}">
-@endsection
 
 @section('content')
     <form action="" enctype="multipart/form-data" method="post">
@@ -9,7 +6,7 @@
             <div class="col-6 right-content">
                 <div class="product-name pa">
                     <label>Tên sản phẩm:</label>
-                    <span style="width: fit-content">{{$product->name}}</span>
+                    <a href="/admin/product/edit/{{$product->id}}" class="name-back"><span style="width: fit-content">{{$product->name}}</span></a>
                 </div>
                 
                 <div class="product-size pa">

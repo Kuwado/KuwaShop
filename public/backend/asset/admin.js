@@ -286,6 +286,7 @@ function blockColor(colors) {
         for (var i = 0; i < selectColor.options.length; i++) {
             if (selectColor.options[i].text === color) {
                 selectColor.options[i].disabled = true;
+                selectColor.options[i].style.color = "black";
                 break; // Thoát khỏi vòng lặp sau khi tìm thấy tùy chọn cần vô hiệu hóa
             }
         }
