@@ -840,7 +840,7 @@
 
 .category-sub-content-mini {
     min-height: 50px;
-    border-left :1px solid black;
+    border-left: 1px solid black;
 }
 
 .category-mini {
@@ -854,6 +854,7 @@
 .category-mini-content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     min-height: 50px;
 }
 
@@ -869,25 +870,54 @@
 
 .category-more {
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
     margin: 20px 0;
 }
 
-.category-more-btn {
+.category-more button,
+.category-button button {
     height: 50px;
     width: 50px;
-    border-radius: 50% ;
+    border-radius: 50%;
     border: 2px solid #FF1493;
     background-color: #1b1b23;
     color: #fafafa;
+
     &:hover {
-        border: 2px solid #3333FF;
-        background-color: #fafafa;
+        border: 2px solid #3333FF !important;
+        background-color: #fafafa !important;
         color: #1b1b23;
     }
 }
 
+.category-more button:last-child,
+.category-delete-btn {
+    background-color: #ad3b2e !important;
+    border: 2px solid #470629 !important;
+}
+
 .add-detail {
     margin: 10px 0;
+}
+
+.type-name {
+    display: flex;
+    flex-direction: column;    
+    color: #2527a1;
+}
+
+.category-button button {
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.category-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-button button:nth-child(2) {
+    margin-left: 30px !important;
 }

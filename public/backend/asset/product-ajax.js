@@ -53,7 +53,7 @@ $('#img-file').on('change', () => {
 
 // Xóa dữ liệu trong db
 function removeRow(product_id, url) {
-    if (confirm('Xác nhận xóa')) {
+    if (confirm('Bạn có chắc muốn xóa sản phẩm này không?')) {
         $.ajax({
             url: url,
             data: { product_id },

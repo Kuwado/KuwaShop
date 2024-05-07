@@ -9,15 +9,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
         
-                <div class="modal-body type-body">
-                    <div class="category-more">
-                        <button type="button" class="category-more-btn" onClick="moreType()"><i class="fa-solid fa-plus"></i></button>
+                <div class="modal-body">
+                    <div id="type-body">
+                        <div class="add-detail">
+                            <label>Tên Type: </label>
+                            <input type="text" name="types[]" class="category-add-input">
+                        </div>  
                     </div>
 
-                    <div class="add-detail">
-                        <label>Tên Type: </label>
-                        <input type="text" name="types[]" class="category-add-input">
-                    </div>     
+                    <div class="category-more">
+                        <button type="button" class="category-more-btn" onClick="moreType()"><i class="fa-solid fa-plus"></i></button>
+                        <button type="button" class="category-less-btn" onClick="lessType('type')"><i class="fa-solid fa-minus"></i></button>
+                    </div>
+
                 </div>
         
                 <div class="modal-footer">
@@ -27,5 +31,6 @@
             </div>
         </div>
     </div>
+    @csrf
 </form>
 

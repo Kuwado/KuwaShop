@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Quan;
-use App\Models\Type;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -19,7 +17,7 @@ class ProductController extends Controller
         ]);
     }
 
-// Lấy danh sách sản phẩm
+// Lấy danh sách sản phẩm --------------------------------------------------------------------------------------------------
     public function list_product() {
         //$products = DB::table('products')->paginate(5);
         $products = Product::all();
@@ -30,7 +28,8 @@ class ProductController extends Controller
         ]);
     }
 
-// Thêm thông tin sản phẩm vào db
+
+// Thêm thông tin sản phẩm vào db --------------------------------------------------------------------------------------------------
     private function checkProductNameExists($productName) {
         // Kiểm tra xem sản phẩm có tồn tại trong cơ sở dữ liệu hay không
         $existingProduct = Product::where('name', $productName)->exists();
@@ -120,7 +119,7 @@ class ProductController extends Controller
         return redirect() -> back();
     }
 
-// Xóa sản phẩm
+// Xóa sản phẩm --------------------------------------------------------------------------------------------------
     public function delete_product(Request $request) {
         Product::find($request->product_id)->delete();
         return response() -> json([
@@ -128,7 +127,7 @@ class ProductController extends Controller
         ]);
     }
 
-// Edit sản phẩm
+// Edit sản phẩm --------------------------------------------------------------------------------------------------
     // Tất cả màu của sản phẩm
     public function edit_product_all(Request $request) {
         $product = Product::find($request->id);
@@ -153,7 +152,7 @@ class ProductController extends Controller
         ]);
     }
 
-// Update sản phẩm
+// Update sản phẩm --------------------------------------------------------------------------------------------------
     // Update thông tin
     public function update_product_all(Request $request) {
         $product = Product::find($request->id);
@@ -183,7 +182,7 @@ class ProductController extends Controller
         return redirect('/admin/product/edit/' . $quan->product_id);    
     }
 
-    // Thêm màu cho sản phẩm
+// Thêm màu cho sản phẩm --------------------------------------------------------------------------------------------------
     public function add_color_product(Request $request) {
         $product = Product::find($request->id);
         $quans = Quan::where('product_id', $request->id)->get();  
@@ -215,18 +214,6 @@ class ProductController extends Controller
         $quan->save();
         return redirect() -> back();
     }
-
-// Thêm danh mục sản phẩm
-    public function add_category_product() {
-        $types = DB::table('types')->get();
-        return view('admin.product.category.add', [
-            'title' => 'Sản phẩm',
-            'subTitle' => 'Thêm danh mục sản phẩm',
-            'types' => $types
-        ]);
-    }
-
-
 
 
 }
