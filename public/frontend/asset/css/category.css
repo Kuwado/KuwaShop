@@ -1,0 +1,229 @@
+/* breadcrumb */
+
+.breadcrumb {
+    font-size: 15px;   
+    color:black;
+    font-weight: 500;     
+    padding: 10px; 
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-category {
+    border-radius: 10px 2px 10px 2px;
+    border: solid 2px blue;
+    width: 50px;
+    margin: 5px 5px;
+}
+
+.btn-category:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.category-search-btn, .category-cancel-btn {
+    border-radius: 2px 10px 2px 10px;
+    border: solid 2px yellowgreen;
+    margin: 10px 10px;
+}
+
+.category-search-btn:hover, .category-cancel-btn:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+/* Products */
+.product-img {
+    width: 100%;
+    /* Đảm bảo phần tử chứa hình ảnh mở rộng ra toàn bộ chiều rộng của nó */
+    height: 400px;
+    /* Hoặc bất kỳ chiều cao nào khác mà bạn muốn */
+    object-fit: cover;
+}
+
+.product-img-first {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.product-img-second {
+    position: relative;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.product-img-first:hover {
+    opacity: 0;
+}
+
+.product-img-first:hover+.product-img-second {
+    opacity: 1;
+}
+
+
+.product {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+.ticket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    padding: 7px 18px 7px 15px;
+    text-transform: uppercase;
+    border-radius: 5px 0px 5px 0px;
+    color: red;
+    z-index: 4;
+
+}
+
+.color-bar {
+    display: flex;
+}
+
+.color-dot .fa-check {
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    visibility: hidden;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.product-name {
+    font-size: 24px;
+    color: bisque;
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+
+}
+
+.product-name:hover {
+    color: blueviolet;
+}
+
+.favorite {
+    margin-left: auto;
+    /* Đẩy biểu tượng trái tim sang phải */
+    margin-right: 5px;
+    /* Để cách biểu tượng trái tim với phần còn lại của hàng */
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+}
+
+.favorite-icon:hover {
+    color: cyan;
+}
+
+.discount-price {
+    font-size: 20px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.original-price {
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.product-cart-icon {
+    background-color: aqua;
+    bottom: 0;
+    /* Đặt ở phía dưới cùng */
+    right: 0;
+    /* Đặt ở phía bên phải */
+    position: absolute;
+    cursor: pointer;
+    border-radius: 5px 0px 5px 0px;
+    width: 45px;
+    height: 45px;
+    border: solid 2px #FF7F50;
+}
+
+.product-cart-icon i {
+    position: relative;
+    /* Đặt vị trí tương đối để có thể sử dụng transform */
+    top: 50%;
+    /* Dịch chuyển phần tử đi 50% của kích thước của nó theo trục y */
+    left: 50%;
+    /* Dịch chuyển phần tử đi 50% của kích thước của nó theo trục x */
+    transform: translate(-50%, -50%);
+    /* Dịch chuyển phần tử đi -50% của kích thước của chính nó theo cả hai trục */
+    font-size: 20px;
+}
+
+.product-cart-icon:hover {
+    background-color: white;
+
+    i {
+        color: black;
+    }
+}
+
+.size-option {
+    bottom: 0px;
+    /* Đặt ở phía dưới cùng */
+    right: 0;
+    /* Đặt ở phía bên phải */
+    position: absolute;
+    background-color: azure;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    /* Sử dụng flexbox để căn chỉnh các phần tử */
+    flex-direction: column;
+    /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: center;
+    /* Căn các phần tử con vào giữa theo chiều ngang */
+    visibility: hidden;
+    transition: bottom 0.5s ease;
+    z-index: 3;
+}
+
+.size-option .row {
+    height: 20%;
+    /* Chiều cao của mỗi row bằng với chiều cao của size-option */
+    width: 100%;
+}
+
+.btn-size {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+}
+
+.btn-size:hover {
+    color: #FFA07A;
+}
+
+.straight-line {
+    border-bottom: solid 1px black;
+    opacity: 0.3;
+}

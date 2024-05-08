@@ -1,0 +1,70 @@
+.order {
+    margin: 110px 0 0 0;
+}
+
+.order-address-text {
+    border-radius: 20px 0 20px 0;
+    border: 2px solid #dddddd;
+    padding: 10px;
+}
+
+.order-address-text p span {
+    font-weight: 500;   
+}
+
+.order-address-add-btn {
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px 0 10px 0;
+    margin: 10px 5px;
+    background-color: black;
+    color: white;
+}
+
+.order-address-add-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.order-delivery-method-option {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 15px 0 15px 0;
+    border: 2px solid #dddddd;
+}
+
+.order-pay-method {
+    margin: 10px;
+}
+
+.order-pay-method-option {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
+    margin-right: 30px;
+    border-radius: 25px 0 25px 0;
+    border: 2px solid #dddddd;
+}
+
+.order-pay-method-option label {
+    margin: 5px 0;
+}
+
+/* order btn */
+.order-btn {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border-radius: 10px 0 10px 0;
+    text-decoration: none;
+    margin: 5px 15px 20px 15px;
+}
+
+.order-btn:hover {
+    background-color: white;
+    color: black;
+}

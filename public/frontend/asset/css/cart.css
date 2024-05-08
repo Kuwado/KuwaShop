@@ -1,0 +1,237 @@
+.cart {
+    margin: 110px 0 0 0;
+}
+
+/* cart left */
+
+.cart-left {
+    background-color: azure;
+    padding: 25px 10px 10px 10px;
+}
+
+/* cart status */
+.cart-status-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    margin: 30px 0 0 0;
+    border-radius: 10px 0 10px 0;
+    border: 2px solid #dddddd;
+}
+
+.cart-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Các phần tử được căn đều với khoảng cách đều giữa chúng */
+    height: 2px;
+    width: 90%;
+    background-color: #dddddd;
+}
+
+.cart-status-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    color: #dddddd;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #dddddd;
+}
+
+.cart-status-text {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Các phần tử được căn đều với khoảng cách đều giữa chúng */
+    width: 96%;
+}
+
+.cart-status-text p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.cart-active {
+    border-color: blue;
+    color:blue;
+}
+
+.cart-active-done {
+    border-color: black;
+    color: black;
+}
+
+.cart-quan {
+    color: brown;
+    font-weight: 500;
+}
+
+
+/* cart product */
+
+.cart-product th {
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dddddd;
+    margin-bottom: 10px;
+}
+
+.cart-product img {
+    height: 200px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.cart-product tr {
+    border-bottom: 2px solid #dddddd;
+}
+
+.cart-product td {
+    height: 220px;
+    margin-bottom: 2px solid #dddddd;
+}
+
+.cart-product td:first-child {
+    width: 170px;
+}
+
+.cart-product td:nth-child(2) {
+    width: 210px;
+    padding-right: 20px;
+    a {
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 500;
+        color: black;
+    }
+
+}
+
+.cart-product td:nth-child(3) {
+    width: 140px;
+    padding-right: 20px;
+
+}
+
+.cart-product td:nth-child(4) {
+    width: 140px;
+    padding-right: 20px;
+
+}
+
+.cart-product td:nth-child(5) {
+    width: 144px;
+    padding-right: 20px;
+    div {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+.cart-product td:nth-child(6) {
+    width: 40px;
+    i {
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
+
+/* back button */
+
+.cart-product-back-btn {
+    display: inline-block; /* Đảm bảo rằng div chỉ chiếm đúng độ rộng của nội dung bên trong */
+    margin: 20px 10px;
+}
+
+.cart-product-back-btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 10px 0 10px 0;
+    border: 2px solid black;
+}
+
+.cart-product-back-btn button {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cart-product-back-btn a:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* cart right */
+
+.cart-right {
+    background-color: blanchedalmond;
+    padding: 25px 10px 10px 10px;
+    height: fit-content;
+}
+
+.cart-right th {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+
+.cart-right td {
+    font-size: 18px;
+}
+
+.cart-right td:first-child {
+    width: 210px;
+    padding-left: 10px;
+}
+
+.cart-right td:nth-child(2) {
+    width: 210px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.cart-right tr:first-child {
+    border-bottom: 2px solid #dddddd;
+}
+
+.cart-right tr:nth-child(2) td {
+    padding-top: 10px;
+}
+
+.cart-right tr:last-child td {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dddddd;
+}
+
+.cart-right-price {
+    font-weight: 500;
+    color: blueviolet;
+}
+
+/* order btn */
+.cart-order-btn {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border-radius: 10px 0 10px 0;
+    text-decoration: none;
+    margin: 5px 15px 20px 15px;
+}
+
+.cart-order-btn:hover {
+    background-color: white;
+    color: black;
+}
