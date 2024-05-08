@@ -25,7 +25,11 @@
                     $quans = DB::table('quans')->where('product_id', $product->id)->get();
                 @endphp
                 @foreach ($quans as $quan)
-                    <span class="color-dot" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check show"></i></span>
+                    @if ($quan->color === "Đen")
+                        <span class="color-dot" style="background-color: {{$quan->color_code}}; border: 1px solid #fafafa"><i class="fa-solid fa-check show" style="color: #fafafa"></i></span>
+                    @else
+                        <span class="color-dot" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check show"></i></span>
+                    @endif
                 @endforeach
             </div>
 
