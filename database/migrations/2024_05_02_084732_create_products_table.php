@@ -22,6 +22,10 @@ return new class extends Migration
             $table->longText('intro');
             $table->longText('detail');
             $table->longText('preserve');
+            $table->integer('sold_quantity')->default(0);
+            $table->boolean('hot')->default(false);
+            $table->boolean('new')->default(true);
+            $table->string('sale')->default("none");
             $table->timestamps();
         });
     }

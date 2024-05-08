@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Không cho phép cuộn ngang */
+}
+
+header {
+    z-index: 10;
+    height: 100px;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #30cfd0, #330867);
+    /* dải màu từ A -> B */
+    padding: 0 !important;
+}
+
+/*------------------------------------------------- icon ------------------------------------------------------------------------ */
+.nvicon {
+    color: #fff;
+    font-size: 20px;
+}
+
+.fa-bars {
+    color: #fff;
+    font-size: 30px;
+}
+
+.nav-btn {
+    padding: 0 15px;
+
+    .bg-primary {
+        background-color: #e5345b !important;
+    }
+}
+
+.nav-btn:hover .nvicon {
+    color: #8B0000;
+}
+
+
+/* search bar */
+.sf {
+    padding: 0 20px;
+}
+
+#search-btn {
+    color: bisque;
+}
+
+#search-input {
+    background: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #fafafa;
+}
+
+/* ----------------------------------------------------------------- logo ---------------------------------------------------- */
+#logo-image {
+    width: 100px;
+    height: 100px;
+    padding-left: 10px;
+}
+
+/* --------------------------------------------------------------- menu bar ------------------------------------------------------ */
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.nav-item:hover {
+
+    color: red !important;
+
+    .dropdown-menu {
+        visibility: visible;
+    }
+}
+
+/* menu detail */
+.contact-menu {
+    visibility: hidden;
+    position: absolute;
+    background-color: #F0FFFF;
+    padding: 10px;
+    border: 2px solid aqua;
+    transition: margin 0.5s ease;
+    /* Hiệu ứng transition */
+    margin-top: 50px;
+    list-style: none;
+    /* Xóa chấm tròn trong danh sách */
+    line-height: 2;
+    /* Đặt khoảng cách giữa các hàng là 2 lần chiều cao của phông chữ */
+
+}
+
+.contact:hover {
+    .contact-menu {
+        visibility: visible;
+        margin-top: 0;
+    }
+
+    .nav-link {
+        color: red !important;
+    }
+}
+
+.contact-menu:hover {
+    visibility: visible;
+    margin-top: 0;
+}
+
+/* sub menu */
+.contact-sub-menu {
+    list-style: none;
+    /* Loại bỏ chấm tròn */
+    line-height: 1.8;
+    /* Đặt khoảng cách giữa các hàng là 1.8 lần chiều cao của phông chữ */
+}
+
+.contact-item {
+    text-decoration: none;
+    /* Loại bỏ gạch chân */
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+}
+
+.contact-item:hover {
+    color: #FF4500;
+}
+
+.contact-sub-item {
+    text-decoration: none;
+    /* Loại bỏ gạch chân */
+    font-size: 16px;
+    color: black;
+}
+
+.contact-sub-item:hover {
+    color: #FF4500;
+}

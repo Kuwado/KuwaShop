@@ -1,0 +1,131 @@
+/* ---------------------------------------------------------------- color ----------------------------------------------------------*/
+.bg-red {
+    background-color: red;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-bisque {
+background-color: rgba(255, 228, 196, 0.2); /* Màu bisque với độ trong suốt 50% */
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+
+.bg-aqua {
+    background-color: aqua;
+}
+
+.bg-antiquewhite {
+    background-color: antiquewhite;
+}
+
+.cl-red {
+    color: red !important;
+}
+
+.cl-black {
+    color: black;
+}
+
+.cl-antiquewhite{
+    color: antiquewhite;
+}
+
+.cl-white {
+    color: white !important;
+}
+
+.cl-brown {
+    color: brown !important;
+}
+
+.red-text {
+    color: red !important;
+}
+
+
+
+
+/* ------------------------------------------------------ format ---------------------------------------*/
+/* ẩn hiện */
+.show {
+    visibility: visible !important;
+}
+
+/* ngăn không cho click vào class a */
+.disble-a {
+    pointer-events: none;
+}
+
+.same-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.centerX {
+    display: flex;
+    align-items: center;
+}
+
+.centerY {
+    display: flex;
+    justify-content: center;
+}
+
+.centerXY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border-all {
+    border: 2px solid rgba(0, 0, 0, 0.5); /* Màu đen với độ mờ 50% */
+}
+
+
+
+
+/* ------------------------------------------ Button ----------------------------------------------------------------------------*/
+/* */
+.view-all {
+    background-color: aqua;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 24px 0px;
+    border: 1px solid #FF69B4;
+}
+
+.view-all:hover {
+    background-color: black;
+    color: white;
+}

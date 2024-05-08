@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    color: black !important;
+}
+
 .admin {
     overflow: hidden;
     background-color: #7FFFD4;
@@ -639,6 +643,10 @@
     border-bottom: 2px solid black;
 }
 
+#product-list-table td {
+    word-wrap: break-word;
+}
+
 #product-list-table td:first-child {
     width: 3%;
     text-align: center;
@@ -657,10 +665,12 @@
 
 #product-list-table td:nth-child(3) {
     width: 20%;
+    max-width: 210px;
 }
 
 #product-list-table td:nth-child(4) {
     width: 15%;
+    max-width: 150px;
 }
 
 #product-list-table td:nth-child(5) {

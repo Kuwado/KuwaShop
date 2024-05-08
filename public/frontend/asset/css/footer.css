@@ -1,0 +1,99 @@
+/* footer */
+.footer-top {
+    background-color: #FFE4E1;
+}
+
+.footer-bottom {
+    background-image: url(../Images/Background/bg_namek.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-img {
+    width: 150px;
+}
+
+.footer-list-item a {
+    color: black;
+}
+
+.footer-list-item a:hover {
+    color: red;
+}
+
+.footer-icon {
+    width: auto;
+    height: 30px;
+}
+
+/* form */
+.footer-register-form {
+    background-color: #FFFFFF !important;
+    border-radius: 56px 0px;
+    justify-content: center;
+    margin: 5px 20px;
+    border: 2px solid salmon;
+}
+
+.title-footer {
+    color: #00008B;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 5px 5px 5px 30px;
+}
+
+.footer-subscribe {
+    margin: 15px 30px 15px 15px;
+
+}
+
+.footer-btn-submit input {
+    border-radius: 20px 0px;
+    background-color: pink;
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+
+.footer-btn-submit:hover input {
+    background-color: black;
+    color: white;
+}
+
+#footer-email-subscribe {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.footer-last-img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-subscribe-notice {
+    left: 77%;
+    right: 5%;
+    z-index: 10;
+    padding: 5px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    visibility: hidden;
+    transition: visibility;
+}
+
+.footer-icon-notice {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.img-goku-frieza {
+    width: 450px;
+    height: auto;
+}
+
+.footer-text {
+    background-color: black;
+}
