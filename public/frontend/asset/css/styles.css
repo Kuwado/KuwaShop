@@ -1,3 +1,60 @@
+/* --------------------------------------------------------------- var ------------------------------------------------------------ */
+:root {
+    --hv-main: white;
+    --hv-extra: #EA4C89;
+
+
+
+    --cl-main: #00ccff;
+    --cl-extra: #1b337f;
+    --cl-light: #F7F7F7;
+    --cl-dark: #1b1b32;
+    --cl-main-op-25: rgba(0, 204, 255, 0.25);
+    --cl-main-op-50: rgba(0, 204, 255, 0.5);
+    --cl-main-op-75: rgba(0, 204, 255, 0.75);
+    --cl-extra-op-25: rgba(27, 51, 127, 0.25);
+    --cl-extra-op-50: rgba(27, 51, 127, 0.5);
+    --cl-extra-op-75: rgba(27, 51, 127, 0.75);
+}
+
+:root {
+    --cl-main: #1b337f;
+    --cl-extra: #00ccff;
+    --cl-light: #1b1b32;
+    --cl-dark: #F7F7F7;
+    --cl-main-op-25: rgba(27, 51, 127, 0.25);
+    --cl-main-op-50: rgba(27, 51, 127, 0.5);
+    --cl-main-op-75: rgba(27, 51, 127, 0.75);
+    --cl-extra-op-25: rgba(0, 204, 255, 0.25);
+    --cl-extra-op-50: rgba(0, 204, 255, 0.5);
+    --cl-extra-op-75: rgba(0, 204, 255, 0.75);
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+    padding-top: 100px;
+    background-color: var(--cl-light);
+    color: var(--cl-extra);
+}
+
+
+
 /* ---------------------------------------------------------------- color ----------------------------------------------------------*/
 .bg-red {
     background-color: red;
@@ -71,9 +128,6 @@ background-color: rgba(255, 228, 196, 0.2); /* Màu bisque với độ trong su�
     color: red !important;
 }
 
-
-
-
 /* ------------------------------------------------------ format ---------------------------------------*/
 /* ẩn hiện */
 .show {
@@ -114,18 +168,100 @@ background-color: rgba(255, 228, 196, 0.2); /* Màu bisque với độ trong su�
 
 
 /* ------------------------------------------ Button ----------------------------------------------------------------------------*/
-/* */
-.view-all {
-    background-color: aqua;
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 24px 0px;
-    border: 1px solid #FF69B4;
+.small-btn,
+.medium-btn,
+.large-btn {
+    font-weight: 700;
+    border: none;
+    transition: box-shadow 0.3s ease;
 }
 
-.view-all:hover {
+.small-btn {
+    font-size: 14px;
+    border-radius: 10px 0 10px 0;
+    padding: 8px 12px;
+}
+
+.medium-btn {
+    font-size: 16px;
+    border-radius: 15px 0 15px 0;
+    padding: 10px 15px;
+}
+
+.large-btn {
+    font-size: 18px;
+    border-radius: 20px 0 20px 0;
+    padding: 15px 20px;
+}
+
+.small-btn:hover {
+    box-shadow: 0px 3px 3px var(--cl-extra-op-25);
+}
+
+.medium-btn:hover {
+    box-shadow: 0px 4px 4px var(--cl-extra-op-25);
+}
+
+.large-btn:hover {
+    box-shadow: 0px 5px 5px var(--cl-extra-op-25);
+}
+
+.small-btn.border-btn {
+    border: 2px solid;
+}
+
+.medium-btn.border-btn {
+    border: 3px solid;
+}
+
+.large-btn.border-btn {
+    border: 4px solid;
+}
+
+.transparent-btn {
+    background-color: transparent !important;
+}
+
+.transparent-btn:hover {
+    background-color: var(--cl-extra) !important;
+    color: white !important;
+}
+/* color-button */
+.dark-blue-btn {
+    background-color: var(--cl-extra);
+    color: white;
+}
+
+.dark-blue-btn:hover,
+.dark-blue-btn.active {
+    background-color: white;
+    color: var(--cl-extra);
+}
+
+.light-blue-btn {
+    background-color: var(--cl-main);
+    color: white;
+}
+
+.light-blue-btn:hover,
+.light-blue.active {
+    background-color: white;
+    color: var(--cl-main);
+}
+
+.black-btn {
     background-color: black;
     color: white;
+    border-color: #EA4C89 !important;
+}
+
+.black-btn:hover,
+.black-btn.active {
+    background-color: white;
+    color: black;
+    border-color: #EA4C89;
+}
+
+.black-btn.active, .white-btn.active, .pink-btn.active {
+    cursor: default;
 }

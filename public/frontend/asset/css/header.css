@@ -1,106 +1,25 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    overflow-x: hidden; /* Không cho phép cuộn ngang */
-}
-
 header {
     z-index: 10;
-    height: 100px;
 }
 
 .navbar {
-    background-image: linear-gradient(to right, #30cfd0, #330867);
-    /* dải màu từ A -> B */
+    /* background-image: linear-gradient(to right,#00ccff, #1b337f ); */
+    background-color: var(--cl-main);
     padding: 0 !important;
-}
-
-/*------------------------------------------------- icon ------------------------------------------------------------------------ */
-.nvicon {
-    color: #fff;
-    font-size: 20px;
-}
-
-.fa-bars {
-    color: #fff;
-    font-size: 30px;
-}
-
-.nav-btn {
-    padding: 0 15px;
-
-    .bg-primary {
-        background-color: #e5345b !important;
-    }
-}
-
-.nav-btn:hover .nvicon {
-    color: #8B0000;
-}
-
-
-/* search bar */
-.sf {
-    padding: 0 20px;
-}
-
-#search-btn {
-    color: bisque;
-}
-
-#search-input {
-    background: none;
-    border: none;
-    border-radius: 0;
-    border-bottom: 2px solid #fafafa;
+    box-shadow: 0px 2px 2px var(--cl-extra-op-25);
+    height: 100px;
 }
 
 /* ----------------------------------------------------------------- logo ---------------------------------------------------- */
 #logo-image {
-    width: 100px;
-    height: 100px;
-    padding-left: 10px;
+    width: 80px;
+    height: 80px;
 }
 
 /* --------------------------------------------------------------- menu bar ------------------------------------------------------ */
 
-.navbar-nav li {
+.contact {
     padding: 0 10px;
-}
-
-.nav-link {
-    color: #ffffff !important;
-    font-weight: 600;
-}
-
-.nav-item:hover {
-
-    color: red !important;
-
-    .dropdown-menu {
-        visibility: visible;
-    }
-}
-
-/* menu detail */
-.contact-menu {
-    visibility: hidden;
-    position: absolute;
-    background-color: #F0FFFF;
-    padding: 10px;
-    border: 2px solid aqua;
-    transition: margin 0.5s ease;
-    /* Hiệu ứng transition */
-    margin-top: 50px;
-    list-style: none;
-    /* Xóa chấm tròn trong danh sách */
-    line-height: 2;
-    /* Đặt khoảng cách giữa các hàng là 2 lần chiều cao của phông chữ */
-
 }
 
 .contact:hover {
@@ -110,8 +29,27 @@ header {
     }
 
     .nav-link {
-        color: red !important;
+        color: var(--hv-main) !important;
     }
+}
+
+.nav-link {
+    color: var(--cl-extra) !important;
+    font-weight: 700;
+}
+
+/* menu detail */
+.contact-menu {
+    visibility: hidden;
+    position: absolute;
+    background-color: var(--cl-light);
+    padding: 20px;
+    border: 3px solid var(--cl-extra);
+    transition: margin 0.5s ease;
+    margin-top: 50px;
+    line-height: 2;
+    /* Đặt khoảng cách giữa các hàng là 2 lần chiều cao của phông chữ */
+    border-radius: 20px 0 20px 0;
 }
 
 .contact-menu:hover {
@@ -121,31 +59,361 @@ header {
 
 /* sub menu */
 .contact-sub-menu {
-    list-style: none;
-    /* Loại bỏ chấm tròn */
     line-height: 1.8;
-    /* Đặt khoảng cách giữa các hàng là 1.8 lần chiều cao của phông chữ */
 }
 
 .contact-item {
-    text-decoration: none;
-    /* Loại bỏ gạch chân */
-    font-size: 17px;
     font-weight: bold;
-    color: black;
-}
-
-.contact-item:hover {
-    color: #FF4500;
+    color: var(--cl-extra);
 }
 
 .contact-sub-item {
-    text-decoration: none;
-    /* Loại bỏ gạch chân */
-    font-size: 16px;
-    color: black;
+    color: var(--cl-extra);
 }
 
+.contact-item:hover,
 .contact-sub-item:hover {
-    color: #FF4500;
+    color: var(--hv-extra);
+}
+
+/*------------------------------------------------- icon ------------------------------------------------------------------------ */
+#tool {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nvicon {
+    color: var(--cl-extra);
+    font-size: 24px;
+}
+
+.fa-bars {
+    color: var(--cl-extra);
+    font-size: 30px;
+}
+
+.nav-btn {
+    padding: 5px;
+}
+
+.nav-btn div {
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5345b;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    top: -40%;
+    left: 80%;
+}
+
+.nav-btn div span {
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+.nav-btn:hover .nvicon {
+    color: var(--hv-main);
+}
+
+/* search bar */
+#search-bar {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+}
+
+#search-btn {
+    color: var(--cl-extra);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+#search-input {
+    background: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--cl-extra);
+    color: var(--cl-extra);
+}
+
+#search-input::-webkit-input-placeholder {
+    color: var(--cl-extra-op);
+    font-style: italic;
+}
+
+/* -----------------------------------------------------Avatar menu--------------------------------------------------------*/
+#avatar {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--cl-extra);
+    position: relative;
+}
+
+#avatar-menu {
+    background-color: var(--cl-light);
+    position: absolute;
+    top: 90%;
+    right: -20%;
+    border-radius: 30px 0 30px 0;
+    width: 300px;
+    padding-bottom: 10px;
+    box-shadow: 1px 1px 5px var(--cl-extra-op-25);
+    transition: right 0.7s ease;
+    z-index: 5;
+    display: none;
+}
+
+.avatar-menu-item {
+    padding: 8px 0;
+    a {
+        color: var(--cl-extra);
+    }
+}
+
+.avatar-menu-item a:hover {
+    color: var(--hv-extra);
+}
+
+.avatar-menu-item a i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#preview-profile {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--cl-main-op-50);
+}
+
+#preview-profile img {
+    width: 20%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#preview-profile div {
+    width: 80%;
+}
+
+#preview-infor span:first-child {
+    color: var(--hv-extra);
+    font-weight: 700;
+}
+
+#preview-infor span:last-child {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* --------------------------------------------------Cart Preview-----------------------------------------------------------*/
+#cart-preview{ 
+    width: 25%;
+    height: 100vh;
+    background-color: var(--cl-light);
+    position: absolute;
+    top: 0%;
+    right: -30%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: -4px 0px 2px var(--cl-extra-op-25);
+    transition: right 0.7s ease;
+}
+
+/* header */
+#cart-preview-header {
+    height: 100px;
+    background-color: var(--cl-main);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#cart-preview-header div {
+    position: relative;
+} 
+
+#cart-preview-header div p {
+    position: absolute;
+    top: -10%;
+    right: -24%;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #e5345b;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+}
+
+#cart-preview-header button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    i {
+        font-size: 32px;
+        color: var(--cl-extra);
+    }
+}
+
+#cart-preview-header button:hover i {
+    color: var(--hv-main);
+}
+
+/* content */
+#cart-preview-content {
+    height: 72%;
+    background-color: var(--cl-light);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-right: 5px;
+}
+
+#cart-preview-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+#cart-preview-content::-webkit-scrollbar-thumb {
+    background-color: var(--cl-extra);
+    border-radius: 10px;
+}
+
+#cart-preview-content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.cart-preview-item {
+    padding: 10px 0;
+    border-bottom: 2px solid var(--cl-extra-op-25);
+    display: flex;
+    gap: 10px;
+}
+
+.cart-preview-image {
+    height: 100px;
+    width: 75px;
+    object-fit: cover;
+}
+
+.cart-preview-detail {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cart-preview-detail p {
+    margin: 0;
+}
+
+.cart-preview-name {
+    color: var(--cl-extra);
+    font-weight: bold;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+.cart-preview-name:hover {
+    color: var(--hv-extra);
+}
+
+.cart-preview-color,
+.cart-preview-size {
+    width: 50%;
+}
+
+.cart-preview-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px 0 12px 0;
+    height: fit-content;
+    border: 2px solid white;
+    position: relative;
+    width: 102px;
+}
+
+.cart-preview-number button {
+    background-color: var(--cl-main);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 12px 0 12px 0;
+    border: 2px solid white;
+    position: absolute;
+}
+
+.cart-preview-number button:first-child {
+    left: -2px;
+}
+
+.cart-preview-number button:last-child {
+    right: -2px;
+}
+
+.cart-preview-number button i {
+    color: var(--cl-extra);
+}
+
+.cart-preview-number input {
+    height: 34px;
+    width: 34px;
+    background-color: transparent;
+    border: none;
+    padding: 7px;
+    color: var(--cl-extra);
+    text-align: center;
+}
+
+.cart-preview-input::-webkit-outer-spin-button,
+.cart-preview-input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Remove increment/decrement buttons */
+  display: none;
+}
+
+.cart-preview-price {
+    color: var(--hv-extra);
+}
+
+/* footer */
+#cart-preview-footer {
+    height: 15%;
+    background-color: var(--cl-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#cart-preview-footer p {
+    margin: 0;
+    text-align: right;
+    width: 100%;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+#cart-preview-footer p span {
+    color: var(--hv-main);
+    font-weight: 700;
 }

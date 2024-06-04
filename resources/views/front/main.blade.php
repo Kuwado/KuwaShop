@@ -24,9 +24,7 @@
 
     <!--------------------------------------------------End of footer------------------------------------------------------->
 
-    <foot>
-        @include('front.parts.foot')
-    </foot>
+    @include('front.parts.foot')
 </body>
 
 

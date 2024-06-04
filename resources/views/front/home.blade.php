@@ -26,7 +26,7 @@
 
             <div class="row">
                 <div class="d-flex justify-content-center mb-4">
-                    <a href="category.html" class="view-all">Xem tất cả</a>
+                    <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
                 </div>
                 <div class="straight-line"></div>
             </div>

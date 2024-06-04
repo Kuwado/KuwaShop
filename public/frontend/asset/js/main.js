@@ -1,3 +1,58 @@
+// ------------------------------------------------ Avatar Menu -----------------------------------------------------------
+const avatarMenu = document.querySelector('#avatar-menu');
+var avtMenuStt = false;
+
+function showAvatarMenu() {
+    if (!avtMenuStt) {
+        avatarMenu.style.display = "block";
+        setTimeout(function() {
+            avatarMenu.style.right = "1%";
+            avtMenuStt = true;
+        }, 10); 
+    } else {
+        hideAvatarMenu();
+    }
+}
+
+function hideAvatarMenu() {
+    avatarMenu.style.right = "-20%";
+    setTimeout(function() {
+        avatarMenu.style.display = "none";
+        avtMenuStt = false;
+    }, 300);
+}
+
+document.addEventListener('click', function(event) {
+    if(avtMenuStt) {
+        const targetElement = event.target; 
+        const isClickInsideAvatarMenu = avatarMenu.contains(targetElement);
+        if (targetElement !== document.querySelector('#avatar-button') && !isClickInsideAvatarMenu) {
+            hideAvatarMenu();
+        }
+    }
+});
+
+//------------------------------------------------Cart Preview------------------------------------
+const cartPreview = document.querySelector('#cart-preview');
+
+function showCartPreview() {
+    cartPreview.style.display = "flex";
+    setTimeout(function() {
+        cartPreview.style.right = "0%";
+    }, 10); 
+
+}
+
+function closeCartPreview() {
+    cartPreview.style.right = "-30%";
+    setTimeout(function() {
+        cartPreview.style.display = "none";
+    }, 500);
+}
+
+// -------------------------------------- Footer --------------------------------------------------
+
+
 var listEmail = []; // Khởi tạo mảng để lưu trữ các email đã đăng ký
 var zIndexCounter = 1; // Đếm số thứ tự z-index
 

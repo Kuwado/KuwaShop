@@ -1,21 +1,33 @@
-<div class="d-flex order-lg-2">
+<div id="tool">
 
-    <form class="d-flex sf" role="search">
+    <form id="search-bar" role="search">
         <input class="form-control me-4" type="search" placeholder="Bạn đang muốn tìm gì?" aria-label="Bạn đang muốn tìm gì?" id="search-input">
-        <button class="btn btn-outline-success" type="submit" id="search-btn">Tìm</button>
+        <button class="small-btn border-btn transparent-btn" type="submit" id="search-btn">Tìm</button>
     </form>
 
-    <button type="button" class="btn position-relative nav-btn" id="cart-btn">
+    <button type="button" class="btn position-relative nav-btn" id="cart-btn" onclick="showCartPreview()">
         <i class="fa fa-shopping-cart nvicon"></i>
-        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="cart-number">5</span>
+        <div><span id="cart-number">5</span></div>
     </button>
 
     <button type="button" class="btn position-relative nav-btn" id="favorite-btn">
         <i class="fa fa-heart nvicon"></i>
-        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary" id="favorite-number">2</span>
+        <div><span id="favorite-number">12</span></div>
     </button>
 
-    <button type="button" class="btn position-relative nav-btn" id="user-btn">
-        <i class="fa fa-user nvicon"></i>
-    </button>
+    <img src="{{asset("../Images/avatar.jpg")}}" id="avatar" onclick="showAvatarMenu()">
+    <!--Avatar menu-->
+    <ul id="avatar-menu">
+        <li class="avatar-menu-item" id="preview-profile">
+            <img src="{{asset("../Images/avatar.jpg")}}">
+            <div id="preview-infor">
+                <span>Lưu Việt Hoàn</span>
+                <span>viethoan557723@gmail.com</span>
+            </div>
+        </li>
+        <li class="avatar-menu-item"><a href="/src/view/profile.html"><i class="fa-solid fa-user"></i><span>Thông tin cá nhân</span></a></li>
+        <li class="avatar-menu-item"><a href="/src/view/setting.html"><i class="fa-solid fa-gear"></i><span>Cài đặt</span></a></li>
+        <li class="avatar-menu-item"><a href="/src/view/feedback.html"><i class="fa-solid fa-message"></i><span>Góp ý nhà phát triển</span></a></li>
+        <li class="avatar-menu-item"><a href="/src/view/login.html"><i class="fa-solid fa-right-from-bracket"></i><span>Đăng xuất</span></a></li>
+    </ul>
 </div>
