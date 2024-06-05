@@ -1,10 +1,13 @@
 /* footer */
+footer {
+    color: var(--cl-main);
+}
 .footer-top {
-    background-color: #FFE4E1;
+    background-color: var(--cl-dark);
 }
 
 .footer-bottom {
-    background-image: url(../Images/Background/bg_namek.jpg);
+    background-image: url(../images/bg_namek.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -13,31 +16,31 @@
     width: 150px;
 }
 
-.footer-list-item a {
-    color: black;
-}
-
-.footer-list-item a:hover {
-    color: red;
-}
-
 .footer-icon {
     width: auto;
     height: 30px;
 }
 
+.footer-list-item a {
+    color: var(--cl-main);
+}
+
+.footer-list-item a:hover {
+    color: var(--hv-extra);
+    font-weight: 700;
+}
+
 /* form */
 .footer-register-form {
-    background-color: #FFFFFF !important;
-    border-radius: 56px 0px;
+    background-color: transparent !important;
+    border-radius: 50px 0px;
     justify-content: center;
     margin: 5px 20px;
-    border: 2px solid salmon;
+    border: 3px solid var(--cl-main);
 }
 
 .title-footer {
-    color: #00008B;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 20px;
     margin: 5px 5px 5px 30px;
 }
@@ -49,21 +52,30 @@
 
 .footer-btn-submit input {
     border-radius: 20px 0px;
-    background-color: pink;
-    border: 1px solid black;
+    background-color: var(--cl-extra);
+    border: 1px solid var(--cl-main);
     padding: 10px 20px;
+    color: white;
 }
 
 .footer-btn-submit:hover input {
-    background-color: black;
+    background-color: var(--cl-main);
+    border: 1px solid var(--cl-extra);
     color: white;
 }
 
 #footer-email-subscribe {
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--cl-main);
     padding: 10px;
     margin-right: 10px;
+    background-color: transparent;
+    color: var(--cl-main);
+}
+
+#footer-email-subscribe::-webkit-input-placeholder {
+    color: var(--cl-main-op-50);
+    font-style: italic;
 }
 
 .footer-last-img {
@@ -79,7 +91,6 @@
     font-size: 16px;
     display: flex;
     align-items: center;
-    /* Căn giữa theo chiều dọc */
     visibility: hidden;
     transition: visibility;
 }

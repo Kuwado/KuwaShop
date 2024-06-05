@@ -13,12 +13,12 @@ Route::get('/', function () {
 });
 
 
-// Admin
+// ------------------------------------------------------------ Admin --------------------------------------------------------------
 Route::get('/admin', function() {
     return view('admin.home');
 });
 
-//Product -----------------------------------------------------------------------------------------------------------------------------
+//Product -----------------------------------------------------------------------------
 // Thêm sản phẩm
 Route::post('/admin/product/add', [ProductController::class,'insert_product']);
 Route::get('/admin/product/create', [ProductController::class, 'add_product']);
@@ -38,7 +38,7 @@ Route::post('/admin/product/more/{id}', [ProductController::class, 'insert_color
 Route::get('/admin/product/delete', [ProductController::class, 'delete_product']);
 
 
-// Category ---------------------------------------------------------------------------------------------------------------------------
+// Category --------------------------------------------------------------------------------
 // Thêm danh mục
 Route::get('/admin/product/add/category', [CategoryController::class, 'add_category_product']);
 Route::post('/admin/product/add/category/type', [CategoryController::class, 'insert_type_product']);
@@ -50,7 +50,7 @@ Route::get('/admin/product/delete/category/type', [CategoryController::class, 'd
 Route::get('/admin/product/delete/category/sub', [CategoryController::class, 'delete_sub']);
 Route::get('/admin/product/delete/category/mini', [CategoryController::class, 'delete_mini']);
 
-// Order ---------------------------------------------------------------------------------------------------------
+// Order -------------------------------------------------------------------------------------
 Route::get('/admin/order/list', [OrderController::class, 'list_order']);
 Route::get('/admin/order/detail', [OrderController::class, 'detail_order']);
 
@@ -69,5 +69,7 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 
 
 
-//
+// --------------------------------------------------------- Front --------------------------------------------------
 Route::get('/home', [FrontendController::class, 'getHome']);
+
+Route::get('/product/detail/{id}', [FrontendController::class, 'getProductDetail']);

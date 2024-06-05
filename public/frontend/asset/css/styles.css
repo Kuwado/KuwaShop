@@ -15,6 +15,8 @@
     --cl-extra-op-25: rgba(27, 51, 127, 0.25);
     --cl-extra-op-50: rgba(27, 51, 127, 0.5);
     --cl-extra-op-75: rgba(27, 51, 127, 0.75);
+    --cl-text-light: white;
+    --cl-text-dark: black;
 }
 
 :root {
@@ -28,6 +30,8 @@
     --cl-extra-op-25: rgba(0, 204, 255, 0.25);
     --cl-extra-op-50: rgba(0, 204, 255, 0.5);
     --cl-extra-op-75: rgba(0, 204, 255, 0.75);
+    --cl-text-light: black;
+    --cl-text-dark: white;
 }
 
 
@@ -40,6 +44,11 @@
 
 a {
     text-decoration: none;
+    color: var(--cl-extra);
+}
+
+a:hover {
+    color: var(--hv-main);
 }
 
 li {
@@ -52,8 +61,6 @@ body {
     background-color: var(--cl-light);
     color: var(--cl-extra);
 }
-
-
 
 /* ---------------------------------------------------------------- color ----------------------------------------------------------*/
 .bg-red {

@@ -25,16 +25,19 @@
                     $quans = DB::table('quans')->where('product_id', $product->id)->get();
                 @endphp
                 @foreach ($quans as $quan)
+                    @php
+                        $images = explode('*', $quan->images);
+                    @endphp
                     @if ($quan->color === "Đen")
-                        <span class="color-dot" style="background-color: {{$quan->color_code}}; border: 1px solid #fafafa"><i class="fa-solid fa-check show" style="color: #fafafa"></i></span>
+                        <span class="color-dot" onclick="showOtherColor('{{asset($images[0])}}', '{{asset($images[1])}}', this)" style="background-color: {{$quan->color_code}}; border: 1px solid #fafafa"><i class="fa-solid fa-check" style="color: #fafafa"></i></span>
                     @else
-                        <span class="color-dot" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check show"></i></span>
+                        <span class="color-dot" onclick="showOtherColor('{{asset($images[0])}}', '{{asset($images[1])}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
                     @endif
                 @endforeach
             </div>
 
-            <div class="favorite">
-                <span><i class="fa-solid fa-heart favorite-icon"></i></span>
+            <div class="favorite" onclick="likeProduct(this)">
+                <span><i class="fa-solid fa-heart"></i></span>
             </div>
         </div>
 
@@ -52,7 +55,7 @@
             @endif
         </div>
 
-        <div class="cart-menu">
+        <div class="size-menu">
             <div class="size-option">
                 <div class="row"><button class="btn btn-size">S</button>
                 </div>
@@ -66,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="card-cart-icon">
+            <div class="card-cart-icon" onclick="showSizeMenu(this)">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
         </div>

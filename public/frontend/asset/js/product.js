@@ -1,3 +1,123 @@
+const bigCon = document.querySelector("#product-detail-img-big-list");
+const smallCon = document.querySelector("#product-detail-img-small-list");
+const bigImages = document.querySelectorAll(".product-detail-img-big-item");
+const smallImages = document.querySelectorAll(".product-detail-img-small-item");
+let imgNumber = bigImages.length;
+let currentIndex = 0;
+
+// Đặt vị trí cho các ảnh lớn dựa trên index của chúng
+bigImages.forEach(function (img, i) {
+    img.style.left = i * 100 + "%";
+});
+
+smallImages.forEach(function (img, i) {
+    img.style.top = i * 130 + "px";
+    img.addEventListener("click", function () {
+        updateSlider(i);
+    });
+});
+
+
+// Hàm để cập nhật vị trí của slider và class active cho ảnh nhỏ
+function updateSlider(index) {
+    currentIndex = index;
+    bigCon.style.left = "-" + index * 100 + "%";
+
+    smallImages.forEach(function (img) {
+        img.classList.remove("active");
+    });
+    smallImages[index].classList.add("active");
+
+    if (index > 2 && index < imgNumber - 1) {
+        smallCon.style.top = "-" + (index - 2) * 130 + "px"; // 130 = 120 (height) + 10 (margin)
+    } else if (index <= 2) {
+        smallCon.style.top = "0px";
+    } else if (index == imgNumber - 1) {
+        smallCon.style.top = "-" + (index - 3) * 130 + "px";
+    }
+}
+
+updateSlider(0);
+
+// Sang Ảnh khác
+function nextImage() {
+    currentIndex++;
+    if (currentIndex >= imgNumber) {
+        currentIndex = 0;
+    }
+    updateSlider(currentIndex);
+}
+
+// Quay lại anh trước
+function previousImage() {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = imgNumber - 1;
+    }
+    updateSlider(currentIndex);
+    console.log(currentIndex);
+}
+
+// Kéo thanh ảnh lên
+function upImage() {
+    let currentTop = parseInt(smallCon.style.top);
+    if (currentTop < 0) {
+        smallCon.style.top = (currentTop + 130) + "px";
+    } else if (currentTop == 0) {
+        smallCon.style.top = "-" + (imgNumber - 4) * 130 + "px";
+    }
+}
+
+// Hạ thanh ảnh xuống
+function downImage() {
+    let currentTop = parseInt(smallCon.style.top);
+    if (currentTop > -(imgNumber - 4) * 130) {
+        smallCon.style.top = (currentTop - 130) + "px";
+    } else if (currentTop == -(imgNumber - 4) * 130) {
+        smallCon.style.top = "0px";
+    }
+}
+
+const upBtn = document.querySelector("#product-detail-img-small-up-btn");
+const downBtn = document.querySelector("#product-detail-img-small-down-btn");
+const smallContainer =  document.querySelector("#product-detail-img-small-container");
+// Ẩn button lên xuống khi ít ảnh
+if (imgNumber <= 4) {
+    upBtn.style.visibility = "hidden";
+    downBtn.style.visibility = "hidden";
+    if (imgNumber == 1) {
+        smallContainer.style.height = "120px";
+    } else if (imgNumber == 2) {
+        smallContainer.style.height = "250px";
+    } else if (imgNumber == 3) {
+        smallContainer.style.height = "380px";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Đảm bảo chỉ chọn đc 1 size
 const checkboxes = document.querySelectorAll('.product-detail-size .btn-check');
 

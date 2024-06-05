@@ -6,8 +6,8 @@
         <img src="../Images/Slide/Slide02.png">
         <img src="../Images/Slide/Slide04.png">
     </div>
-    <button class="btn prev-btn"><i class="fa-solid fa-circle-chevron-left  btn-slide"></i></button>
-    <button class="btn next-btn"><i class="fa-solid fa-circle-chevron-right btn-slide"></i></button>
+    <button class="btn prev-btn btn-slide"><i class="fa-solid fa-circle-chevron-left"></i></button>
+    <button class="btn next-btn btn-slide"><i class="fa-solid fa-circle-chevron-right"></i></button>
     <div class="ratio over">
         <div class="overlay overMCK">
             <h2 class="text-capitalize text-black">best collection MCK</h2>

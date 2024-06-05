@@ -1,7 +1,7 @@
 /* slide */
 .slider {
     padding-bottom: 30px;
-    border-bottom: 2px solid #00008B;
+    border-bottom: 2px solid var(--cl-extra);
     overflow: hidden;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .dot-active {
-    background-color: #000;
+    background-color: var(--cl-extra);
 }
 
 .prev-btn {
@@ -41,8 +41,6 @@
     left: 20px;
     transform: translateY(-50%);
     z-index: 1;
-    /* Đảm bảo nút được hiển thị trên ảnh */
-
 }
 
 .next-btn {
@@ -51,13 +49,16 @@
     right: 20px;
     transform: translateY(-50%);
     z-index: 1;
-    /* Đảm bảo nút được hiển thị trên ảnh */
 }
 
-.btn-slide {
+.btn-slide i {
     font-size: 40px;
-    color: #00008B;
+    color: var(--cl-extra);
     opacity: 0.7;
+}
+
+.btn-slide:hover i {
+    opacity: 1;
 }
 
 .over {
@@ -66,25 +67,26 @@
     transform: translate(-50%, -50%);
     z-index: 3;
     text-align: center;
-    color: #000;
+    color: var(--cl-extra);
     transition: 0.4s;
 }
 
 .overlay a {
-    background-color: white;
-    color: green;
+    background-color: transparent;
+    color: black;
+    border-radius: 15px 0;
 }
 
 .overlay a:hover {
-    background-color: #e5345b;
-    color: white;
+    background-color: var(--hv-extra);
+    color: var(--hv-main);
+    font-weight: 700;
 }
 
-.red-text {
+/* .red-text {
     color: red;
 }
 
-/* */
 .view-all {
     background-color: aqua;
     color: black;
@@ -98,4 +100,4 @@
 .view-all:hover {
     background-color: black;
     color: white;
-}
+} */

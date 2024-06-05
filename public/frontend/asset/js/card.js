@@ -1,12 +1,11 @@
 const categoryColorDots = document.querySelectorAll(".category-color-bar");
-
 categoryColorDots.forEach(c => {
     const dots = c.querySelectorAll(".color-dot");
 
     dots.forEach(dot => {
         const i = dot.querySelector("i");
-        dot.addEventListener("click", function(){
-            if (i.classList.contains("show")){
+        dot.addEventListener("click", function () {
+            if (i.classList.contains("show")) {
                 i.classList.remove("show");
             }
             else {
@@ -16,83 +15,75 @@ categoryColorDots.forEach(c => {
     })
 })
 
-// Lấy tất cả các container chứa các dot
+// ----------------------------------------------- Chuyển màu của sản phẩm ---------------------------------------------
+function showOtherColor(image1, image2, element) {
+    // Tìm phần tử cha chứa các hình ảnh
+    var cardImageContainer = element.closest('.card-product').querySelector('.card-image');
+    // Cập nhật src của các thẻ hình ảnh
+    var images = cardImageContainer.querySelectorAll('img');
+    images[0].src = image2;
+    images[1].src = image1;
+
+    // Thêm lớp active vào dot được click và loại bỏ từ các dot khác
+    var colorDots = element.closest('.card-product').querySelectorAll('.color-dot i');
+    colorDots.forEach(function (dot) {
+        dot.classList.remove('show');
+    });
+    element.querySelector("i").classList.add('show');
+}
+
+// Cho dot đầu tiên được tick
 const cardContainers = document.querySelectorAll(".card-product");
-
-// Lặp qua mỗi container và thêm sự kiện click cho các dot bên trong
 cardContainers.forEach(dotContainer => {
-    // Lấy tất cả các dot trong container hiện tại
-    const dots = dotContainer.querySelectorAll(".color-dot");
-
-    // Lặp qua mỗi dot và thêm sự kiện click
-    dots.forEach(dot => {
-        dot.addEventListener("click", function () {
-            // Ẩn tất cả các check
-            dotContainer.querySelectorAll(".color-dot i").forEach(check => {
-                check.classList.remove("show");
-            });
-
-            // Hiển thị check trong dot được click
-            this.querySelector("i").classList.add("show");
-
-            // Lấy đường dẫn của ảnh từ thuộc tính data-src của dot
-            const firstImageSrc = dot.getAttribute("product-img-first-id");
-            const secondImageSrc = dot.getAttribute("product-img-second-id");
-
-            // Thay đổi src của ảnh tương ứng với container chứa dot đó
-            dotContainer.querySelector(".card-img-second").src = secondImageSrc;
-            dotContainer.querySelector(".card-img-first").src = firstImageSrc;
-
-        });
-    });
+    const dot = dotContainer.querySelector(".color-dot");
+    dot.querySelector("i").classList.add("show");
 });
 
-const hearts = document.querySelectorAll(".favorite");
+// Sản phẩm favorite
+function likeProduct(element) {
+    var heart = element.closest('.favorite');
+    if (heart.classList.contains("active")) {
+        heart.classList.remove("active");
+    } else {
+        heart.classList.add("active");
+    }
+}
 
-// Lặp qua từng phần tử "favorite" và thêm sự kiện click cho mỗi phần tử
-hearts.forEach(heart => {
-    heart.addEventListener("click", function () {
-        const heartStatus = window.getComputedStyle(heart).color;
-        if (heartStatus === "rgb(255, 255, 255)" || heartStatus === "white") {
-            heart.style.color = "red";
-        } else {
-            heart.style.color = "white";
-        }
-    });
-});
+// ---------------------------------------------------- Hiển thị bảng chọn size -------------------------------------------
+var sizeMenuStt = false;
+const sizeMenus = document.querySelectorAll(".size-menu");
 
+function showSizeMenu(element) {
+    var sizeMenu = element.closest('.size-menu');
+    if (!sizeMenu.classList.contains("active")) {
+        hideSizeMenu();
+        sizeMenu.classList.add("active")
+        sizeMenuStt = true;
+    } else {
+        hideSizeMenu();
+    }
+}
 
-const carts = document.querySelectorAll(".cart-menu");
-
-// Ẩn tất cả các size-option khi trang web được tải
-
-carts.forEach(cart => {
-    const cartIcon = cart.querySelector(".card-cart-icon");
-    const cartMenu = cart.querySelector(".size-option");
-
-    cartIcon.addEventListener("click", function () {
-
-        // Lấy giá trị tính toán của thuộc tính visibility của size-option
-        const cartStatus = window.getComputedStyle(cartMenu).visibility;
-        if (cartStatus === "hidden") {
-            // Ẩn tất cả các size-option
-            document.querySelectorAll('.size-option').forEach(option => {
-                option.style.visibility = "hidden";
-                option.style.bottom = "0";
-
-                document.querySelectorAll(".card-cart-icon i").forEach(icon => {
-                    icon.style.color = "white";
-                });
-            });
-            cartMenu.style.visibility = "visible"; // Hiển thị size-option được nhấp vào
-            cartMenu.style.bottom = "60px";
-            cartIcon.querySelector("i").style.color = "#9c95c4";
-        }
-        else {
-            cartMenu.style.visibility = "hidden"; // Ẩn size-option nếu đã được hiển thị
-            cartMenu.style.bottom = "0";
-            cartIcon.querySelector("i").style.color = "white";
-        }
+function hideSizeMenu() {
+    sizeMenus.forEach(menu => {
+        menu.classList.remove("active");
     })
-})
+    sizeMenuStt = false
+}
 
+// Kiểm tra nếu click bên ngoài thì ẩn đi
+document.addEventListener('click', function (event) {
+    if (sizeMenuStt) {
+        const targetElement = event.target;
+        let isClickInsideAnyMenu = false;
+        sizeMenus.forEach(menu => {
+            if (menu.contains(targetElement)) {
+                isClickInsideAnyMenu = true;
+            }
+        });
+
+        if (!isClickInsideAnyMenu) {
+            hideSizeMenu();
+        }
+    }
+})
