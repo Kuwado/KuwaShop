@@ -19,7 +19,7 @@
     --cl-text-dark: black;
 }
 
-:root {
+/* :root {
     --cl-main: #1b337f;
     --cl-extra: #00ccff;
     --cl-light: #1b1b32;
@@ -32,7 +32,7 @@
     --cl-extra-op-75: rgba(0, 204, 255, 0.75);
     --cl-text-light: black;
     --cl-text-dark: white;
-}
+} */
 
 
 * {

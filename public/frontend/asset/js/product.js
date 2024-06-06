@@ -1,22 +1,34 @@
 const bigCon = document.querySelector("#product-detail-img-big-list");
 const smallCon = document.querySelector("#product-detail-img-small-list");
-const bigImages = document.querySelectorAll(".product-detail-img-big-item");
-const smallImages = document.querySelectorAll(".product-detail-img-small-item");
-let imgNumber = bigImages.length;
-let currentIndex = 0;
+var bigImages = document.querySelectorAll(".product-detail-img-big-item");
+var smallImages = document.querySelectorAll(".product-detail-img-small-item");
+var imgNumber = 0;
+var currentIndex = 0;
+const upBtn = document.querySelector("#product-detail-img-small-up-btn");
+const downBtn = document.querySelector("#product-detail-img-small-down-btn");
+const smallContainer =  document.querySelector("#product-detail-img-small-container");
 
 // Đặt vị trí cho các ảnh lớn dựa trên index của chúng
-bigImages.forEach(function (img, i) {
-    img.style.left = i * 100 + "%";
-});
+function setImages() {
+    bigImages = document.querySelectorAll(".product-detail-img-big-item");
+    smallImages = document.querySelectorAll(".product-detail-img-small-item");
+    imgNumber = bigImages.length;
+    currentIndex = 0;
 
-smallImages.forEach(function (img, i) {
-    img.style.top = i * 130 + "px";
-    img.addEventListener("click", function () {
-        updateSlider(i);
+    bigImages.forEach(function (img, i) {
+        img.style.left = i * 100 + "%";
     });
-});
+    
+    smallImages.forEach(function (img, i) {
+        img.style.top = i * 130 + "px";
+        img.addEventListener("click", function () {
+            updateSlider(i);
+        });
+    });    
 
+    fixImages();
+    updateSlider(0);
+}
 
 // Hàm để cập nhật vị trí của slider và class active cho ảnh nhỏ
 function updateSlider(index) {
@@ -36,8 +48,6 @@ function updateSlider(index) {
         smallCon.style.top = "-" + (index - 3) * 130 + "px";
     }
 }
-
-updateSlider(0);
 
 // Sang Ảnh khác
 function nextImage() {
@@ -78,116 +88,166 @@ function downImage() {
     }
 }
 
-const upBtn = document.querySelector("#product-detail-img-small-up-btn");
-const downBtn = document.querySelector("#product-detail-img-small-down-btn");
-const smallContainer =  document.querySelector("#product-detail-img-small-container");
 // Ẩn button lên xuống khi ít ảnh
-if (imgNumber <= 4) {
-    upBtn.style.visibility = "hidden";
-    downBtn.style.visibility = "hidden";
-    if (imgNumber == 1) {
-        smallContainer.style.height = "120px";
-    } else if (imgNumber == 2) {
-        smallContainer.style.height = "250px";
-    } else if (imgNumber == 3) {
-        smallContainer.style.height = "380px";
+function fixImages() {
+    if (imgNumber <= 4) {
+        upBtn.style.visibility = "hidden";
+        downBtn.style.visibility = "hidden";
+        if (imgNumber == 1) {
+            smallContainer.style.height = "120px";
+        } else if (imgNumber == 2) {
+            smallContainer.style.height = "250px";
+        } else if (imgNumber == 3) {
+            smallContainer.style.height = "380px";
+        } else {
+            smallContainer.style.height = "510px";
+        }
+    } else {
+        upBtn.style.visibility = "visible";
+        downBtn.style.visibility = "visible";
+        smallContainer.style.height = "510px";
     }
 }
 
+// ---------------------------------------------------------- Chuyển màu sản phẩm --------------------------------------------------
+function showOtherColorProduct(imagesJson, color, colorCode, element) {
+    var imagesList = JSON.parse(imagesJson);
+    console.log(imagesList);
+    // Tìm phần tử cha chứa các hình ảnh lớn và nhỏ
+    var imagesBigList = document.querySelector('#product-detail-img-big-list');
+    var imagesSmallList = document.querySelector('#product-detail-img-small-list');
+    // Xóa tất cả các hình ảnh cũ
+    imagesBigList.innerHTML = '';
+    imagesSmallList.innerHTML = '';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Đảm bảo chỉ chọn đc 1 size
-const checkboxes = document.querySelectorAll('.product-detail-size .btn-check');
-
-// Thêm sự kiện 'change' cho mỗi checkbox
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', function() {
-        // Nếu checkbox được chọn
-        if (this.checked) {
-            // Loại bỏ chọn trước đó từ tất cả các checkbox khác
-            checkboxes.forEach((otherCheckbox) => {
-                if (otherCheckbox !== this) {
-                    otherCheckbox.checked = false;
-                }
-            });
-        }
-    });
-});
-
-// Tăng giảm số lượng cần mua
-document.addEventListener("DOMContentLoaded", function() {
-    const decreaseBtn = document.querySelector('.decrease-btn');
-    const increaseBtn = document.querySelector('.increase-btn');
-    const quantityField = document.querySelector('.quantity-field');
-
-    decreaseBtn.addEventListener('click', function() {
-        let value = parseInt(quantityField.value);
-        if (value > 1) {
-            value--;
-            quantityField.value = value;
-        }
+    // Tạo và thêm các thẻ img mới
+    imagesList.forEach(img => {
+        var imgBigElement = document.createElement('img');
+        var imgSmallElement = document.createElement('img');
+        // Thiết lập thuộc tính src
+        imgBigElement.setAttribute('src', img);
+        imgSmallElement.setAttribute('src', img);
+        // Thiết lập thuộc tính alt
+        imgBigElement.setAttribute('alt', '');
+        imgSmallElement.setAttribute('alt', '');
+        // Thiết lập class
+        imgBigElement.classList.add('product-detail-img-big-item');
+        imgSmallElement.classList.add('product-detail-img-small-item');
+        // Thêm thẻ img vào danh sách
+        imagesBigList.appendChild(imgBigElement);
+        imagesSmallList.appendChild(imgSmallElement);
     });
 
-    increaseBtn.addEventListener('click', function() {
-        let value = parseInt(quantityField.value);
-        if (value < 10) {
-            value++;
-            quantityField.value = value;
-        }
+    // Cập nhật thông tin màu sắc
+    document.querySelector('#product-detail-color-name span').style.color = colorCode;
+    document.querySelector('#product-detail-color-name span').innerText = color;
+
+    // Loại bỏ lớp active từ các phần tử trước đó
+    document.querySelectorAll('.color-dot.active').forEach(dot => {
+        dot.classList.remove('active');
     });
-});
 
-// Đảm bảo phần infor chỉ có 1 action tại 1 thời điểm và có border-bottom
-document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll('.product-infor-btn');
-    const collapses = document.querySelectorAll('.collapse');
+    // Thêm lớp active vào phần tử được chọn
+    element.classList.add('active');
+    setImages();
+}
 
-    buttons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            const target = document.querySelector(this.getAttribute('data-bs-target'));
+// Cho dot đầu tiên được tick
+const dot = document.querySelector("#product-detail-color-bar").querySelector(".color-dot");
+dot.classList.add("active");
+setImages();
 
-            // Kiểm tra xem button hiện tại đã có border chưa
-            const hasBorder = this.style.borderBottom === '3px solid black';
 
-            // Loại bỏ border bottom từ tất cả các button
-            buttons.forEach(function(btn) {
-                btn.style.borderBottom = 'none';
-            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Đảm bảo chỉ chọn đc 1 size
+// const checkboxes = document.querySelectorAll('.product-detail-size .btn-check');
+
+// // Thêm sự kiện 'change' cho mỗi checkbox
+// checkboxes.forEach((checkbox) => {
+//     checkbox.addEventListener('change', function() {
+//         // Nếu checkbox được chọn
+//         if (this.checked) {
+//             // Loại bỏ chọn trước đó từ tất cả các checkbox khác
+//             checkboxes.forEach((otherCheckbox) => {
+//                 if (otherCheckbox !== this) {
+//                     otherCheckbox.checked = false;
+//                 }
+//             });
+//         }
+//     });
+// });
+
+// // Tăng giảm số lượng cần mua
+// document.addEventListener("DOMContentLoaded", function() {
+//     const decreaseBtn = document.querySelector('.decrease-btn');
+//     const increaseBtn = document.querySelector('.increase-btn');
+//     const quantityField = document.querySelector('.quantity-field');
+
+//     decreaseBtn.addEventListener('click', function() {
+//         let value = parseInt(quantityField.value);
+//         if (value > 1) {
+//             value--;
+//             quantityField.value = value;
+//         }
+//     });
+
+//     increaseBtn.addEventListener('click', function() {
+//         let value = parseInt(quantityField.value);
+//         if (value < 10) {
+//             value++;
+//             quantityField.value = value;
+//         }
+//     });
+// });
+
+// // Đảm bảo phần infor chỉ có 1 action tại 1 thời điểm và có border-bottom
+// document.addEventListener("DOMContentLoaded", function() {
+//     const buttons = document.querySelectorAll('.product-infor-btn');
+//     const collapses = document.querySelectorAll('.collapse');
+
+//     buttons.forEach(function(button) {
+//         button.addEventListener('click', function() {
+//             const target = document.querySelector(this.getAttribute('data-bs-target'));
+
+//             // Kiểm tra xem button hiện tại đã có border chưa
+//             const hasBorder = this.style.borderBottom === '3px solid black';
+
+//             // Loại bỏ border bottom từ tất cả các button
+//             buttons.forEach(function(btn) {
+//                 btn.style.borderBottom = 'none';
+//             });
             
-            // Nếu button hiện tại đã có border, loại bỏ border. Ngược lại, thêm border vào button
-            if (hasBorder) {
-                this.style.borderBottom = 'none';
-            } else {
-                this.style.borderBottom = '3px solid black';
-            }
+//             // Nếu button hiện tại đã có border, loại bỏ border. Ngược lại, thêm border vào button
+//             if (hasBorder) {
+//                 this.style.borderBottom = 'none';
+//             } else {
+//                 this.style.borderBottom = '3px solid black';
+//             }
 
-            collapses.forEach(function(collapse) {
-                if (collapse !== target) {
-                    collapse.classList.remove('show');
-                }
-            });
-        });
-    });
-});
+//             collapses.forEach(function(collapse) {
+//                 if (collapse !== target) {
+//                     collapse.classList.remove('show');
+//                 }
+//             });
+//         });
+//     });
+// });

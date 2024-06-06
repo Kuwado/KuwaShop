@@ -1,7 +1,7 @@
 /* Card */
 .card-product {
-    background-color: var(--cl-dark);
-    color: var(--cl-text-light); 
+    background-color: var(--cl-extra-op-25);
+    color: var(--cl-extra); 
     border: none;
     border-radius: 36px 0;
 }
@@ -81,8 +81,8 @@
 }
 
 .color-dot {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     display: inline-block;
     margin: 0px 5px;
@@ -90,15 +90,22 @@
     position: relative;
 }
 
-
-.color-dot .fa-check {
+.color-dot i {
     position: absolute;
-    color: black;
+    color: var(--cl-extra); 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     visibility: hidden;
+    font-size: 15px;
+}
+
+.color-dot.active {
+    border: 2px solid var(--cl-extra);
+    i {
+        visibility: visible;
+    }
 }
 
 /* Favorite */
@@ -130,7 +137,7 @@
     text-overflow: ellipsis; 
     overflow: hidden;
     white-space: nowrap;
-    color: var(--cl-text-light);
+    color: var(--cl-extra); 
 }
 
 

@@ -4,7 +4,11 @@
         $images = explode('*', $quan->images);
     @endphp
     <div class="card-image">
+        @if (count($images) > 1)
         <img src="{{asset($images[1])}}" class="card-img-top card-img card-img-second">
+        @else
+        <img src="{{asset($images[0])}}" class="card-img-top card-img card-img-second">
+        @endif
         <img src="{{asset($images[0])}}" class="card-img-top card-img card-img-first">
     </div>
 
@@ -27,11 +31,12 @@
                 @foreach ($quans as $quan)
                     @php
                         $images = explode('*', $quan->images);
+                        $imagesJson = json_encode($images);
                     @endphp
                     @if ($quan->color === "Đen")
-                        <span class="color-dot" onclick="showOtherColor('{{asset($images[0])}}', '{{asset($images[1])}}', this)" style="background-color: {{$quan->color_code}}; border: 1px solid #fafafa"><i class="fa-solid fa-check" style="color: #fafafa"></i></span>
+                        <span class="color-dot" onclick="showOtherColor('{{$imagesJson}}', this)" style="background-color: {{$quan->color_code}}; border: 1px solid #fafafa"><i class="fa-solid fa-check" style="color: #fafafa"></i></span>
                     @else
-                        <span class="color-dot" onclick="showOtherColor('{{asset($images[0])}}', '{{asset($images[1])}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
+                        <span class="color-dot" onclick="showOtherColor('{{$imagesJson}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
                     @endif
                 @endforeach
             </div>

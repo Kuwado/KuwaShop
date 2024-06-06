@@ -16,27 +16,32 @@ categoryColorDots.forEach(c => {
 })
 
 // ----------------------------------------------- Chuyển màu của sản phẩm ---------------------------------------------
-function showOtherColor(image1, image2, element) {
+function showOtherColor(imagesJson, element) {
+    var imagesList = JSON.parse(imagesJson);
     // Tìm phần tử cha chứa các hình ảnh
     var cardImageContainer = element.closest('.card-product').querySelector('.card-image');
     // Cập nhật src của các thẻ hình ảnh
     var images = cardImageContainer.querySelectorAll('img');
-    images[0].src = image2;
-    images[1].src = image1;
+    if (imagesList.length > 1) {
+        images[0].src = imagesList[1];
+    } else {
+        images[0].src = imagesList[0];
+    }
+    images[1].src = imagesList[0];
 
     // Thêm lớp active vào dot được click và loại bỏ từ các dot khác
-    var colorDots = element.closest('.card-product').querySelectorAll('.color-dot i');
+    var colorDots = element.closest('.card-product').querySelectorAll('.color-dot');
     colorDots.forEach(function (dot) {
-        dot.classList.remove('show');
+        dot.classList.remove('active');
     });
-    element.querySelector("i").classList.add('show');
+    element.classList.add('active');
 }
 
 // Cho dot đầu tiên được tick
 const cardContainers = document.querySelectorAll(".card-product");
 cardContainers.forEach(dotContainer => {
     const dot = dotContainer.querySelector(".color-dot");
-    dot.querySelector("i").classList.add("show");
+    dot.classList.add("active");
 });
 
 // Sản phẩm favorite

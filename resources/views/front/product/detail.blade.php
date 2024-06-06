@@ -2,7 +2,14 @@
 
 @section('front-head')
     <link rel="stylesheet" href="{{asset('frontend/asset/css/product.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/asset/css/card.css')}}">
 @endsection
+
+@php
+    // Lấy ảnh
+    $quan = DB::table('quans')->where('product_id', $product->id)->first();
+    $images = explode('*', $quan->images);
+@endphp
 
 @section('front-content')
 <section id="product-detail" class="container">
@@ -18,18 +25,9 @@
     <!--Sản phẩm chính-->
     <div id="product-detail-main">
         <div id="product-detail-main-left">
-
             <div id="product-detail-img-big">
                 <div id="product-detail-img-big-list">
-                    @php
-                        $quan = DB::table('quans')->where('product_id', $product->id)->first();
-                        $imageLinks = [];
-                        $images = explode('*', $quan->images);
-                        foreach ($images as $image) {
-                            $imageLinks[] = asset($image);
-                        }
-                    @endphp
-                    @foreach ($imageLinks as $link)
+                    @foreach ($images as $link)
                         <img src="{{asset($link)}}" alt="" class="product-detail-img-big-item">
                     @endforeach
                 </div>
@@ -40,7 +38,7 @@
             <div id="product-detail-img-small">
                 <div id="product-detail-img-small-container">
                     <div id="product-detail-img-small-list">
-                        @foreach ($imageLinks as $link)
+                        @foreach ($images as $link)
                             <img src="{{asset($link)}}" alt="" class="product-detail-img-small-item">
                         @endforeach
                     </div>
@@ -48,11 +46,37 @@
                 <div id="product-detail-img-small-up-btn" onclick="upImage()"><i class="fa-solid fa-chevron-up"></i></div>
                 <div id="product-detail-img-small-down-btn" onclick="downImage()"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
-
-
         </div>
-        <div id="product-detail-main-right">
 
+        <div id="product-detail-main-right">
+            <div id="product-detail-right-content">
+                <h2 id="product-detail-name">{{$product->name}}</h2>
+                <span id="product-detail-sku">SKU: <span>{{$product->sku}}</span></span>
+                @if ($product->sale != "none") 
+                <div class="d-flex align-items-center">
+                    <span id="product-detail-discount-price">{{number_format($product->discount_price)}}đ</span>
+                    <span id="product-detail-original-price">{{number_format($product->original_price)}}đ</span>
+                    <span id="product-detail-sale-ticket">-{{$product->sale}}</span>
+                </div>
+                @else
+                <span id="product-detail-discount-price">{{number_format($product->original_price)}}đ</span>
+                @endif
+                <span id="product-detail-color-name">Màu sắc: <span style="color: {{$quan->color_code}}">{{$quan->color}}</span></span>
+                <div id="product-detail-color-bar">
+                @php
+                    $quans = DB::table('quans')->where('product_id', $product->id)->get();
+                @endphp
+                @foreach ($quans as $quan)
+                    @php
+                    $images = explode('*', $quan->images);
+                    $imagesJson = json_encode($images);
+                    @endphp
+                    <span class="color-dot" onclick="showOtherColorProduct('{{$imagesJson}}', '{{$quan->color}}', '{{$quan->color_code}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
+                @endforeach
+                </div>
+
+
+            </div>
         </div>
     </div>
 

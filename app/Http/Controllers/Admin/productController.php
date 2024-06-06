@@ -90,8 +90,9 @@ class ProductController extends Controller
             }
         // Nếu sản phẩm chưa tồn tại
         } else {
+
+
             // Thêm vào bảng Products
-            $product->sku = $request->input('product-name');
             $product->name = $request->input('product-name');
             $product->image = $request->input('product-image');
             $product->type = $request->input('product-type');
@@ -101,9 +102,8 @@ class ProductController extends Controller
             $product->detail = $request->input('product-ct-text');
             $product->preserve = $request->input('product-bq-text');
             $product->save();
-            $sku = '57VH' . $product->id;
-            $product->sku = $sku;
-            $product->save();
+            $product->setSku();
+            $product->setSale();
 
             // Thêm vào bảng Quans
             $quan->product_id = $product->id;

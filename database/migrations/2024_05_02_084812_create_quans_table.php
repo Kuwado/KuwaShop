@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('l')->default(0);
             $table->integer('xl')->default(0);
             $table->integer('xxl')->default(0);
-            $table->string('images');
+            $table->longText('images');
             $table->timestamps();
 
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
