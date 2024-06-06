@@ -1,34 +1,25 @@
+// ------------------------------------------------------ Ảnh -------------------------------------------------------
 const bigCon = document.querySelector("#product-detail-img-big-list");
 const smallCon = document.querySelector("#product-detail-img-small-list");
-var bigImages = document.querySelectorAll(".product-detail-img-big-item");
-var smallImages = document.querySelectorAll(".product-detail-img-small-item");
-var imgNumber = 0;
+const bigImages = document.querySelectorAll(".product-detail-img-big-item");
+const smallImages = document.querySelectorAll(".product-detail-img-small-item");
+var imgNumber = bigImages.length;
 var currentIndex = 0;
 const upBtn = document.querySelector("#product-detail-img-small-up-btn");
 const downBtn = document.querySelector("#product-detail-img-small-down-btn");
 const smallContainer =  document.querySelector("#product-detail-img-small-container");
 
 // Đặt vị trí cho các ảnh lớn dựa trên index của chúng
-function setImages() {
-    bigImages = document.querySelectorAll(".product-detail-img-big-item");
-    smallImages = document.querySelectorAll(".product-detail-img-small-item");
-    imgNumber = bigImages.length;
-    currentIndex = 0;
+bigImages.forEach(function (img, i) {
+    img.style.left = i * 100 + "%";
+});
 
-    bigImages.forEach(function (img, i) {
-        img.style.left = i * 100 + "%";
+smallImages.forEach(function (img, i) {
+    img.style.top = i * 130 + "px";
+    img.addEventListener("click", function () {
+        updateSlider(i);
     });
-    
-    smallImages.forEach(function (img, i) {
-        img.style.top = i * 130 + "px";
-        img.addEventListener("click", function () {
-            updateSlider(i);
-        });
-    });    
-
-    fixImages();
-    updateSlider(0);
-}
+});    
 
 // Hàm để cập nhật vị trí của slider và class active cho ảnh nhỏ
 function updateSlider(index) {
@@ -89,95 +80,66 @@ function downImage() {
 }
 
 // Ẩn button lên xuống khi ít ảnh
-function fixImages() {
-    if (imgNumber <= 4) {
-        upBtn.style.visibility = "hidden";
-        downBtn.style.visibility = "hidden";
-        if (imgNumber == 1) {
-            smallContainer.style.height = "120px";
-        } else if (imgNumber == 2) {
-            smallContainer.style.height = "250px";
-        } else if (imgNumber == 3) {
-            smallContainer.style.height = "380px";
-        } else {
-            smallContainer.style.height = "510px";
-        }
-    } else {
-        upBtn.style.visibility = "visible";
-        downBtn.style.visibility = "visible";
-        smallContainer.style.height = "510px";
+if (imgNumber <= 4) {
+    upBtn.style.visibility = "hidden";
+    downBtn.style.visibility = "hidden";
+    if (imgNumber == 1) {
+        smallContainer.style.height = "120px";
+    } else if (imgNumber == 2) {
+        smallContainer.style.height = "250px";
+    } else if (imgNumber == 3) {
+        smallContainer.style.height = "380px";
     }
+} 
+
+updateSlider(0);
+
+// ------------------------------------------------------ Chọn size ---------------------------------------------------------
+const quantity = document.querySelector("#product-detail-quantity span");
+let sizeCons = document.querySelectorAll(".choose-size-btn");
+
+sizeCons = Array.from(sizeCons).filter(sc => {
+    var inputId = sc.getAttribute("for");
+    var input = document.querySelector(`#${inputId}`);
+    if (input.value == 0) {
+        sc.classList.add("oos");
+        return false; // Loại bỏ phần tử khỏi mảng
+    }
+    return true; // Giữ lại phần tử trong mảng
+});
+
+function removeSizeCons() {
+    sizeCons.forEach(sc => {
+        sc.classList.remove("active");
+    })
 }
 
-// ---------------------------------------------------------- Chuyển màu sản phẩm --------------------------------------------------
-function showOtherColorProduct(imagesJson, color, colorCode, element) {
-    var imagesList = JSON.parse(imagesJson);
-    console.log(imagesList);
-    // Tìm phần tử cha chứa các hình ảnh lớn và nhỏ
-    var imagesBigList = document.querySelector('#product-detail-img-big-list');
-    var imagesSmallList = document.querySelector('#product-detail-img-small-list');
-    // Xóa tất cả các hình ảnh cũ
-    imagesBigList.innerHTML = '';
-    imagesSmallList.innerHTML = '';
-
-    // Tạo và thêm các thẻ img mới
-    imagesList.forEach(img => {
-        var imgBigElement = document.createElement('img');
-        var imgSmallElement = document.createElement('img');
-        // Thiết lập thuộc tính src
-        imgBigElement.setAttribute('src', img);
-        imgSmallElement.setAttribute('src', img);
-        // Thiết lập thuộc tính alt
-        imgBigElement.setAttribute('alt', '');
-        imgSmallElement.setAttribute('alt', '');
-        // Thiết lập class
-        imgBigElement.classList.add('product-detail-img-big-item');
-        imgSmallElement.classList.add('product-detail-img-small-item');
-        // Thêm thẻ img vào danh sách
-        imagesBigList.appendChild(imgBigElement);
-        imagesSmallList.appendChild(imgSmallElement);
-    });
-
-    // Cập nhật thông tin màu sắc
-    document.querySelector('#product-detail-color-name span').style.color = colorCode;
-    document.querySelector('#product-detail-color-name span').innerText = color;
-
-    // Loại bỏ lớp active từ các phần tử trước đó
-    document.querySelectorAll('.color-dot.active').forEach(dot => {
-        dot.classList.remove('active');
-    });
-
-    // Thêm lớp active vào phần tử được chọn
-    element.classList.add('active');
-    setImages();
+function chooseSize(size, element) {
+    var sizeCon = element.closest(".choose-size-btn");
+    removeSizeCons();
+    sizeCon.classList.add("active");
+    
+    var inputId = element.getAttribute("for"); // Lấy giá trị của thuộc tính 'for' của label
+    var input = document.querySelector(`#${inputId}`); // Tìm input tương ứng
+    quantity.textContent = input.value; // Gán giá trị của input cho quantity
 }
 
-// Cho dot đầu tiên được tick
-const dot = document.querySelector("#product-detail-color-bar").querySelector(".color-dot");
-dot.classList.add("active");
-setImages();
+window.onload = function() {
+    var oosLabels = document.querySelectorAll('.choose-size-btn.oos');
+    oosLabels.forEach(function(label) {
+        label.onclick = function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của label
+            event.stopPropagation(); // Ngăn chặn sự kiện lan truyền ra các phần tử cha
+        };
+    });
+};
 
+sizeCons[0].classList.add("active");
+var inputId = sizeCons[0].getAttribute("for");
+var input = document.querySelector(`#${inputId}`); 
+quantity.textContent = input.value; 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ------------------------------------------------------ Chọn số lượng -------------------------------------------------------
 // // Đảm bảo chỉ chọn đc 1 size
 // const checkboxes = document.querySelectorAll('.product-detail-size .btn-check');
 
@@ -196,28 +158,33 @@ setImages();
 //     });
 // });
 
-// // Tăng giảm số lượng cần mua
-// document.addEventListener("DOMContentLoaded", function() {
-//     const decreaseBtn = document.querySelector('.decrease-btn');
-//     const increaseBtn = document.querySelector('.increase-btn');
-//     const quantityField = document.querySelector('.quantity-field');
+const decreaseBtn = document.querySelector('#product-detail-decrease-btn');
+const increaseBtn = document.querySelector('#product-detail-increase-btn');
+const inputNumber = document.querySelector('#product-detail-number-input');
 
-//     decreaseBtn.addEventListener('click', function() {
-//         let value = parseInt(quantityField.value);
-//         if (value > 1) {
-//             value--;
-//             quantityField.value = value;
-//         }
-//     });
+// Tăng giảm số lượng cần mua
+function increaseNumber() {
+    let value = parseInt(inputNumber.value);
+    if (value < 10) {
+        value++;
+        inputNumber.value = value;
+    } else {
+        alert("Số lượng quá lớn, bạn chỉ có thể chọn số lượng <= 10");
+    }
+}
 
-//     increaseBtn.addEventListener('click', function() {
-//         let value = parseInt(quantityField.value);
-//         if (value < 10) {
-//             value++;
-//             quantityField.value = value;
-//         }
-//     });
-// });
+function decreaseNumber() {
+    let value = parseInt(inputNumber.value);
+    if (value > 1) {
+        value--;
+        inputNumber.value = value;
+    } else {
+        alert("Số lượng quá bé, bạn chỉ có thể chọn số lượng >= 1");
+    }
+}
+
+
+
 
 // // Đảm bảo phần infor chỉ có 1 action tại 1 thời điểm và có border-bottom
 // document.addEventListener("DOMContentLoaded", function() {

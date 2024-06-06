@@ -72,4 +72,4 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 // --------------------------------------------------------- Front --------------------------------------------------
 Route::get('/home', [FrontendController::class, 'getHome']);
 
-Route::get('/product/detail/{id}', [FrontendController::class, 'getProductDetail']);
+Route::get('/product/detail/{id}/{quanid}', [FrontendController::class, 'getProductDetail']);

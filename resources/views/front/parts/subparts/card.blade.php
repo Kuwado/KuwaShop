@@ -33,11 +33,7 @@
                         $images = explode('*', $quan->images);
                         $imagesJson = json_encode($images);
                     @endphp
-                    @if ($quan->color === "Đen")
-                        <span class="color-dot" onclick="showOtherColor('{{$imagesJson}}', this)" style="background-color: {{$quan->color_code}}; border: 1px solid #fafafa"><i class="fa-solid fa-check" style="color: #fafafa"></i></span>
-                    @else
-                        <span class="color-dot" onclick="showOtherColor('{{$imagesJson}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
-                    @endif
+                    <span class="color-dot" onclick="showOtherColor('{{$imagesJson}}', '{{$product->id}}', '{{$quan->id}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
                 @endforeach
             </div>
 
@@ -47,7 +43,10 @@
         </div>
 
         <div class="card-name-div">
-            <a href="/product/detail/{{$product->id}}" class="card-name">{{$product->name}}</a>
+            @php
+                $quan = DB::table('quans')->where('product_id', $product->id)->first();
+            @endphp
+            <a href="/product/detail/{{$product->id}}/{{$quan->id}}" class="card-name">{{$product->name}}</a>
         </div>
 
         <div class="card-price">

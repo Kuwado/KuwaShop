@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use App\Models\Product;
+use App\Models\Quan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,8 +25,12 @@ class FrontendController extends Controller {
     // Product detail
     public function getProductDetail(Request $request) {
         $product = Product::find($request->id);
+        $quan = Quan::find($request->quanid);
+        $quans = Quan::where('product_id', $request->id)->get(); 
         return view('front.product.detail', [
-            'product' => $product
+            'product' => $product,
+            'quan' => $quan,
+            'quans' => $quans
         ]);
     }
 }
