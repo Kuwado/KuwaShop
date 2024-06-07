@@ -5,8 +5,8 @@
 @endsection
 
 @section('front-content')
-    <section class="container slider">
-        @include('front.parts.slide')
+    <section class="container">
+        @include('front.parts.subparts.slide')
     </section>
 
     <section class="collection mt-5">

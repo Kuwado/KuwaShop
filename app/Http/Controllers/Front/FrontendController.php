@@ -26,10 +26,12 @@ class FrontendController extends Controller {
     public function getProductDetail(Request $request) {
         $product = Product::find($request->id);
         $quan = Quan::find($request->quanid);
+        $products = Product::where('type', $product->type)->take(8)->get();
         $quans = Quan::where('product_id', $request->id)->get(); 
         return view('front.product.detail', [
             'product' => $product,
             'quan' => $quan,
+            'products' => $products,
             'quans' => $quans
         ]);
     }

@@ -134,30 +134,29 @@ window.onload = function() {
     });
 };
 
-sizeCons[0].classList.add("active");
-var inputId = sizeCons[0].getAttribute("for");
-var input = document.querySelector(`#${inputId}`); 
-quantity.textContent = input.value; 
+const cartBtn = document.querySelector('#product-detail-cart-btn');
+const buyBtn = document.querySelector('#product-detail-buy-btn');
+const numberBar = document.querySelector('#product-detail-number-bar')
+// Kiểm tra hết hàng
+function checkOutOfStock() {
+    console.log(sizeCons.length);
+    // Nếu hết hàng
+    if (sizeCons.length == 0) {
+        cartBtn.classList.add('oos');
+        buyBtn.classList.add('oos');
+        cartBtn.textContent = "Hết hàng";
+        numberBar.classList.add('oos');
+    } else { // Nếu còn hàng
+        sizeCons[0].classList.add("active");
+        var inputId = sizeCons[0].getAttribute("for");
+        var input = document.querySelector(`#${inputId}`); 
+        quantity.textContent = input.value; 
+    }
+}
+
+checkOutOfStock();
 
 // ------------------------------------------------------ Chọn số lượng -------------------------------------------------------
-// // Đảm bảo chỉ chọn đc 1 size
-// const checkboxes = document.querySelectorAll('.product-detail-size .btn-check');
-
-// // Thêm sự kiện 'change' cho mỗi checkbox
-// checkboxes.forEach((checkbox) => {
-//     checkbox.addEventListener('change', function() {
-//         // Nếu checkbox được chọn
-//         if (this.checked) {
-//             // Loại bỏ chọn trước đó từ tất cả các checkbox khác
-//             checkboxes.forEach((otherCheckbox) => {
-//                 if (otherCheckbox !== this) {
-//                     otherCheckbox.checked = false;
-//                 }
-//             });
-//         }
-//     });
-// });
-
 const decreaseBtn = document.querySelector('#product-detail-decrease-btn');
 const increaseBtn = document.querySelector('#product-detail-increase-btn');
 const inputNumber = document.querySelector('#product-detail-number-input');
@@ -183,38 +182,51 @@ function decreaseNumber() {
     }
 }
 
+// ------------------------------------------------------ Thả tym ----------------------------------------------
+const likeBtn = document.querySelector("#product-detail-like-btn");
+function like() {
+    if (likeBtn.classList.contains("active")) {
+        likeBtn.classList.remove("active");
+    } else {
+        likeBtn.classList.add("active");
+    }
+}
 
+// --------------------------------------------------- Xem infor ------------------------------------------------
+const inforBtns = document.querySelectorAll('.product-detail-infor-btn');
+const inforContents = document.querySelectorAll('.product-detail-collapse');
+const moreBtn = document.querySelector('#product-detail-right-more-btn i');
+const mainRight = document.querySelector('#product-detail-main-right');
 
+// Xóa hết active của các thông tin
+function removeInfors() {
+    inforBtns.forEach(btn => {
+        btn.classList.remove('active');
+    })
+    inforContents.forEach(con => {
+        con.classList.remove('active');
+    })
+}
 
-// // Đảm bảo phần infor chỉ có 1 action tại 1 thời điểm và có border-bottom
-// document.addEventListener("DOMContentLoaded", function() {
-//     const buttons = document.querySelectorAll('.product-infor-btn');
-//     const collapses = document.querySelectorAll('.collapse');
+// Hiển thị thông tin
+function showInfor(element) {
+    var inforBtn = element.closest('.product-detail-infor-btn');
+    var inforId = inforBtn.getAttribute('data-bs-target');
+    var inforContent = document.querySelector(inforId);
+    removeInfors();
+    inforBtn.classList.add('active');
+    inforContent.classList.add('active');
+}
 
-//     buttons.forEach(function(button) {
-//         button.addEventListener('click', function() {
-//             const target = document.querySelector(this.getAttribute('data-bs-target'));
-
-//             // Kiểm tra xem button hiện tại đã có border chưa
-//             const hasBorder = this.style.borderBottom === '3px solid black';
-
-//             // Loại bỏ border bottom từ tất cả các button
-//             buttons.forEach(function(btn) {
-//                 btn.style.borderBottom = 'none';
-//             });
-            
-//             // Nếu button hiện tại đã có border, loại bỏ border. Ngược lại, thêm border vào button
-//             if (hasBorder) {
-//                 this.style.borderBottom = 'none';
-//             } else {
-//                 this.style.borderBottom = '3px solid black';
-//             }
-
-//             collapses.forEach(function(collapse) {
-//                 if (collapse !== target) {
-//                     collapse.classList.remove('show');
-//                 }
-//             });
-//         });
-//     });
-// });
+// Mở rộng để xem
+function moreInfor() {
+    if (mainRight.classList.contains('hidden')) {
+        moreBtn.classList.remove('fa-chevron-down');
+        moreBtn.classList.add('fa-chevron-up');
+        mainRight.classList.remove('hidden');
+    } else {
+        moreBtn.classList.remove('fa-chevron-up');
+        moreBtn.classList.add('fa-chevron-down');
+        mainRight.classList.add('hidden');
+    }
+}
