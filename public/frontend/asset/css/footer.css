@@ -1,34 +1,79 @@
 /* footer */
-footer {
+#footer {
     color: var(--cl-main);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.footer-top {
+
+#footer-top,
+#footer-bottom {
+    display: flex;
+    width: 100%;
+}
+
+#footer-top {
     background-color: var(--cl-dark);
 }
 
-.footer-bottom {
+#footer-bottom {
     background-image: url(../images/bg_namek.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.footer-img {
+.footer-top-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    padding: 20px;
+
+}
+
+#footer-logo-img {
     width: 150px;
+    height: 150px;
+    object-fit: fill;
+}
+
+#location-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 30px 0;
+    border: 2px solid var(--cl-main);
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-top-item a {
+    color: var(--cl-main);
+    font-weight: 700;
+}
+
+.footer-top-item a:hover {
+    color: var(--hv-extra);
+}
+
+.footer-top-item ul {
+    line-height: 3;
 }
 
 .footer-icon {
     width: auto;
-    height: 30px;
+    height: 34px;
 }
 
-.footer-list-item a {
-    color: var(--cl-main);
-}
 
-.footer-list-item a:hover {
-    color: var(--hv-extra);
-    font-weight: 700;
-}
+
+
+
 
 /* form */
 .footer-register-form {

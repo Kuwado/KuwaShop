@@ -3,7 +3,7 @@
         <h2>Giỏ hàng</h2>
         <p id="cart-preview-number">12</p>
     </div>
-    <button><i class="fa-solid fa-xmark" onclick="closeCartPreview()"></i></button>
+    <button onclick="closeCartPreview()"><i class="fa-solid fa-xmark"></i></button>
 </div>
 
 <div id="cart-preview-body">

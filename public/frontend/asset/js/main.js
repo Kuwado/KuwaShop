@@ -36,23 +36,104 @@ document.addEventListener('click', function(event) {
 const cartPreview = document.querySelector('#cart-preview');
 
 function showCartPreview() {
-    cartPreview.style.display = "flex";
-    setTimeout(function() {
-        cartPreview.style.right = "0%";
-    }, 10); 
+    // cartPreview.style.display = "flex";
+    // setTimeout(function() {
+    //     cartPreview.style.right = "0%";
+    // }, 10); 
+    cartPreview.classList.add('active');
 
 }
 
 function closeCartPreview() {
-    cartPreview.style.right = "-30%";
-    setTimeout(function() {
-        cartPreview.style.display = "none";
-    }, 500);
+    // cartPreview.style.right = "-30%";
+    // setTimeout(function() {
+    //     cartPreview.style.display = "none";
+    // }, 500);
+    cartPreview.classList.remove('active');
+}
+
+/* --------------------------------------------------- Side bar ---------------------------------------------------*/
+function closeAllSubMenu() {
+    const items = document.querySelectorAll('.sidebar-item-bar');
+    if (items.length > 0) {
+        items.forEach(item => {
+            item.classList.remove('active');
+            const icon = item.querySelector('i');
+            if (icon.classList.contains('fa-circle-chevron-up')) {
+                icon.classList.remove('fa-circle-chevron-up');
+                icon.classList.add('fa-circle-chevron-down');
+                item.querySelector('.sidebar-more-item-btn').setAttribute('status', 'false');
+            }
+        });
+    }
+
+    const subMenus = document.querySelectorAll('.sidebar-sub-menu');
+    if (subMenus.length > 0) {
+        subMenus.forEach(sub => {
+            sub.classList.remove('active');
+            const miniMenus = sub.querySelectorAll('.sidebar-mini-menu');
+            if (miniMenus.length > 0) {
+                miniMenus.forEach(mini => {
+                    mini.classList.remove('active');
+                })
+            }
+        })
+    }
+}
+
+function showSubMenu(element) {
+    var stt = element.getAttribute('status');
+    const itemBar = element.closest('.sidebar-item-bar');
+    const subMenu = itemBar.nextElementSibling;
+    const icon = itemBar.querySelector('i');
+    if (stt === 'false') {
+        closeAllSubMenu();
+        subMenu.classList.add('active');
+        itemBar.classList.add('active');
+        element.setAttribute('status', 'true');
+        icon.classList.remove('fa-circle-chevron-down');
+        icon.classList.add('fa-circle-chevron-up');
+    } else {
+        subMenu.classList.remove('active');
+        itemBar.classList.remove('active');
+        element.setAttribute('status', 'false');
+        icon.classList.remove('fa-circle-chevron-up');
+        icon.classList.add('fa-circle-chevron-down');
+    }
+}
+
+function showMiniMenu(element) {
+    var stt = element.getAttribute('status');
+    const itemBar = element.closest('.sidebar-item-bar');
+    const miniMenu = itemBar.nextElementSibling;
+    const icon = itemBar.querySelector('i');
+    if (stt === 'false') {
+        miniMenu.classList.add('active');
+        itemBar.classList.add('active');
+        element.setAttribute('status', 'true');
+        icon.classList.remove('fa-circle-chevron-down');
+        icon.classList.add('fa-circle-chevron-up');
+    } else {
+        miniMenu.classList.remove('active');
+        itemBar.classList.remove('active');
+        element.setAttribute('status', 'false');
+        icon.classList.remove('fa-circle-chevron-up');
+        icon.classList.add('fa-circle-chevron-down');
+    }
+}
+
+// Show sidebar
+const sidebar = document.querySelector('#sidebar');
+
+function showSidebar() {
+    sidebar.classList.add('active');
+}
+
+function hideSidebar() {
+    sidebar.classList.remove('active');
 }
 
 // -------------------------------------- Footer --------------------------------------------------
-
-
 var listEmail = []; // Khởi tạo mảng để lưu trữ các email đã đăng ký
 var zIndexCounter = 1; // Đếm số thứ tự z-index
 
@@ -99,7 +180,6 @@ document.getElementById("footer-btn-submit").addEventListener("click", function(
     // Xóa nội dung trong input
     emailInput.value = '';
 });
-
 
 function toggleActive(index) {
     // Loại bỏ class "active" khỏi tất cả các dot

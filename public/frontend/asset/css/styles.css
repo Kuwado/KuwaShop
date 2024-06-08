@@ -2,7 +2,9 @@
 :root {
     --hv-main: white;
     --hv-extra: #EA4C89;
-
+    --hd-height: 80px;
+    --hd-right-width: 25%;
+    --hd-right-transition: -30%;
 
 
     --cl-main: #00ccff;
@@ -56,8 +58,7 @@ li {
 }
 
 body {
-    overflow-x: hidden;
-    padding-top: 100px;
+    padding-top: var(--hd-height);
     background-color: var(--cl-light);
     color: var(--cl-extra);
 }
@@ -161,3 +162,4 @@ body {
     cursor: default;
 }
 
+/* ------------------------------------------------------- Format -------------------------------------------------------*/

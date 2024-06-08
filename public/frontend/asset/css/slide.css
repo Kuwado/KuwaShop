@@ -1,29 +1,97 @@
 /* slide */
 .slider-container {
-    width: 100%;
-    height: 75vh;
-    overflow: visible;
-    position: relative;
-    background-color: black;
+    width: 85%;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.slide {
-    display: flex;
-    transition: transform 0.4s ease;
-    width: 100%;
-    height: 100%;
+.owl-carousel,
+.owl-stage-outer {
+    width: 100% !important;
+    height: 100% !important;
 }
 
-.slide-item {
-    min-width: 100%;
-    height: 100%;
+.owl-item, .owl-stage, .item {
+    height: 100% !important;
+}
+
+.owl-prev,
+.owl-next {
     position: absolute;
+    top: calc(50% - 20px);
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    opacity: 0.5;
+    i {
+        font-size: 40px;
+        color: var(--cl-extra);
+    }
 }
 
-.slide-item img {
+.owl-next {
+    right: 20px;
+}
+
+.owl-prev {
+    left: 20px;
+}
+
+.owl-next:hover,
+.owl-prev:hover {
+    opacity: 1;
+    background-color: transparent !important;
+}
+
+.dot-container {
+    position: absolute;
+    bottom: 20px;
+    height: 30px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.owl-dots {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom : 20px;
+}
+
+.owl-dot {
+    height: fit-content !important;
+    width: fit-content !important;
+}
+
+.owl-dot span{
+    height: 20px !important;
+    width: 20px !important;
+    background-color: var(--cl-extra-op-25) !important;
+    margin: 0 !important;
+}
+
+.owl-dot span:hover {
+    background-color: var(--cl-extra-op-50) !important;
+}
+
+.owl-dot.active span{
+    background-color: var(--cl-extra) !important;
+}
+
+/* ---------------------------------------------- Tùy chọn -------------------------------------------------------*/
+.item img {
     height: 100%;
+    width: 100%;
     object-fit: fill;
+    border-radius: 75px 0;
 }
 
 .slide-overlay {
@@ -38,64 +106,6 @@
     justify-content: center;
 }
 
-.slide-prev-btn,
-.slide-next-btn {
-    position: absolute;
-    top: calc(50% - 20px);
-    transform: translateY(-50%);
-    z-index: 1;
-    background-color: transparent;
-    border: none;
-}
-
-.slide-next-btn {
-    right: 20px;
-}
-
-.slide-prev-btn {
-    left: 20px;
-}
-
-.btn-slide i {
-    font-size: 40px;
-    color: var(--cl-extra);
-    opacity: 0.7;
-}
-
-.btn-slide:hover i {
-    opacity: 1;
-}
-
-.dot-container {
-    position: absolute;
-    bottom: 20px;
-    height: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.dot {
-    height: 20px;
-    width: 20px;
-    background-color: var(--cl-extra-op-25);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dot:hover {
-    background-color: var(--cl-extra-op-50);
-}
-
-.dot.active {
-    background-color: var(--cl-extra);
-    pointer-events: none;
-}
-
-
-/* ---------------------------------------------- Tùy chọn -------------------------------------------------------*/
 .slide-overlay-btn {
     background-color: var(--hv-extra);
     color: white;
