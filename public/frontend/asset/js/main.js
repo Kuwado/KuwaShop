@@ -131,6 +131,7 @@ function showSidebar() {
 
 function hideSidebar() {
     sidebar.classList.remove('active');
+    closeAllSubMenu();
 }
 
 /* ---------------------------------------------- search ----------------------------------------------------------------*/
@@ -140,7 +141,6 @@ function suggestSearch(element) {
     const searchInput = searchBar.querySelector('#search-input');
     const searchText = element.textContent;
     searchInput.value = searchText;
-    console.log(searchText);
 }
 
 
@@ -166,60 +166,43 @@ function suggestSearch(element) {
 
 // -------------------------------------- Footer --------------------------------------------------
 var listEmail = []; // Khởi tạo mảng để lưu trữ các email đã đăng ký
-var zIndexCounter = 1; // Đếm số thứ tự z-index
+const emailInput = document.querySelector('#footer-email-subscribe');
+const notices = document.querySelectorAll('.footer-subscribe-notice');
+const successNotice = document.querySelector('#footer-subscribe-success');
+const errorNotice = document.querySelector('#footer-subscribe-error');
+const failNotice = document.querySelector('#footer-subscribe-fail');
+let timeoutId = null;
 
-document.getElementById("footer-btn-submit").addEventListener("click", function(event) {
+function hideAllNotices() {
+    notices.forEach(nt => {
+        nt.classList.remove('active');
+    });
+}
+
+function subscribeEmail(event) {
     event.preventDefault(); // Ngăn chặn việc gửi form và tải lại trang
-
-    // Lấy giá trị email từ input
-    var emailInput = document.getElementById("footer-email-subscribe");
-    var email = emailInput.value;
-
+    hideAllNotices();
+    const email = emailInput.value;
     // Hiển thị thông báo tương ứng
     if (email.includes("@gmail.com")) {
-        if (listEmail.includes(email)){
-            document.getElementById("footer-subscribe-fail").style.visibility = "visible";
-            document.getElementById("footer-subscribe-fail").style.zIndex = zIndexCounter++; // Tăng giá trị z-index và gán cho thông báo
-        }
-        else {
-            document.getElementById("footer-subscribe-success").style.visibility = "visible";
-            document.getElementById("footer-subscribe-success").style.zIndex = zIndexCounter++; // Tăng giá trị z-index và gán cho thông báo
+        if (listEmail.includes(email)) {
+            failNotice.classList.add('active');
+            // console.log('fail: email already exists');
+        } else {
+            successNotice.classList.add('active');
+            // console.log('success: email subscribed');
             listEmail.push(email);
         }
-    }
-    else {
-        document.getElementById("footer-subscribe-error").style.visibility = "visible";
-        document.getElementById("footer-subscribe-error").style.zIndex = zIndexCounter++; // Tăng giá trị z-index và gán cho thông báo
-    }
-
-    // Ẩn thông báo đi sau 5s kaka
-    var timeoutId = setTimeout(function() {
-        document.getElementById("footer-subscribe-error").style.visibility = "hidden";
-        document.getElementById("footer-subscribe-fail").style.visibility = "hidden";
-        document.getElementById("footer-subscribe-success").style.visibility = "hidden";
-    }, 5000);
-
-    // Xóa timeout cũ trước khi đặt timeout mới
-    var previousTimeoutId = document.getElementById("footer-btn-submit").getAttribute("data-timeout-id");
-    if (previousTimeoutId) {
-        clearTimeout(previousTimeoutId);
+    } else {
+        errorNotice.classList.add('active');
+        // console.log('fail: invalid email');
     }
 
-    // Lưu ID của timeout mới vào thuộc tính data-timeout-id của nút đăng ký
-    document.getElementById("footer-btn-submit").setAttribute("data-timeout-id", timeoutId);
-
-    // Xóa nội dung trong input
-    emailInput.value = '';
-});
-
-function toggleActive(index) {
-    // Loại bỏ class "active" khỏi tất cả các dot
-    var dots = document.querySelectorAll('.dot');
-    dots.forEach(function(dot) {
-        dot.classList.remove('active');
-    });
-
-    // Thêm class "active" vào dot được click
-    var selectedDot = document.querySelector('.dot:nth-child(' + index + ')');
-    selectedDot.classList.add('active');
+    // Reset bộ hẹn giờ nếu đã tồn tại
+    if (timeoutId) {
+        clearTimeout(timeoutId);
+    }
+    // Thiết lập một bộ hẹn giờ mới
+    timeoutId = setTimeout(hideAllNotices, 3000);
 }
+

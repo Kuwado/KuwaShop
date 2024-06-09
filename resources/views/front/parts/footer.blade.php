@@ -1,7 +1,6 @@
 <!------------------------------------------------Footer---------------------------------------------------------->
 <div id="footer">
     <div id="footer-top">
-
         <div class="footer-top-item">
             <div class="d-flex justify-content-center align-items-center">
                 <img src="{{asset("Images/logo.png")}}" id="footer-logo-img">
@@ -66,46 +65,21 @@
                 <a href="#"><img src="{{asset("Images/Icon/ic_ytb.svg")}}" class="footer-icon"></a>
             </div>
 
-            <div class="footer-register-form">
-
-                <p class="title-footer">Nhận thông tin các chương trình của KuwaShop</p>
-                <form class="d-flex footer-subscribe">
+            <div id="footer-subscribe">
+                <h5>Nhận thông tin các chương trình của KuwaShop</h5>
+                <form id="footer-register-form">
                     <input id="footer-email-subscribe" type="text" name="email" placeholder="Nhập địa chỉ email" required="required">
-                    <div class="footer-btn-submit"> <input id="footer-btn-submit" class="footer-form-submit" value="Đăng ký" type="submit">
-                    </div>
+                    <button type="submit" class="medium-btn border-btn light-blue-btn" onclick="subscribeEmail(event)">Đăng ký</button>
                 </form>
-
-
-                <div id="footer-subscribe-success"
-                    class="fixed-bottom mb-3 ps-2 bg-success text-white footer-subscribe-notice"><i class="fa-solid fa-check footer-icon-notice"></i>Bạn đã đăng ký thành công</div>
-
-                <div id="footer-subscribe-error"
-                    class="fixed-bottom mb-3 ps-2 bg-danger text-white footer-subscribe-notice"><i class="fa-solid fa-circle-exclamation footer-icon-notice"></i>Email không hợp lệ!</div>
-
-                <div id="footer-subscribe-fail"
-                    class="fixed-bottom mb-3 ps-2 bg-warning text-black footer-subscribe-notice"><i class="fa-solid fa-triangle-exclamation footer-icon-notice"></i>Email đã tồn tại!</div>
+                <!--Thông báo -->
+                <div id="footer-subscribe-success" class="footer-subscribe-notice"><i class="fa-solid fa-check footer-icon-notice"></i>Bạn đã đăng ký thành công</div>
+                <div id="footer-subscribe-error" class="footer-subscribe-notice"><i class="fa-solid fa-circle-exclamation footer-icon-notice"></i>Email không hợp lệ!</div>
+                <div id="footer-subscribe-fail" class="footer-subscribe-notice"><i class="fa-solid fa-triangle-exclamation footer-icon-notice"></i>Email đã tồn tại!</div>
             </div>
 
-            <div class="doraemon d-flex align-items-center justify-content-center">
-                <img src="{{asset("Images/Dong/doraemon_lacvong.gif")}}" alt="" class="">
-
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="{{asset("Images/Dong/doraemon_lacvong.gif")}}">
             </div>
-        </div>
-    </div>
-
-    <div id="footer-bottom">
-
-        <div class="col-8">
-            <div class="row d-flex ms-3">
-                <p class="red-text mt-2 d-flex align-items-center justify-content-center footer-text" style="display: inline-block;">Nhãn hiệu "KuwaShop" đã được ký kết bởi Hehe & Haha</p>
-            </div>
-            <div class="row d-flex align-items-center justify-content-center">
-                <img src="{{asset("Images/Background/bg_goku_frieza.png")}}" alt="" class="img-goku-frieza img-fluid" >
-            </div>
-        </div>
-
-        <div class="col-4">
-            <img src="{{asset("Images/Funny/hehe.jpg")}}" class="footer-last-img">
         </div>
     </div>
 </div>

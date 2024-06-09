@@ -323,6 +323,10 @@
     padding: 20px;
 }
 
+#cart-preview-header h2 {
+    font-weight: 700;
+}
+
 #cart-preview-header div {
     position: relative;
 }
@@ -631,8 +635,8 @@
 /* Điện thoại di động (dưới 480px) */
 @media only screen and (max-width: 480px) {
     :root {
-        --hd-right-width: 80%;
-        --hd-right-transition: -90%;
+        --hd-right-width: 100%;
+        --hd-right-transition: -110%;
     }
 
     * {
@@ -654,13 +658,28 @@
         display: none;
     }
 
+    .nav-btn div {
+        top: -25%;
+        left: 80%;
+        height: 20px;
+        width: 20px;
+        span {
+            font-size: 10px;
+        }
+    }
+
+    #cart-preview-header div p {
+        top: -15%;
+        right: -40%;
+    }
+
 }
 
 /* Điện thoại di động lớn và máy tính bảng nhỏ (481px - 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     :root {
-        --hd-right-width: 50%;
-        --hd-right-transition: -60%;
+        --hd-right-width: 70%;
+        --hd-right-transition: -80%;
     }
 
     #sidebar-btn {

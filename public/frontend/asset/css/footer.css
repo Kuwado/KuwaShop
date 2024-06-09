@@ -71,52 +71,31 @@
     height: 34px;
 }
 
-
-
-
-
-
 /* form */
-.footer-register-form {
-    background-color: transparent !important;
-    border-radius: 50px 0px;
-    justify-content: center;
-    margin: 5px 20px;
-    border: 3px solid var(--cl-main);
+#footer-subscribe {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 40px 0;
+    border: 2px solid var(--cl-main);
+    padding: 20px;
+    margin-bottom: 70px;
+    margin-top: 20px;
 }
 
-.title-footer {
-    font-weight: 700;
-    font-size: 20px;
-    margin: 5px 5px 5px 30px;
-}
-
-.footer-subscribe {
-    margin: 15px 30px 15px 15px;
-
-}
-
-.footer-btn-submit input {
-    border-radius: 20px 0px;
-    background-color: var(--cl-extra);
-    border: 1px solid var(--cl-main);
-    padding: 10px 20px;
-    color: white;
-}
-
-.footer-btn-submit:hover input {
-    background-color: var(--cl-main);
-    border: 1px solid var(--cl-extra);
-    color: white;
+#footer-register-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #footer-email-subscribe {
     border: none;
     border-bottom: 1px solid var(--cl-main);
     padding: 10px;
-    margin-right: 10px;
     background-color: transparent;
     color: var(--cl-main);
+    width: 60%;
 }
 
 #footer-email-subscribe::-webkit-input-placeholder {
@@ -124,33 +103,64 @@
     font-style: italic;
 }
 
-.footer-last-img {
-    width: 100%;
-    height: auto;
-}
-
 .footer-subscribe-notice {
-    left: 77%;
-    right: 5%;
-    z-index: 10;
-    padding: 5px 0;
-    font-size: 16px;
+    position: absolute;
+    bottom: -100%;
+    right: calc(50% - 150px);
     display: flex;
     align-items: center;
+    padding: 12px 20px;
+    width: 300px;
+    border-radius: 20px 0;
+    color: var(--hv-main);
+    font-weight: 700;
+    transition: bottom 0.4s ease;
     visibility: hidden;
-    transition: visibility;
 }
 
-.footer-icon-notice {
-    font-size: 24px;
-    margin-right: 10px;
+.footer-subscribe-notice.active {
+    visibility: visible;
+    bottom: -50%;
 }
 
-.img-goku-frieza {
-    width: 450px;
-    height: auto;
+#footer-subscribe-success {
+    background-color: var(--cl-main);
 }
 
-.footer-text {
-    background-color: black;
+#footer-subscribe-error {
+    background-color: red;
+}
+
+#footer-subscribe-fail {
+    background-color: yellowgreen;
+}
+
+/* ----------------------------------------------------- Responsive --------------------------------------------------*/
+/* Điện thoại di động (dưới 480px) */
+@media only screen and (max-width: 480px) {
+    #footer {
+        display: none;
+    }
+
+}
+
+/* Điện thoại di động lớn và máy tính bảng nhỏ (481px - 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+}
+
+
+/* Máy tính bảng và thiết bị màn hình nhỏ (769px - 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+/* Máy tính xách tay và màn hình lớn (1025px - 1200px) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+/* Màn hình rộng (1201px trở lên) */
+@media only screen and (min-width: 1201px) {
+
 }

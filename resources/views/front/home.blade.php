@@ -11,31 +11,22 @@
         @include('front.parts.subparts.slide')
     </section>
 
-    <section class="collection mt-5">
-        <div class="new-collection container">
+    <section id="best-collection">
+        <div class="collection">
+            <h2 class="collection-title">New Collection</h2>
 
-            <div class="row">
-                <h2 class="collection-title d-flex justify-content-center mb-4 mt-4">New Collection</h2>
-            </div>
-
-            <div class="row">
+            <div class="collection-list">
                 @foreach ($news as $product)
-                    <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                        @include('front.parts.subparts.card')
-                    </div>
+                    @include('front.parts.subparts.card')
                 @endforeach
             </div>
 
-            <div class="row">
-                <div class="d-flex justify-content-center mb-4">
-                    <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
-                </div>
-                <div class="straight-line"></div>
+            <div class="collection-view-all">
+                <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
             </div>
-
         </div>
 
-        <div class="hot-collection container">
+        {{-- <div class="hot-collection container">
 
             <div class="row">
                 <h2 class="collection-title d-flex justify-content-center mb-4 mt-4">Hot Collection</h2>
@@ -79,7 +70,7 @@
                 <div class="straight-line"></div>
             </div>
 
-        </div>
+        </div> --}}
     </section>
 @endsection
 

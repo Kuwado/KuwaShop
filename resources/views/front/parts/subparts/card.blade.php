@@ -1,8 +1,8 @@
-<div class="card card-product">
-    @php
-        $quan = DB::table('quans')->where('product_id', $product->id)->first();
-        $images = explode('*', $quan->images);
-    @endphp
+@php
+    $quan = DB::table('quans')->where('product_id', $product->id)->first();
+    $images = explode('*', $quan->images);
+@endphp
+<div class="card-product">
     <div class="card-image">
         @if (count($images) > 1)
         <img src="{{asset($images[1])}}" class="card-img-top card-img card-img-second">
@@ -21,7 +21,7 @@
         @endif
     @endif
 
-    <div class="card-body">
+    <div class="card-product-body">
 
         <div class="color-bar">
             <div class="color-dot-container">
