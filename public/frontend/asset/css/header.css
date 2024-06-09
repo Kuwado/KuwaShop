@@ -639,10 +639,6 @@
         --hd-right-transition: -110%;
     }
 
-    * {
-        font-size: 14px;
-    }
-
     #sidebar-btn {
         display: block;
     }

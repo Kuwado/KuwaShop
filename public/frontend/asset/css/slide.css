@@ -141,6 +141,22 @@
         bottom: -25px;
     }
 
+    .slide-overlay-btn {
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 15px 0;
+    }
+
+    .slide-overlay {
+        h2 {
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 16px;
+        }
+    }
+
 }
 
 /* Điện thoại di động lớn và máy tính bảng nhỏ (481px - 768px) */

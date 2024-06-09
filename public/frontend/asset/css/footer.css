@@ -4,22 +4,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-#footer-top,
-#footer-bottom {
-    display: flex;
-    width: 100%;
-}
-
-#footer-top {
     background-color: var(--cl-dark);
 }
 
-#footer-bottom {
-    background-image: url(../images/bg_namek.jpg);
-    background-size: cover;
-    background-position: center;
+#footer-top {
+    display: flex;
+    width: 100%;
 }
 
 .footer-top-item {
@@ -86,7 +76,7 @@
 #footer-register-form {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
 }
 
 #footer-email-subscribe {
@@ -95,7 +85,7 @@
     padding: 10px;
     background-color: transparent;
     color: var(--cl-main);
-    width: 60%;
+    width: calc(100% - 110px);
 }
 
 #footer-email-subscribe::-webkit-input-placeholder {
@@ -123,6 +113,10 @@
     bottom: -50%;
 }
 
+.footer-subscribe-notice i {
+    margin-right: 5px;
+}
+
 #footer-subscribe-success {
     background-color: var(--cl-main);
 }
@@ -135,17 +129,71 @@
     background-color: yellowgreen;
 }
 
+/* ----------------------------------------------------- Navbar -------------------------------------------------------*/
+#bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    display: none;
+    background-color: var(--cl-main);
+}
+
+.bottom-navbar-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bottom-navbar-item:hover {
+    color: var(--hv-main);
+}
+
+
+
 /* ----------------------------------------------------- Responsive --------------------------------------------------*/
 /* Điện thoại di động (dưới 480px) */
 @media only screen and (max-width: 480px) {
-    #footer {
-        display: none;
+    #bottom-navbar {
+        display: flex;
     }
 
+    #footer {
+        padding-bottom: 60px;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    #footer-top {
+        flex-direction: column;
+    }
+
+    .footer-top-item {
+        width: 100%;
+    }
+
+    .footer-responsive {
+        display: none !important;
+    }
+
+    #footer-subscribe {
+        margin-bottom: 10px;
+    }
+
+    .footer-subscribe-notice.active {
+        bottom: 120%;
+    }
 }
 
 /* Điện thoại di động lớn và máy tính bảng nhỏ (481px - 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+    #bottom-navbar {
+        display: flex;
+    }
 
 }
 

@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="footer-top-item">
+        <div class="footer-top-item footer-responsive">
             <h3>Giới thiệu</h3>
             <ul>
                 <li><a href="#">Về KuwaShop</a></li>
@@ -41,7 +41,7 @@
             </ul>
         </div>
 
-        <div class="footer-top-item">
+        <div class="footer-top-item footer-responsive">
             <h3>Chính sách khách hàng</h3>
             <ul>
                 <li><a href="#">Chính sách điều khoản</a></li>
@@ -77,7 +77,7 @@
                 <div id="footer-subscribe-fail" class="footer-subscribe-notice"><i class="fa-solid fa-triangle-exclamation footer-icon-notice"></i>Email đã tồn tại!</div>
             </div>
 
-            <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center footer-responsive">
                 <img src="{{asset("Images/Dong/doraemon_lacvong.gif")}}">
             </div>
         </div>

@@ -26,51 +26,33 @@
             </div>
         </div>
 
-        {{-- <div class="hot-collection container">
+        <div class="collection">
+            <h2 class="collection-title">Hot Collection</h2>
 
-            <div class="row">
-                <h2 class="collection-title d-flex justify-content-center mb-4 mt-4">Hot Collection</h2>
-            </div>
-
-            <div class="row">
+            <div class="collection-list">
                 @foreach ($hots as $product)
-                    <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                        @include('front.parts.subparts.card')
-                    </div>
+                    @include('front.parts.subparts.card')
                 @endforeach
             </div>
 
-            <div class="row">
-                <div class="d-flex justify-content-center mb-4">
-                    <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
-                </div>
-                <div class="straight-line"></div>
+            <div class="collection-view-all">
+                <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
             </div>
-
         </div>
 
-        <div class="sale-collection container">
+        <div class="collection">
+            <h2 class="collection-title">Sale Collection</h2>
 
-            <div class="row">
-                <h2 class="collection-title d-flex justify-content-center mb-4 mt-4">Sale Collection</h2>
-            </div>
-
-            <div class="row">
+            <div class="collection-list">
                 @foreach ($sales as $product)
-                    <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                        @include('front.parts.subparts.card')
-                    </div>
+                    @include('front.parts.subparts.card')
                 @endforeach
             </div>
 
-            <div class="row">
-                <div class="d-flex justify-content-center mb-4">
-                    <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
-                </div>
-                <div class="straight-line"></div>
+            <div class="collection-view-all">
+                <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
             </div>
-
-        </div> --}}
+        </div>
     </section>
 @endsection
 

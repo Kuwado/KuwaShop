@@ -171,6 +171,10 @@ body {
         --hd-height: 60px;
     }
 
+    * {
+        font-size: 14px;
+    }
+
 }
 
 /* Điện thoại di động lớn và máy tính bảng nhỏ (481px - 768px) */

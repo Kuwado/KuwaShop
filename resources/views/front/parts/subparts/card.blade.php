@@ -54,7 +54,7 @@
                 <div class="discount-price"><span>{{number_format($product->original_price)}}đ</span></div>
             @else
             <div class="discount-price"><span>{{number_format($product->discount_price)}}đ</span></div>
-            <div class="original-price ms-2"><span>{{number_format($product->original_price)}}đ</span></div>
+            <div class="original-price"><span>{{number_format($product->original_price)}}đ</span></div>
             <div class="card-right-ticket">{{$product->sale}}</div>
             @endif
         </div>
