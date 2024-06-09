@@ -133,6 +133,37 @@ function hideSidebar() {
     sidebar.classList.remove('active');
 }
 
+/* ---------------------------------------------- search ----------------------------------------------------------------*/
+
+function suggestSearch(element) {
+    const searchBar = element.closest('#search-bar');
+    const searchInput = searchBar.querySelector('#search-input');
+    const searchText = element.textContent;
+    searchInput.value = searchText;
+    console.log(searchText);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // -------------------------------------- Footer --------------------------------------------------
 var listEmail = []; // Khởi tạo mảng để lưu trữ các email đã đăng ký
 var zIndexCounter = 1; // Đếm số thứ tự z-index

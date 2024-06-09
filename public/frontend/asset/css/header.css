@@ -3,7 +3,7 @@
     background-color: var(--cl-main);
     box-shadow: 0px 2px 2px var(--cl-extra-op-25);
     height: var(--hd-height);
-    width: 100vw;
+    width: 100%;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -132,6 +132,7 @@
     width: fit-content;
     height: fit-content;
     padding: 5px;
+    position: relative;
 }
 
 #search-btn {
@@ -152,6 +153,73 @@
 #search-input::-webkit-input-placeholder {
     color: var(--cl-extra-op-50);
     font-style: italic;
+}
+
+/* ----------------------------------------------------- Suggest search ----------------------------------------------------*/
+#suggest-container {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    padding-top: 12px;
+    max-width: 400px;
+    width: max-content;
+    background-color: transparent;
+    transition: top 0.4s ease, visibility 0.4s ease-out;
+    visibility: hidden;
+}
+
+#search-bar:hover #suggest-container,
+#suggest-container:hover {
+    top: 100%;
+    visibility: visible;
+}
+
+#suggest-search {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 50px 0;
+    border: 2px solid var(--cl-extra);
+    background-color: var(--cl-light);
+    box-shadow: 2px 2px 2px var(--cl-extra-op-25);
+}
+
+.suggest-content {
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cl-extra-op-25);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#suggest-search .suggest-content:last-child {
+    border: none;
+}
+
+.suggest-content h4 {
+    font-weight: 700;
+}
+
+.suggest-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.suggest-item {
+    padding: 7px 15px;
+    border-radius: 15px 0;
+    border: 1px solid var(--cl-extra);
+    cursor: pointer;
+}
+
+.suggest-item:hover {
+    background-color: var(--hv-extra);
+    color: var(--hv-main);
+    border-color: var(--hv-main);
 }
 
 /* -----------------------------------------------------Avatar menu--------------------------------------------------------*/
@@ -603,7 +671,10 @@
         display: flex;
     }
 
-    #menu {
+    #menu,
+    #avatar,
+    #favorite-btn,
+    #search-bar {
         display: none;
     }
 

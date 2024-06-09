@@ -3,7 +3,7 @@
     <!--Side bar cho các screen bé-->
     <button id="sidebar-btn" onclick="showSidebar()"><i class="fa-solid fa-bars"></i></button>
     <div id="sidebar">
-        @include('front.parts.subparts.sidebar')
+        @include('front.parts.headerparts.sidebar')
     </div>
 
     <!--Logo and menu-->
@@ -14,17 +14,17 @@
     
         <!--Menu-->
         <div id="menu">
-            @include('front.parts.subparts.menu')
+            @include('front.parts.headerparts.menu')
         </div>
     </div>
 
     <!--Search & Icon button-->
     <div id="tool">
-        @include('front.parts.subparts.tool')
+        @include('front.parts.headerparts.tool')
     </div>
 
     <div id="cart-preview">
-        @include('front.parts.subparts.cart')
+        @include('front.parts.headerparts.cart')
     </div>
 
 </div>
