@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     background-color: var(--cl-dark);
+    overflow: hidden;
 }
 
 #footer-top {
@@ -129,43 +130,11 @@
     background-color: yellowgreen;
 }
 
-/* ----------------------------------------------------- Navbar -------------------------------------------------------*/
-#bottom-navbar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    padding: 10px 20px;
-    display: none;
-    background-color: var(--cl-main);
-}
-
-.bottom-navbar-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.bottom-navbar-item:hover {
-    color: var(--hv-main);
-}
-
-
-
 /* ----------------------------------------------------- Responsive --------------------------------------------------*/
 /* Điện thoại di động (dưới 480px) */
 @media only screen and (max-width: 480px) {
-    #bottom-navbar {
-        display: flex;
-    }
-
     #footer {
         padding-bottom: 60px;
-        margin: 0;
-        overflow-x: hidden;
     }
 
     #footer-top {
@@ -176,7 +145,8 @@
         width: 100%;
     }
 
-    .footer-responsive {
+    .footer-responsive,
+    .footer-responsive-doraemon {
         display: none !important;
     }
 
@@ -191,24 +161,56 @@
 
 /* Điện thoại di động lớn và máy tính bảng nhỏ (481px - 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    #bottom-navbar {
-        display: flex;
+    #footer {
+        padding-bottom: 60px;
     }
 
+    .footer-top-item {
+        width: 50%;
+    }
+
+    .footer-responsive {
+        display: none !important;
+    }
 }
 
 
 /* Máy tính bảng và thiết bị màn hình nhỏ (769px - 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #footer {
+        padding-bottom: 60px;
+    }
 
+    .footer-top-item {
+        width: 50%;
+    }
+
+    .footer-responsive {
+        display: none !important;
+    }
 }
 
 /* Máy tính xách tay và màn hình lớn (1025px - 1200px) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    #footer-register-form {
+        flex-direction: column;
+    }
 
+    #footer-email-subscribe {
+        width: 90%;
+    }
+
+    .footer-subscribe-notice {
+        right: 0;
+    }
+
+    .footer-subscribe-notice.active {
+        bottom: -30%;
+    }
+    
 }
 
-/* Màn hình rộng (1201px trở lên) */
+/* Màn hình rộng (1201px trở lên)
 @media only screen and (min-width: 1201px) {
 
-}
+} */

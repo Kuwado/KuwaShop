@@ -1,7 +1,7 @@
 @extends('front.main')
 
 @section('front-head')
-    <link rel="stylesheet" href="{{asset('frontend/asset/css/product.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/asset/css/product.detail.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/asset/css/card.css')}}">
 @endsection
 
@@ -11,7 +11,7 @@
 @endphp
 
 @section('front-content')
-<section id="product-detail" class="container">
+<section id="product-detail">
     <nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
         <ol class="breadcrumb bg-bisque">
             <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
@@ -148,17 +148,17 @@
         </div>
     </div>
 
-    <div id="product-detail-similar">
-        <div class="row">
-            <h2 class="collection-title d-flex justify-content-center mb-4 mt-4">Sản phẩm tương tự</h2>
+    <div class="collection">
+        <h2 class="collection-title">Sản phẩm tương tự</h2>
+
+        <div class="collection-list">
+            @foreach ($products as $product)
+                @include('front.parts.subparts.card')
+            @endforeach
         </div>
 
-        <div class="row">
-            @foreach ($products as $product)
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                    @include('front.parts.subparts.card')
-                </div>
-            @endforeach
+        <div class="collection-view-all">
+            <a href="category.html" class="medium-btn border-btn light-blue-btn">Xem tất cả</a>
         </div>
     </div>
 </section>

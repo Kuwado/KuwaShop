@@ -41,6 +41,7 @@
     font-weight: 700;
     position: relative;
     cursor: pointer;
+    text-align: center;
 }
 
 .menu-item:hover>a {
@@ -305,6 +306,7 @@
     box-shadow: -4px 0px 2px var(--cl-extra-op-25);
     transition: right 0.7s ease, visibility 0.7s ease-out;
     visibility: hidden;
+    z-index: 15px;
 }
 
 #cart-preview.active {
@@ -369,7 +371,7 @@
 
 /* content */
 #cart-preview-content {
-    height: 85%;
+    flex: 1;
     background-color: var(--cl-light);
     padding: 10px;
     display: flex;
@@ -487,7 +489,7 @@
 
 /* footer */
 #cart-preview-footer {
-    height: 15%;
+    height: 100px;
     background-color: var(--cl-main);
     display: flex;
     flex-direction: column;
@@ -522,7 +524,7 @@
     top: 0%;
     left: var(--hd-right-transition);
     background-color: var(--cl-light);
-    z-index: 5;
+    z-index: 15;
     display: flex;
     flex-direction: column;
     box-shadow: 4px 0px 2px var(--cl-extra-op-25);
@@ -630,6 +632,31 @@
     display: block;
 }
 
+/* ----------------------------------------------------- Navbar -------------------------------------------------------*/
+#bottom-navbar {
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    display: none;
+    background-color: var(--cl-main);
+}
+
+.bottom-navbar-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bottom-navbar-item:hover {
+    color: var(--hv-main);
+}
+
 
 /* ----------------------------------------------------- Responsive --------------------------------------------------*/
 /* Điện thoại di động (dưới 480px) */
@@ -637,6 +664,10 @@
     :root {
         --hd-right-width: 100%;
         --hd-right-transition: -110%;
+    }
+
+    #bottom-navbar {
+        display: flex;
     }
 
     #sidebar-btn {
@@ -678,6 +709,10 @@
         --hd-right-transition: -80%;
     }
 
+    #bottom-navbar {
+        display: flex;
+    }
+
     #sidebar-btn {
         display: block;
     }
@@ -701,6 +736,30 @@
     #sidebar-btn,
     #sidebar {
         display: none;
+    }
+
+    :root {
+        --hd-right-width: 45%;
+        --hd-right-transition: -55%;
+    }
+
+    #bottom-navbar {
+        display: flex;
+    }
+
+    #avatar,
+    #favorite-btn {
+        display: none;
+    }
+
+    .nav-btn div {
+        top: -25%;
+        left: 80%;
+        height: 20px;
+        width: 20px;
+        span {
+            font-size: 10px;
+        }
     }
 }
 

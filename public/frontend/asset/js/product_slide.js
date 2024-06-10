@@ -1,89 +1,103 @@
-const bigCon = document.querySelector(".product-detail-img-big");
-const smallCon = document.querySelector(".product-detail-img-small");
-const bigImages = document.querySelectorAll(".product-img-big-item");
-const smallImages = document.querySelectorAll(".product-detail-img-small img");
-const nextBtn = document.querySelector(".product-detail-img-big-next-btn");
-const prevBtn = document.querySelector(".product-detail-img-big-prev-btn");
-const upBtn = document.querySelector(".product-detail-img-small-up-btn");
-const downBtn = document.querySelector(".product-detail-img-small-down-btn");
-let imgNumber = bigImages.length;
+const bigCon = document.querySelector("#product-detail-img-big-list");
+const smallCon = document.querySelector("#product-detail-img-small-list");
+const bigImages = document.querySelectorAll(".product-detail-img-big-item");
+const smallImages = document.querySelectorAll(".product-detail-img-small-item");
+const imgNumber = bigImages.length;
+let n = imgNumber;
 let currentIndex = 0;
+const upBtn = document.querySelector("#product-detail-img-small-up-btn");
+const downBtn = document.querySelector("#product-detail-img-small-down-btn");
+const smallContainer =  document.querySelector("#product-detail-img-small-container");
 
-// Đặt vị trí cho các ảnh lớn dựa trên index của chúng
-bigImages.forEach(function (img, i) {
-    img.style.left = i * 100 + "%";
-});
+// Set up small images
+function setUpSmallImages() {
+    smallImages.forEach(function (img, i) {
+        img.style.height = `calc((100% - 10px * ${n-1}) / ${n})`;
+        img.style.top = `calc(((100% - 10px * ${n-1}) / ${n} + 10px) * ${i})`;
+        img.addEventListener("click", function () {
+            updateSlider(i);
+        });
+    });    
+}
 
-// Hàm để cập nhật vị trí của slider và class active cho ảnh nhỏ
+// Hàm để cập nhật vị trí
 function updateSlider(index) {
     currentIndex = index;
     bigCon.style.left = "-" + index * 100 + "%";
-    // Loại bỏ class active từ tất cả các ảnh nhỏ
+
     smallImages.forEach(function (img) {
         img.classList.remove("active");
     });
-
-    // Thêm class active cho ảnh nhỏ tương ứng với index đã chọn
     smallImages[index].classList.add("active");
-
-    // Cập nhật vị trí của container ảnh nhỏ nếu cần
+    var smallHeight = document.querySelector(".product-detail-img-small-item").offsetHeight;
     if (index > 2 && index < imgNumber - 1) {
-        smallCon.style.top = "-" + (index - 2) * 125 + "px";
+        smallCon.style.top = "-" + (index - 2) * (smallHeight + 10) + "px";
     } else if (index <= 2) {
-        smallCon.style.top = "0px";
+        smallCon.style.top = "0";
+    } else if (index == imgNumber - 1) {
+        smallCon.style.top = "-" + (index - 3) * (smallHeight + 10) + "px";
     }
-
 }
 
-function updateSmallSlider(index) {
-    smallCon.style.top = "-" + index * 125 + "px";
-}
-
-// Xử lý sự kiện click cho nút next
-nextBtn.addEventListener("click", function () {
+// Sang ảnh khác
+function nextImage() {
     currentIndex++;
     if (currentIndex >= imgNumber) {
         currentIndex = 0;
     }
     updateSlider(currentIndex);
-});
+}
 
-// Xử lý sự kiện click cho nút prev
-prevBtn.addEventListener("click", function () {
+// Quay lại ảnh trước
+function previousImage() {
     currentIndex--;
     if (currentIndex < 0) {
         currentIndex = imgNumber - 1;
     }
     updateSlider(currentIndex);
-});
+}
 
-// Xử lý sự kiện click cho ảnh nhỏ
-smallImages.forEach(function (img, i) {
-    img.style.top = i * 125 + "px";
-    img.addEventListener("click", function () {
-        updateSlider(i);
-    });
-});
-
-upBtn.addEventListener("click", function () {
-    let currentTop = parseInt(smallCon.style.top);
+// Kéo thanh ảnh lên 
+function upImage() {
+    var currentTop = parseInt(smallCon.style.top);
+    var smallHeight = document.querySelector(".product-detail-img-small-item").offsetHeight;
     if (currentTop < 0) {
-        smallCon.style.top = (currentTop + 125) + "px"; // Di chuyển lên 125px mỗi lần click
+        smallCon.style.top = (currentTop + smallHeight + 10) + "px";
+    } else {
+        smallCon.style.top = "-" + (imgNumber - 4) * (smallHeight + 10) + "px";
     }
-})
+}
 
-downBtn.addEventListener("click", function () {
-    let currentTop = parseInt(smallCon.style.top);
-    if (currentTop > -(imgNumber - 4)*125) {
-        smallCon.style.top = (currentTop - 125) + "px"; // Di chuyển lên 125px mỗi lần click
+// Hạ thanh ảnh xuống
+function downImage() {
+    var currentTop = parseInt(smallCon.style.top);
+    var smallHeight = document.querySelector(".product-detail-img-small-item").offsetHeight;
+    if (currentTop > -(imgNumber - 4) * (smallHeight + 10)) {
+        smallCon.style.top = (currentTop - smallHeight -10) + "px";
+    } else {
+        smallCon.style.top = "0";
     }
-})
+}
 
-// Ẩn button lên xuống khi ít ảnh
+// Set up
+if (imgNumber >= 4) {
+    n = 4;
+}
+
+bigImages.forEach(function (img, i) {
+    img.style.left = i * 100 + "%";
+});
+
+setUpSmallImages();
+updateSlider(0);
+
 if (imgNumber <= 4) {
     upBtn.style.visibility = "hidden";
     downBtn.style.visibility = "hidden";
+    smallCon.style.paddingTop = `calc(100% * 4 / 3 * ${n} + 10px * ${n-1})`;
 }
 
-// Mặc định hiển thị ảnh đầu tiên khi tải trang
-updateSlider(0);
+window.addEventListener("resize", function () {
+    setUpSmallImages();
+    updateSlider(currentIndex);
+});

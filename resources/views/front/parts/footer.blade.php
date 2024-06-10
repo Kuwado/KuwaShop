@@ -77,7 +77,7 @@
                 <div id="footer-subscribe-fail" class="footer-subscribe-notice"><i class="fa-solid fa-triangle-exclamation footer-icon-notice"></i>Email đã tồn tại!</div>
             </div>
 
-            <div class="d-flex align-items-center justify-content-center footer-responsive">
+            <div class="d-flex align-items-center justify-content-center footer-responsive-doraemon">
                 <img src="{{asset("Images/Dong/doraemon_lacvong.gif")}}">
             </div>
         </div>

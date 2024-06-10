@@ -28,7 +28,7 @@
 .owl-next {
     position: absolute;
     top: calc(50% - var(--sd-icon));
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     z-index: 1;
     background-color: transparent;
     border: none;
@@ -156,7 +156,6 @@
             font-size: 16px;
         }
     }
-
 }
 
 /* Điện thoại di động lớn và máy tính bảng nhỏ (481px - 768px) */
@@ -164,20 +163,50 @@
     .slider-container {
         width: 90%;
     }
+
+    .item img {
+        border-radius: 45px 0;
+    }
+
+    :root {
+        --sd-icon: 17px;
+    }
+
+    .slide-overlay-btn {
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 15px 0;
+    }
 }
 
 
 /* Máy tính bảng và thiết bị màn hình nhỏ (769px - 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .slider-container {
+        width: 90%;
+    }
 
+    .item img {
+        border-radius: 55px 0;
+    }
+
+    :root {
+        --sd-icon: 18px;
+    }
 }
 
 /* Máy tính xách tay và màn hình lớn (1025px - 1200px) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .slider-container {
+        width: 90%;
+    }
 
+    .item img {
+        border-radius: 65px 0;
+    }
 }
 
-/* Màn hình rộng (1201px trở lên) */
+/* Màn hình rộng (1201px trở lên)
 @media only screen and (min-width: 1201px) {
 
-}
+} */
