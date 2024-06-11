@@ -36,19 +36,10 @@ document.addEventListener('click', function(event) {
 const cartPreview = document.querySelector('#cart-preview');
 
 function showCartPreview() {
-    // cartPreview.style.display = "flex";
-    // setTimeout(function() {
-    //     cartPreview.style.right = "0%";
-    // }, 10); 
     cartPreview.classList.add('active');
-
 }
 
 function closeCartPreview() {
-    // cartPreview.style.right = "-30%";
-    // setTimeout(function() {
-    //     cartPreview.style.display = "none";
-    // }, 500);
     cartPreview.classList.remove('active');
 }
 

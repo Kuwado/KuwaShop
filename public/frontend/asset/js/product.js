@@ -148,7 +148,6 @@ const buyBtn = document.querySelector('#product-detail-buy-btn');
 const numberBar = document.querySelector('#product-detail-number-bar')
 // Kiểm tra hết hàng
 function checkOutOfStock() {
-    console.log(sizeCons.length);
     // Nếu hết hàng
     if (sizeCons.length == 0) {
         cartBtn.classList.add('oos');

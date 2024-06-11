@@ -728,6 +728,15 @@
         display: none;
     }
 
+    .nav-btn div {
+        top: -25%;
+        left: 80%;
+        height: 20px;
+        width: 20px;
+        span {
+            font-size: 10px;
+        }
+    }
 }
 
 
@@ -768,6 +777,11 @@
     #sidebar-btn,
     #sidebar {
         display: none;
+    }
+
+    :root {
+        --hd-right-width: 35%;
+        --hd-right-transition: -45%;
     }
 }
 
