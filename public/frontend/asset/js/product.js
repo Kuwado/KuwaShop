@@ -106,6 +106,7 @@ window.addEventListener("resize", function () {
 // ------------------------------------------------------ Chọn size ---------------------------------------------------------
 const quantity = document.querySelector("#product-detail-quantity span");
 let sizeCons = document.querySelectorAll(".choose-size-btn");
+const inputSize = document.querySelector("#product-detail-input-size");
 
 sizeCons = Array.from(sizeCons).filter(sc => {
     var inputId = sc.getAttribute("for");
@@ -131,6 +132,7 @@ function chooseSize(size, element) {
     var inputId = element.getAttribute("for"); // Lấy giá trị của thuộc tính 'for' của label
     var input = document.querySelector(`#${inputId}`); // Tìm input tương ứng
     quantity.textContent = input.value; // Gán giá trị của input cho quantity
+    inputSize.value = size;
 }
 
 window.onload = function() {
@@ -159,6 +161,7 @@ function checkOutOfStock() {
         var inputId = sizeCons[0].getAttribute("for");
         var input = document.querySelector(`#${inputId}`); 
         quantity.textContent = input.value; 
+        inputSize.value = sizeCons[0].textContent.toLowerCase();
     }
 }
 
@@ -168,15 +171,18 @@ checkOutOfStock();
 const decreaseBtn = document.querySelector('#product-detail-decrease-btn');
 const increaseBtn = document.querySelector('#product-detail-increase-btn');
 const inputNumber = document.querySelector('#product-detail-number-input');
+const inputNumberHidden = document.querySelector('#product-detail-input-quantity');
 
 // Tăng giảm số lượng cần mua
 function increaseNumber() {
+    let numberRemain = parseInt(quantity.textContent);
     let value = parseInt(inputNumber.value);
-    if (value < 10) {
+    if (value < 10 && value < numberRemain) {
         value++;
         inputNumber.value = value;
+        inputNumberHidden.value = inputNumber.value;
     } else {
-        alert("Số lượng quá lớn, bạn chỉ có thể chọn số lượng <= 10");
+        alert("Số lượng quá lớn, bạn chỉ có thể chọn số lượng <= 10 và <= số lượng còn lại");
     }
 }
 
@@ -185,6 +191,7 @@ function decreaseNumber() {
     if (value > 1) {
         value--;
         inputNumber.value = value;
+        inputNumberHidden.value = inputNumber.value;
     } else {
         alert("Số lượng quá bé, bạn chỉ có thể chọn số lượng >= 1");
     }

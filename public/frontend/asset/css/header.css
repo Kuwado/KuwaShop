@@ -403,7 +403,7 @@
 .cart-preview-image {
     height: 100px;
     width: 75px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .cart-preview-detail {
@@ -429,9 +429,12 @@
     color: var(--hv-extra);
 }
 
-.cart-preview-color,
+.cart-preview-color {
+    width: 70%;
+}
+
 .cart-preview-size {
-    width: 50%;
+    width: 30%;
 }
 
 .cart-preview-number {
@@ -769,6 +772,11 @@
         span {
             font-size: 10px;
         }
+    }
+
+    #suggest-container {
+        left: unset;
+        right: 0;
     }
 }
 

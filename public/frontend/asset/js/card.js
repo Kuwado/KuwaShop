@@ -41,6 +41,7 @@ function showOtherColor(imagesJson, productId, quanId, element) {
 
     // Thay link
     linkProduct.href = `/product/detail/${productId}/${quanId}`;
+    quan.value = quanId;
 }
 
 
@@ -99,3 +100,10 @@ document.addEventListener('click', function (event) {
         }
     }
 })
+
+// Chọn size
+function setSize(size, element) {
+    var form = element.closest('.size-option');
+    form.querySelector('[name="product-detail-size"]').value = size; 
+    form.submit();
+}

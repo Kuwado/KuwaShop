@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RevenueController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,3 +74,8 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 Route::get('/home', [FrontendController::class, 'getHome']);
 
 Route::get('/product/detail/{id}/{quanid}', [FrontendController::class, 'getProductDetail']);
+
+
+// -------------- Cart ---------------
+// Thêm hàng vào giỏ
+Route::post('/cart/add', [CartController::class, 'addProduct']);
