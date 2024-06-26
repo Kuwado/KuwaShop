@@ -89,7 +89,12 @@ class Product extends Model
         return $str;
     }
     
-
+    /**
+     * Mối quan hệ với Quan.
+     */
+    public function quans() {
+        return $this->hasMany(Quan::class);
+    }
 
 
 

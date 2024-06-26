@@ -64,7 +64,7 @@
                 <input type="hidden" name="product-detail-quan" value="{{$quan->id}}" class="product-detail-quan">
                 <input type="hidden" name="product-detail-size" class="product-detail-input-size">
                 <input type="hidden" name="product-detail-quantity" class="product-detail-input-quantity" value="1">
-                <div class="row"><button class="btn btn-size" onclick="setSize('s', this)">S</button></div>
+                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('s', this)">S</button></div>
                 <div class="row"><button class="btn btn-size" onclick="setSize('m', this)">M</button></div>
                 <div class="row"><button class="btn btn-size" onclick="setSize('l', this)">L</button></div>
                 <div class="row"><button class="btn btn-size" onclick="setSize('xl', this)">XL</button></div>
