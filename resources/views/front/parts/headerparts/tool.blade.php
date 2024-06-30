@@ -11,7 +11,10 @@
 
     <button type="button" class="btn position-relative nav-btn" id="cart-btn" onclick="showCartPreview()">
         <i class="fa fa-shopping-cart nvicon"></i>
-        <div><span id="cart-number">5</span></div>
+        @php
+            $cart = Session::get('cart', []); // Lấy giỏ hàng từ session, nếu không có sẽ trả về mảng rỗng
+        @endphp
+        <div><span id="cart-number">{{ count($cart) }}</span></div>
     </button>
 
     <button type="button" class="btn position-relative nav-btn" id="favorite-btn">

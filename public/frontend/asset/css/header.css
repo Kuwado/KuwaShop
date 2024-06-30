@@ -420,6 +420,7 @@
 .cart-preview-name {
     color: var(--cl-extra);
     font-weight: bold;
+    width: fit-content;
     max-width: 100%;
     text-overflow: ellipsis;
     overflow-x: hidden;
@@ -457,11 +458,11 @@
     position: absolute;
 }
 
-.cart-preview-number button:first-child {
+.cart-preview-number .minus-btn {
     left: -2px;
 }
 
-.cart-preview-number button:last-child {
+.cart-preview-number .plus-btn {
     right: -2px;
 }
 

@@ -102,6 +102,9 @@ document.addEventListener('click', function (event) {
 })
 
 // Chọn size
+// const cartPreview = document.querySelector('#cart-preview');
+let cartActive = false;
+
 function setSize(size, element) {
     var form = $(element).closest('.size-option');
     form.find('[name="product-detail-size"]').val(size);
@@ -113,42 +116,34 @@ function setSize(size, element) {
         dataType: 'json',
         success: function(response) {
             if (response.success) {
-                alert(response.message); // Hiển thị thông báo
-                updateCartPreview();
+                alert(response.message);
+
+                // Lưu trạng thái của cartPreview
+                if (cartPreview.classList.contains('active')) {
+                    localStorage.setItem('cartPreviewActive', 'true');
+                } else {
+                    localStorage.setItem('cartPreviewActive', 'false');
+                }
+
+                // Reload lại trang
+                location.reload();
             } else {
-                alert('Failed to add product to cart. Please try again.'); // Hiển thị thông báo lỗi
+                alert('Failed to add product to cart. Please try again.');
             }
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);
-            alert('Failed to add product to cart. Please try again.'); // Hiển thị thông báo lỗi
+            alert('Failed to add product to cart. Please try again.');
         }
     });
 }
 
-// JavaScript function to update cart preview
-function updateCartPreview() {
-    $.ajax({
-        type: 'GET',
-        url: '{{ route("cart.preview") }}', // Route để lấy HTML của cart preview
-        dataType: 'html',
-        success: function(html) {
-            $('#cartItemsContainer').html(html); // Cập nhật nội dung cart preview
-            $('#cartPreviewModal').modal('show'); // Hiển thị modal cart preview
-        },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-            alert('Failed to update cart preview.');
-        }
-    });
-}
-
-// // Example of adding product to cart (replace with your logic)
-// $('#add-to-cart-btn').on('click', function(e) {
-//     e.preventDefault();
-//     var productDetailId = $('#product-detail-id').val();
-//     var size = $('#product-detail-size').val();
-//     var quantity = $('#product-detail-quantity').val();
-    
-//     addToCart(productDetailId, size, quantity);
-// });
+// Khôi phục trạng thái của cartPreview sau khi trang được tải lại
+window.addEventListener('load', function() {
+    const cartPreviewActive = localStorage.getItem('cartPreviewActive');
+    if (cartPreviewActive === 'true') {
+        cartPreview.classList.add('active');
+    }
+    // Xóa trạng thái sau khi khôi phục để tránh ảnh hưởng đến các lần reload sau
+    localStorage.removeItem('cartPreviewActive');
+});

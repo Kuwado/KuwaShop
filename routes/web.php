@@ -79,4 +79,7 @@ Route::get('/product/detail/{id}/{quanid}', [FrontendController::class, 'getProd
 // -------------- Cart ---------------
 // Thêm hàng vào giỏ
 Route::post('/cart/add', [CartController::class, 'addProduct']);
-Route::get('/cart/preview', 'CartController@preview')->name('cart.preview');
+Route::get('/cart/preview', [CartController::class, 'preview']);
+Route::post('/cart/update/{key}', [CartController::class, 'updateCart']);
+
+

@@ -43,6 +43,50 @@ function closeCartPreview() {
     cartPreview.classList.remove('active');
 }
 
+function decreasePreviewCart(element) {
+    var previewCartItem = element.closest('.cart-preview-number');
+    var quantityInput = previewCartItem.querySelector('.cart-preview-input');
+    var quantity = parseInt(quantityInput.value);
+    if (quantity > 1) { // Ensure quantity doesn't go below 1 (or your minimum)
+        quantity--;
+        quantityInput.value = quantity;
+        previewCartItem.submit();
+    }
+}
+
+function increasePreviewCart(element) {
+    var previewCartItem = element.closest('.cart-preview-number');
+    var quantityInput = previewCartItem.querySelector('.cart-preview-input');
+    var quantity = parseInt(quantityInput.value);
+    // You can optionally add a maximum limit for quantity here
+    quantity++;
+    quantityInput.value = quantity;
+    previewCartItem.submit();
+}
+
+function updateCart(formElement) {
+    var formData = new FormData(formElement);
+
+    fetch(formElement.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Cart updated successfully:', data);
+        // Optionally update UI or show success message
+    })
+    .catch(error => {
+        console.error('Error updating cart:', error);
+        // Handle error scenario
+    });
+}
+
+
+
 /* --------------------------------------------------- Side bar ---------------------------------------------------*/
 function closeAllSubMenu() {
     const items = document.querySelectorAll('.sidebar-item-bar');

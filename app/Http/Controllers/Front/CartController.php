@@ -16,57 +16,43 @@ class CartController extends Controller {
         $size = $request->input('product-detail-size');
         $quantity = $request->input('product-detail-quantity');
         $cartKey = $quanId . '_' . $size;
-        if (is_null(Session::get('cart'))) {
-            Session::put('cart', [
-                $cartKey => $quantity
-            ]);
+    
+        // Lấy giỏ hàng hiện tại từ session, nếu không có thì tạo mảng rỗng
+        $cart = Session::get('cart', []);
+    
+        // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng hay chưa
+        if (Arr::exists($cart, $cartKey)) {
+            // Cập nhật số lượng sản phẩm hiện tại
+            $cart[$cartKey] += $quantity;
+    
+            // Lưu sản phẩm lên đầu giỏ hàng
+            $updatedCart = [$cartKey => $cart[$cartKey]] + Arr::except($cart, [$cartKey]);
         } else {
-            $cart = Session::get('cart');
-            if (Arr::exists($cart, $cartKey)) {
-                $cart[$cartKey] += $quantity;
-            } else {
-                $cart[$cartKey] = $quantity;
-            }
-            Session::put('cart', $cart);
+            // Thêm sản phẩm mới vào đầu giỏ hàng
+            $updatedCart = [$cartKey => $quantity] + $cart;
         }
+    
+        // Lưu giỏ hàng cập nhật vào session
+        Session::put('cart', $updatedCart);
+    
         return response()->json([
             'success' => true, 
             'message' => 'Product added to cart successfully.'
         ]);
     }
 
-    public function preview()
-    {
-        // Lấy thông tin giỏ hàng từ Session
+
+    public function updateCart(Request $request) {
         $cart = Session::get('cart', []);
-        $total = 0;
-        $cartItems = [];
-
-        // Lặp qua từng sản phẩm trong giỏ hàng để lấy thông tin chi tiết
-        foreach ($cart as $cartKey => $quantity) {
-            list($productDetailId, $size) = explode('_', $cartKey);
-            $quan = DB::table('quans')->where('id', $productDetailId)->first();
-            $product = DB::table('products')->where('id', $quan->product_id)->first();
-            $images = explode('*', $quan->images);
-            $price = $product->discount_price ?? $product->original_price;
-            $price *= $quantity;
-            $total += $price;
-
-            // Đẩy thông tin sản phẩm vào mảng $cartItems
-            $cartItems[] = [
-                'image' => asset($images[0]),
-                'productName' => $product->name,
-                'color' => $quan->color,
-                'colorCode' => $quan->color_code,
-                'size' => strtoupper($size),
-                'quantity' => $quantity,
-                'price' => number_format($price),
-                'productLink' => route('product.detail', ['id' => $product->id, 'quanId' => $quan->id]),
-            ];
-        }
-
-        // Trả về view (HTML) của cart preview
-        return View::make('partials.cart_preview', compact('cartItems', 'total'))->render();
+        $quantity = $request->input('cart-preview-input');
+        $key = $request->key;
+        $cart[$key] = $quantity;
+        Session::put('cart', $cart); // Save the updated cart back into session
+    
+        return redirect()->back();
     }
+    
+    
+
 
 }
