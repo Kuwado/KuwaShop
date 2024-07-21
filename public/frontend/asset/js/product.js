@@ -255,3 +255,31 @@ function moreInfor() {
         });
     }
 }
+
+/* --------------------------------------------- Thêm hàng vào giỏ ------------------------------------------------*/
+function addToCart(element) {
+    var form = $(element).closest('form');
+    $.ajax({
+        type: 'POST',
+        url: '/cart/preview/add',
+        data: form.serialize(),
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+                alert(response.message);
+                // cartPreview ở main.js
+                if (cartPreview.classList.contains('active')) {
+                    localStorage.setItem('cartPreviewActive', 'true');
+                } else {
+                    localStorage.setItem('cartPreviewActive', 'false');
+                }
+                location.reload();
+            } else {
+                alert('Chưa thể thêm sản phẩm. Vui lòng thử lại');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+            alert('Failed to add product to cart. Please try again.');
+        }
+    });}

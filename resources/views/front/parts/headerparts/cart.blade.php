@@ -1,5 +1,5 @@
 @php
-    $cart = Session::get('cart', []); // Lấy giỏ hàng từ session, nếu không có sẽ trả về mảng rỗng
+    $cart = Session::get('cart', []);
     $total = 0;
 @endphp
 
@@ -32,10 +32,10 @@
                         <p class="cart-preview-size">Size: <span>{{ strtoupper($size) }}</span></p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
-                        <form class="cart-preview-number" action="/cart/update/{{$key}}" method="POST">
-                            <button onclick="decreasePreviewCart(this)" class="minus-btn"><i class="fa-solid fa-minus"></i></button>
+                        <form class="cart-preview-number" action="/cart/preview/update/{{$key}}" method="POST">
+                            <button type="button" onclick="decreasePreviewCart(this)" class="minus-btn"><i class="fa-solid fa-minus"></i></button>
                             <input type="number" class="cart-preview-input" name="cart-preview-input" value="{{ $quantity }}">
-                            <button onclick="increasePreviewCart(this)" class="plus-btn"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="increasePreviewCart(this)" class="plus-btn"><i class="fa-solid fa-plus"></i></button>
                             @csrf
                         </form>
                         <p class="cart-preview-price">{{ number_format($price) }} đ</p>
@@ -49,6 +49,6 @@
 
     <div id="cart-preview-footer">
         <p id="cart-preview-total-price"><strong>Tổng tiền:</strong> <span>{{ number_format($total) }} đ</span> </p>
-        <a href="#" class="large-btn border-btn dark-blue-btn">Xem giỏ hàng</a>
+        <a href="/cart" class="large-btn border-btn dark-blue-btn">Xem giỏ hàng</a>
     </div>
 </div>

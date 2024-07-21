@@ -16,12 +16,14 @@ categoryColorDots.forEach(c => {
 })
 
 // ----------------------------------------------- Chuyển màu của sản phẩm ---------------------------------------------
-function showOtherColor(imagesJson, productId, quanId, element) {
+function showOtherColor(imagesJson, productId, quanId, sizeQuan, element) {
+    var card = element.closest('.card-product');
     var imagesList = JSON.parse(imagesJson);
-    
-    // Tìm phần tử cha chứa các hình ảnh
-    var cardImageContainer = element.closest('.card-product').querySelector('.card-image');
-    var linkProduct = element.closest('.card-product').querySelector('.card-name');
+    var cardImageContainer = card.querySelector('.card-image');
+    var linkProduct = card.querySelector('.card-name');
+    var quan = card.querySelector('.product-detail-quan');
+    var sizeList = JSON.parse(sizeQuan);
+    var sizeCon = card.querySelectorAll('.btn-size');
 
     // Cập nhật src của các thẻ hình ảnh
     var images = cardImageContainer.querySelectorAll('img');
@@ -33,7 +35,7 @@ function showOtherColor(imagesJson, productId, quanId, element) {
     images[1].src = imagesList[0];
 
     // Thêm lớp active vào dot được click và loại bỏ từ các dot khác
-    var colorDots = element.closest('.card-product').querySelectorAll('.color-dot');
+    var colorDots = card.querySelectorAll('.color-dot');
     colorDots.forEach(function (dot) {
         dot.classList.remove('active');
     });
@@ -42,6 +44,11 @@ function showOtherColor(imagesJson, productId, quanId, element) {
     // Thay link
     linkProduct.href = `/product/detail/${productId}/${quanId}`;
     quan.value = quanId;
+
+    sizeCon.forEach((size, i) => {
+        size.value = sizeList[i];
+    });
+    checkQuantity(card);
 }
 
 
@@ -61,6 +68,23 @@ function likeProduct(element) {
         heart.classList.add("active");
     }
 }
+
+//Check số lượng
+function checkQuantity(card) {
+    const btnSizes = card.querySelectorAll('.btn-size');
+    btnSizes.forEach(btn => {
+        if (btn.value == 0) {
+            btn.classList.add('oos');
+        } else {
+            btn.classList.remove('oos');
+        }
+    })
+}
+
+const cards = document.querySelectorAll('.card-product');
+cards.forEach(card => {
+    checkQuantity(card);
+})
 
 // ---------------------------------------------------- Hiển thị bảng chọn size -------------------------------------------
 var sizeMenuStt = false;
@@ -102,8 +126,7 @@ document.addEventListener('click', function (event) {
 })
 
 // Chọn size
-// const cartPreview = document.querySelector('#cart-preview');
-let cartActive = false;
+// let cartActive = false;
 
 function setSize(size, element) {
     var form = $(element).closest('.size-option');
@@ -111,24 +134,21 @@ function setSize(size, element) {
 
     $.ajax({
         type: 'POST',
-        url: '/cart/add',
+        url: '/cart/preview/add',
         data: form.serialize(),
         dataType: 'json',
         success: function(response) {
             if (response.success) {
                 alert(response.message);
-
-                // Lưu trạng thái của cartPreview
+                // cartPreview ở main.js
                 if (cartPreview.classList.contains('active')) {
                     localStorage.setItem('cartPreviewActive', 'true');
                 } else {
                     localStorage.setItem('cartPreviewActive', 'false');
                 }
-
-                // Reload lại trang
                 location.reload();
             } else {
-                alert('Failed to add product to cart. Please try again.');
+                alert('Chưa thể thêm sản phẩm. Vui lòng thử lại');
             }
         },
         error: function(xhr, status, error) {
@@ -138,12 +158,3 @@ function setSize(size, element) {
     });
 }
 
-// Khôi phục trạng thái của cartPreview sau khi trang được tải lại
-window.addEventListener('load', function() {
-    const cartPreviewActive = localStorage.getItem('cartPreviewActive');
-    if (cartPreviewActive === 'true') {
-        cartPreview.classList.add('active');
-    }
-    // Xóa trạng thái sau khi khôi phục để tránh ảnh hưởng đến các lần reload sau
-    localStorage.removeItem('cartPreviewActive');
-});

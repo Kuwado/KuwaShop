@@ -44,48 +44,72 @@ function closeCartPreview() {
 }
 
 function decreasePreviewCart(element) {
-    var previewCartItem = element.closest('.cart-preview-number');
-    var quantityInput = previewCartItem.querySelector('.cart-preview-input');
-    var quantity = parseInt(quantityInput.value);
-    if (quantity > 1) { // Ensure quantity doesn't go below 1 (or your minimum)
-        quantity--;
-        quantityInput.value = quantity;
-        previewCartItem.submit();
+    var form = $(element).closest('.cart-preview-number');
+    var quantityInput = form.find('.cart-preview-input');
+    var quantity = parseInt(quantityInput.val());
+    var key = form.attr('action').split('/').pop(); // Get the key from the form action URL
+    quantity--;
+    quantityInput.val(quantity);
+    $.ajax({
+        type: 'POST',
+        url: '/cart/preview/update/' + key,
+        data: form.serialize(),
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+                // alert(response.message);
+                // cartPreview ở main.js
+                localStorage.setItem('cartPreviewActive', 'true');
+                location.reload();
+            } else {
+                alert('Chưa thể thêm sản phẩm. Vui lòng thử lại');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+            alert('Failed to add product to cart. Please try again.');
+        }
+    });
+    if (quantity == 0) {
+        alert('Đã xóa sản phẩm.')
     }
 }
 
+
 function increasePreviewCart(element) {
-    var previewCartItem = element.closest('.cart-preview-number');
-    var quantityInput = previewCartItem.querySelector('.cart-preview-input');
-    var quantity = parseInt(quantityInput.value);
-    // You can optionally add a maximum limit for quantity here
-    quantity++;
-    quantityInput.value = quantity;
-    previewCartItem.submit();
+    var form = $(element).closest('.cart-preview-number');
+    var quantityInput = form.find('.cart-preview-input');
+    var quantity = parseInt(quantityInput.val());
+    var key = form.attr('action').split('/').pop(); // Get the key from the form action URL
+    if (quantity < 10) { 
+        quantity++;
+        quantityInput.val(quantity);
+        $.ajax({
+            type: 'POST',
+            url: '/cart/preview/update/' + key,
+            data: form.serialize(),
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    // alert(response.message);
+                    // cartPreview ở main.js
+                    localStorage.setItem('cartPreviewActive', 'true');
+                    location.reload();
+                } else {
+                    alert('Chưa thể thêm sản phẩm. Vui lòng thử lại');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+                alert('Failed to add product to cart. Please try again.');
+            }
+        });
+    } else {
+        alert('Giới hạn sản phẩm là 10.');
+    }
+
+
 }
-
-function updateCart(formElement) {
-    var formData = new FormData(formElement);
-
-    fetch(formElement.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Cart updated successfully:', data);
-        // Optionally update UI or show success message
-    })
-    .catch(error => {
-        console.error('Error updating cart:', error);
-        // Handle error scenario
-    });
-}
-
-
 
 /* --------------------------------------------------- Side bar ---------------------------------------------------*/
 function closeAllSubMenu() {
@@ -180,11 +204,14 @@ function suggestSearch(element) {
 
 
 
-
-
-
-
-
+/* --------------------------------------------- Load ------------------------------------------------------------------------*/
+window.addEventListener('load', function() {
+    const cartPreviewActive = localStorage.getItem('cartPreviewActive');
+    if (cartPreviewActive === 'true') {
+        cartPreview.classList.add('active');
+    }
+    localStorage.setItem('cartPreviewActive', 'false');
+});
 
 
 

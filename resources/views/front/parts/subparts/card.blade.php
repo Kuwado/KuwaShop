@@ -32,8 +32,10 @@
                     @php
                         $images = explode('*', $quan->images);
                         $imagesJson = json_encode($images);
+                        $sizeQuan = [$quan->s, $quan->m, $quan->l, $quan->xl, $quan->xxl];
+                        $sizeQuanJson = json_encode($sizeQuan);
                     @endphp
-                    <span class="color-dot" onclick="showOtherColor('{{$imagesJson}}', '{{$product->id}}', '{{$quan->id}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
+                    <span class="color-dot" onclick="showOtherColor('{{$imagesJson}}', '{{$product->id}}', '{{$quan->id}}', '{{$sizeQuanJson}}', this)" style="background-color: {{$quan->color_code}}"><i class="fa-solid fa-check"></i></span>
                 @endforeach
             </div>
 
@@ -60,15 +62,15 @@
         </div>
 
         <div class="size-menu">
-            <form action="/cart/add" method="post" class="size-option">
+            <form action="/cart/preview/add" method="post" class="size-option">
                 <input type="hidden" name="product-detail-quan" value="{{$quan->id}}" class="product-detail-quan">
                 <input type="hidden" name="product-detail-size" class="product-detail-input-size">
                 <input type="hidden" name="product-detail-quantity" class="product-detail-input-quantity" value="1">
-                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('s', this)">S</button></div>
-                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('m', this)">M</button></div>
-                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('l', this)">L</button></div>
-                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('xl', this)">XL</button></div>
-                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('xxl', this)">XXL</button></div>
+                <div class="row"><button type="button" class="btn btn-size first" onclick="setSize('s', this)" value="{{$quan->s}}">S</button></div>
+                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('m', this)" value="{{$quan->m}}">M</button></div>
+                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('l', this)" value="{{$quan->l}}">L</button></div>
+                <div class="row"><button type="button" class="btn btn-size" onclick="setSize('xl', this)" value="{{$quan->xl}}">XL</button></div>
+                <div class="row"><button type="button" class="btn btn-size last" onclick="setSize('xxl', this)" value="{{$quan->xxl}}">XXL</button></div>
                 @csrf
             </form>
             <div class="card-cart-icon" onclick="showSizeMenu(this)">

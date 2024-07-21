@@ -111,11 +111,11 @@
                     </div>
 
                     <div id="product-detail-action-button">
-                        <form action="/cart/add" method="post">
+                        <form action="/cart/preview/add" method="post">
                             <input type="hidden" name="product-detail-quan" value="{{$quan->id}}">
                             <input type="hidden" name="product-detail-size" id="product-detail-input-size">
                             <input type="hidden" name="product-detail-quantity" id="product-detail-input-quantity" value="1">
-                            <button type="submit" class="medium-btn border-btn dark-blue-btn" id="product-detail-cart-btn">Thêm vào giỏ hàng</button>
+                            <button type="button" class="medium-btn border-btn dark-blue-btn" onclick="addToCart(this)">Thêm vào giỏ hàng</button>
                             @csrf
                         </form>
                         <button class="medium-btn border-btn light-blue-btn" id="product-detail-buy-btn">Mua hàng</button>
