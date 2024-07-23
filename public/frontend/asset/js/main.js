@@ -47,7 +47,7 @@ function decreasePreviewCart(element) {
     var form = $(element).closest('.cart-preview-number');
     var quantityInput = form.find('.cart-preview-input');
     var quantity = parseInt(quantityInput.val());
-    var key = form.attr('action').split('/').pop(); // Get the key from the form action URL
+    var key = form.attr('action').split('/').pop();
     quantity--;
     quantityInput.val(quantity);
     $.ajax({
@@ -80,7 +80,7 @@ function increasePreviewCart(element) {
     var form = $(element).closest('.cart-preview-number');
     var quantityInput = form.find('.cart-preview-input');
     var quantity = parseInt(quantityInput.val());
-    var key = form.attr('action').split('/').pop(); // Get the key from the form action URL
+    var key = form.attr('action').split('/').pop();
     if (quantity < 10) { 
         quantity++;
         quantityInput.val(quantity);
@@ -107,8 +107,6 @@ function increasePreviewCart(element) {
     } else {
         alert('Giới hạn sản phẩm là 10.');
     }
-
-
 }
 
 /* --------------------------------------------------- Side bar ---------------------------------------------------*/

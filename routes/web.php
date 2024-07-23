@@ -81,6 +81,8 @@ Route::get('/product/detail/{id}/{quanid}', [FrontendController::class, 'getProd
 Route::post('/cart/preview/add', [CartController::class, 'addProductToPreviewCart']);
 Route::post('/cart/preview/update/{key}', [CartController::class, 'updatePreviewCart']);
 Route::get('/cart', [CartController::class, 'showCart']);
+Route::get('/cart/delete/{key}', [CartController::class, 'deleteProduct']);
+
 
 
 

@@ -1,4 +1,5 @@
 @php
+    // Session::flush();
     $cart = Session::get('cart', []);
     $total = 0;
 @endphp

@@ -6,6 +6,8 @@
     flex-direction: column;
     background-color: var(--cl-dark);
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 #footer-top {

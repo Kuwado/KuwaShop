@@ -55,9 +55,22 @@ class CartController extends Controller {
     }
     
     public function showCart() {
-        return view('front.cart.detail');
+        $cart = Session::get('cart', []);
+        $total = 0;
+        $total_origin = 0;
+        return view('front.cart.detail', [
+            'cart' => $cart,
+            'total' => $total,
+            'total_origin' => $total_origin
+        ]);
     }
-    
 
+    public function deleteProduct(Request $request) {
+        $cart = Session::get('cart', []);
+        $key = $request->key;
+        unset($cart[$key]);
+        Session::put('cart', $cart);
+        return redirect('/cart');
+    }
 
 }

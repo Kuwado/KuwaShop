@@ -5,152 +5,118 @@
 @endsection
 
 @section('front-content')
-<section id="cart">
-    <div class="container">
-        <div class="row">
-            <div class="col-8 cart-left">
-                <div class="cart-status-wrap">
-                    <div class="cart-status">
-                        <div class="cart-status-item cart-active">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                        <div class="cart-status-item">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </div>
-                        <div class="cart-status-item">
-                            <i class="fa-solid fa-money-bill"></i>
-                        </div>
-                        <div class="cart-status-item">
-                            <i class="fa-solid fa-suitcase"></i>
-                        </div>
-                    </div>
-                    <div class="cart-status-text">
-                        <p class="cart-active">Giỏ hàng</p>
-                        <p>Đặt hàng</p>
-                        <p>Thanh toán</p>
-                        <p>Nhận hàng</p>
-                    </div>
-                </div>
-
-                <h2 class="mt-3 mb-3">Giỏ hàng hiện có <span class="cart-quan">3</span> sản phẩm</h2>
-
-                <div class="cart-product">
-                    <table>
-                        <tr>
-                            <th col>Sản phẩm</th>
-                            <th>Tên</th>
-                            <th>Loại</th>
-                            <th>Số lượng</th>
-                            <th>Giá tiền</th>
-                            <th></th>
-                        </tr>
-
-                        <tr>
-                            <td><a href="../Html/product.html" class=""><img src="../Images/Product/goku_red_1.png"
-                                        alt="" class=""></a></td>
-                            <td><a href="../Html/product.html" class="">Ứ Gô Kaooo</a></td>
-                            <td>
-                                <p>Màu sắc: <span>Đỏ</span></p>
-                                <p>Size: <span>XL</span></p>
-                            </td>
-                            <td>
-                                <div class="product-detail-quantity d-flex">
-                                    <div class="product-detail-quantity-input d-flex">
-                                        <button class="decrease-btn">-</button>
-                                        <input type="number" class="quantity-field" value="1" min="1" max="10">
-                                        <button class="increase-btn">+</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div><span>1.980.000</span> đ</div>
-                            </td>
-                            <td><span><i class="fa-solid fa-trash"></i></span></td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="../Html/product.html" class=""><img src="../Images/Product/goku_red_1.png"
-                                        alt="" class=""></a></td>
-                            <td><a href="../Html/product.html" class="">Ứ Gô Kaooo</a></td>
-                            <td>
-                                <p>Màu sắc: <span>Đỏ</span></p>
-                                <p>Size: <span>XL</span></p>
-                            </td>
-                            <td>
-                                <div class="product-detail-quantity d-flex">
-                                    <div class="product-detail-quantity-input d-flex">
-                                        <button class="decrease-btn">-</button>
-                                        <input type="number" class="quantity-field" value="1" min="1" max="10">
-                                        <button class="increase-btn">+</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div><span>1.980.000</span> đ</div>
-                            </td>
-                            <td><span><i class="fa-solid fa-trash"></i></span></td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="../Html/product.html" class=""><img src="../Images/Product/goku_red_1.png"
-                                        alt="" class=""></a></td>
-                            <td><a href="../Html/product.html" class="">Ứ Gô Kaooo</a></td>
-                            <td>
-                                <p>Màu sắc: <span>Đỏ</span></p>
-                                <p>Size: <span>XL</span></p>
-                            </td>
-                            <td>
-                                <div class="product-detail-quantity d-flex">
-                                    <div class="product-detail-quantity-input d-flex">
-                                        <button class="decrease-btn">-</button>
-                                        <input type="number" class="quantity-field" value="1" min="1" max="10">
-                                        <button class="increase-btn">+</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div><span>1.980.000</span> đ</div>
-                            </td>
-                            <td><span><i class="fa-solid fa-trash"></i></span></td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="cart-product-back-btn">
-                    <a href="" class=""><button class="btn"><i class="fa-solid fa-arrow-left"></i> Tiếp tục mua
-                            hàng</button></a>
-                </div>
+<section id="cart-detail" class="container">
+    <div id="cart-detail-left">
+        <div id="cart-status-bar">
+            <div id="cart-status-progress">
+                <div class="cart-status-progress-item"></div>
+                <div class="cart-status-progress-item"></div>
+                <div class="cart-status-progress-item"></div>
+                <div class="cart-status-progress-item"></div>
+                <div class="cart-status-progress-item"></div>
             </div>
-
-            <div class="col-4 cart-right">
-                <table>
-                    <tr>
-                        <th colspan="2">Tổng tiền giỏ hàng</th>
-                    </tr>
-                    <tr>
-                        <td><p>Tổng sản phẩm</p></td>
-                        <td><p>3</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Tổng tiền ban đầu</p></td>
-                        <td><p><span>3.000.000</span> đ</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Tổng tiền cuối cùng</p></td>
-                        <td><p class="cart-right-price"><span>2.750.000</span> đ</p></td>
-                    </tr>
-                </table>
-
-                <div class="d-flex justify-content-center align-content-center">
-                    <a href="" class="cart-order-btn btn">Đặt hàng</a>
+            <div id="cart-status">
+                <div class="cart-status-item active">
+                    <div><i class="fa-solid fa-cart-shopping"></i></div>
+                    <span>Giỏ hàng</span>
                 </div>
-
-
+                <div class="cart-status-item">
+                    <div><i class="fa-solid fa-cart-plus"></i></div>
+                    <span>Đặt hàng</span>
+                </div>
+                <div class="cart-status-item">
+                    <div><i class="fa-solid fa-money-bill"></i></div>
+                    <span>Thanh toán</span>
+                </div>
+                <div class="cart-status-item">
+                    <div><i class="fa-solid fa-suitcase"></i></div>
+                    <span>Nhận hàng</span>
+                </div>
             </div>
         </div>
+        @if (count($cart) == 0)
+        <h2>Giỏ hàng của bạn hiện tại trống</h2>        
+        @else
+        <span id="cart-title">Giỏ hàng của bạn hiện tại có <span>{{count($cart)}}</span> sản phẩm</span>        
+        <table id="cart-product-list">
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Tên</th>
+                <th>Loại</th>
+                <th>Số lượng</th>
+                <th>Giá tiền</th>
+                <th></th>
+            </tr>
+            @foreach ($cart as $key => $quantity)
+                @php
+                    list($quanId, $size) = explode('_', $key);
+                    $quan = DB::table('quans')->where('id', $quanId)->first();
+                    $product = DB::table('products')->where('id', $quan->product_id)->first();
+                    $images = explode('*', $quan->images);
+                    $price = $product->discount_price ?? $product->original_price;
+                    $price *= $quantity;
+                    $origin = $product->original_price;
+                    $origin *= $quantity;
+                    $total_origin += $origin;
+                    $total += $price;
+                @endphp
+                <tr>
+                    <td><a href="/product/detail/{{ $product->id }}/{{ $quan->id }}" class=""><img src="{{ asset($images[0]) }}"></a></td>
+                    <td><a href="/product/detail/{{ $product->id }}/{{ $quan->id }}" class="cart-product-name">{{ $product->name }}</a></td>
+                    <td>
+                        <p>Màu sắc: <span style="color: {{ $quan->color_code }}">{{ $quan->color }}</span></p>
+                        <p>Size: <span>{{ strtoupper($size) }}</span></p>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <form class="cart-preview-number" action="/cart/update/{{$key}}" method="POST">
+                                <button type="button" onclick="decreaseProductFromCart(this)" class="minus-btn"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="cart-preview-input" name="cart-preview-input" value="{{ $quantity }}">
+                                <button type="button" onclick="increaseProductFromCart(this)" class="plus-btn"><i class="fa-solid fa-plus"></i></button>
+                                @csrf
+                            </form>
+                        </div>
+                    </td>
+                    @if ($product->discount_price == null)
+                    <td><div class="cart-product-discount-price">{{ number_format($price) }} đ</div></td>
+                    @else
+                    <td>
+                        <div class="cart-product-discount-price">{{ number_format($price) }} đ</div>
+                        <div class="cart-product-original-price">{{ number_format($product->original_price) }} đ</div>
+                    </td>
+                    @endif
+                    <td><button type="button" class="cart-product-delete-btn" onclick="deleteProductFromCart('{{$key}}')"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            @endforeach
+        </table>
+        @endif
 
+        <div id="cart-back-btn-bar">
+            <button id="cart-back-btn" onclick="cartBack()"><i class="fa-solid fa-arrow-left"></i> Tiếp tục mua hàng</button>
+        </div>
     </div>
-
+    <div id="cart-detail-right">
+        <div id="cart-detail-right-content">
+            <table id="cart-total-table">
+                <tr>
+                    <th colspan="2">Tổng tiền giỏ hàng</th>
+                </tr>
+                <tr>
+                    <td><p>Tổng sản phẩm</p></td>
+                    <td><p>{{count($cart)}}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Tổng tiền ban đầu</p></td>
+                    <td><p style="opacity: 0.5; text-decoration: line-through;"><span>{{number_format($total_origin)}}</span> đ</p></td>
+                </tr>
+                <tr>
+                    <td><p>Tổng tiền cuối cùng</p></td>
+                    <td><p class="cart-right-price" style="font-weight: bold; color: var(--hv-extra)"><span>{{number_format($total)}}</span> đ</p></td>
+                </tr>
+            </table>
+            <a href="" class="medium-btn border-btn light-blue-btn cart-order-btn">Đặt hàng</a>
+        </div>
+    </div>
 </section>
 @endsection
 
