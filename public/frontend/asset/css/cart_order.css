@@ -1,0 +1,118 @@
+#cart-left-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#cart-order-address {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+#cart-order-address-detail {
+    border-radius: 20px 0;
+    padding: 10px;
+    border: 2px solid var(--cl-extra-op-25);
+    display: flex;
+    gap: 10px;
+}
+
+#cart-order-address-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#cart-order-address-action {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#cart-order-address-btn {
+    border: 2px solid var(--cl-text-dark);
+    background-color: var(--cl-text-light);
+    color: var(--cl-text-dark);
+    padding: 5px;
+    border-radius: 15px 0;
+}
+
+#cart-order-address-btn:hover {
+    border: 2px solid var(--cl-text-light);
+    background-color: var(--cl-text-dark);
+    color: var(--cl-text-light);
+}
+
+/* ------------ delivery ----------------------- */
+#cart-order-delivery-method {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+#cart-order-delivery-method-content {
+    padding: 10px;
+    border-radius: 15px 0;
+    border: 2px solid var(--cl-extra-op-25);
+}
+
+/* --------------------------- pay ----------------------*/
+#cart-order-pay-method {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#cart-order-pay-method-content {
+    padding: 10px;
+    border-radius: 15px 0;
+    border: 2px solid var(--cl-extra-op-25);
+}
+
+/* ------------------------- sale code -------------------------*/
+#sale-code {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#sale-code input {
+    width: 70%;
+    background-color: transparent;
+    border: 2px solid var(--cl-extra);
+    padding: 10px;
+    border-radius: 15px 0 0 0;
+}
+
+#sale-code button {
+    width: 30%;
+    background-color: transparent;
+    border: 2px solid var(--cl-extra);
+    padding: 10px;
+    border-radius: 0 0 15px 0;
+    font-weight: bold;
+    color: var(--cl-extra);
+}
+
+#sale-code button:hover {
+    background-color: var(--cl-extra);
+    border-color: white;
+    color: white;
+}
+
+
+
+/*--------------------------*/
+#cart-detail-right-content {
+    position: absolute;
+}

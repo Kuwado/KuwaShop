@@ -69,12 +69,11 @@
                     </td>
                     <td>
                         <div class="d-flex align-items-center justify-content-between">
-                            <form class="cart-preview-number" action="/cart/update/{{$key}}" method="POST">
-                                <button type="button" onclick="decreaseProductFromCart(this)" class="minus-btn"><i class="fa-solid fa-minus"></i></button>
-                                <input type="number" class="cart-preview-input" name="cart-preview-input" value="{{ $quantity }}">
-                                <button type="button" onclick="increaseProductFromCart(this)" class="plus-btn"><i class="fa-solid fa-plus"></i></button>
-                                @csrf
-                            </form>
+                            <div class="cart-preview-number">
+                                <button type="button" formaction="/cart/update/{{$key}}" onclick="decreaseProductFromCart(this)" class="minus-btn"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" class="cart-preview-input" name="cart_product[{{$key}}]" value="{{$quantity}}">
+                                <button type="button" formaction="/cart/update/{{$key}}" onclick="increaseProductFromCart(this)" class="plus-btn"><i class="fa-solid fa-plus"></i></button>
+                            </div>
                         </div>
                     </td>
                     @if ($product->discount_price == null)
@@ -82,7 +81,7 @@
                     @else
                     <td>
                         <div class="cart-product-discount-price">{{ number_format($price) }} đ</div>
-                        <div class="cart-product-original-price">{{ number_format($product->original_price) }} đ</div>
+                        <div class="cart-product-original-price">{{ number_format($origin) }} đ</div>
                     </td>
                     @endif
                     <td><button type="button" class="cart-product-delete-btn" onclick="deleteProductFromCart('{{$key}}')"><i class="fa-solid fa-trash"></i></a></td>
@@ -114,7 +113,10 @@
                     <td><p class="cart-right-price" style="font-weight: bold; color: var(--hv-extra)"><span>{{number_format($total)}}</span> đ</p></td>
                 </tr>
             </table>
-            <a href="" class="medium-btn border-btn light-blue-btn cart-order-btn">Đặt hàng</a>
+            {{-- <input type="hidden" name="cart-total-price" value="{{$total}}">
+            <input type="hidden" name="cart-total-origin" value="{{$total_origin}}">
+            <input type="hidden" name="cart-product-number" value="{{count($cart)}}"> --}}
+            <button type="button" class="medium-btn border-btn light-blue-btn cart-order-btn" onclick="orderCart('{{count($cart)}}')">Đặt hàng</button>
         </div>
     </div>
 </section>

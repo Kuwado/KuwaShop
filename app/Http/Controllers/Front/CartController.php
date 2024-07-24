@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Quan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
@@ -65,12 +66,53 @@ class CartController extends Controller {
         ]);
     }
 
+    public function updateCart(Request $request) {
+        $cart = Session::get('cart', []);
+        $quantity = $request->input('quantity');  // Changed to match the data key
+        $key = $request->input('key');  // Changed to use input method
+    
+        if ($quantity == 0) {
+            unset($cart[$key]);
+        } else {
+            $cart[$key] = $quantity;
+        }
+        Session::put('cart', $cart);
+    
+        return response()->json([
+            'success' => true,
+            'message' => 'Sản phẩm đã được cập nhật số lượng'
+        ]);
+    }
+    
     public function deleteProduct(Request $request) {
         $cart = Session::get('cart', []);
         $key = $request->key;
         unset($cart[$key]);
         Session::put('cart', $cart);
         return redirect('/cart');
+    }
+
+    public function orderCart(Request $request) {
+        $cart = Session::get('cart', []);
+        $total_origin = 0;
+        $total = 0;
+        $number = count($cart);
+        foreach ($cart as $key => $quantity) {
+            list($quanId, $size) = explode('_', $key);
+            $quan = Quan::find($quanId);
+            $product = $quan->product;
+            $price = $product->discount_price ?? $product->original_price;
+            $price *= $quantity;
+            $origin = $product->original_price;
+            $origin *= $quantity;
+            $total_origin += $origin;
+            $total += $price;
+        }
+        return view('front.cart.order', [
+            'number' => $number,
+            'total' => $total,
+            'total_origin' => $total_origin
+        ]);
     }
 
 }

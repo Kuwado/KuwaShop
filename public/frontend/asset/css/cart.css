@@ -1,4 +1,5 @@
-#cart-detail {
+#cart-detail,
+#cart-order {
     display: flex;
     width: 100%;
     min-height: calc(100vh - var(--hd-height));
@@ -238,6 +239,11 @@
     gap: 20px;
     position: fixed;
     z-index: 5;
+}
+
+#cart-total-table p,
+#cart-total-table span {
+    font-size: 18px;
 }
 
 #cart-total-table th{

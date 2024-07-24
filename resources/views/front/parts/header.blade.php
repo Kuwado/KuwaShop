@@ -9,7 +9,7 @@
     <!--Logo and menu-->
     <div id="logo-and-menu">
         <div id="logo">
-            <a href="/home"><img src="{{asset("../Images/logo.png")}}" id="logo-image"></a>
+            <a href="/"><img src="{{asset("../Images/logo.png")}}" id="logo-image"></a>
         </div>
     
         <!--Menu-->
